@@ -57,20 +57,20 @@ export default function HomePage() {
     };
 
     return (
-        <div className="flex w-full flex-wrap content-between items-center">
-            <div className="w-[50%] float-left">
+        <div className="flex flex-wrap items-center content-between w-full">
+            <div className="float-left w-[50%]">
                 <h6 className='font-inter text-[16px] text-slate-200 uppercase'>Welcome to My World</h6>
-                <h1 className="text-4xl font-bold font-exo_2 pt-[10px] leading-[60px]">
-                    Hi, I’m <span className="text-[#edf339] text-5xl font-dancing_script">Fuad Hasan</span><br />
-                    a <span className='transition-all ease-in-out duration-300 uppercase text-slate-300'>{currentWord}</span>
-                    <span className="ml-1 typing-cursor text-gray-400 font-extralight">|</span>
+                <h1 className="pt-[10px] font-bold font-exo_2 text-4xl leading-[60px]">
+                    Hi, I’m <span className="font-dancing_script text-[#edf339] text-5xl">Fuad Hasan</span><br />
+                    a <span className='text-slate-300 uppercase transition-all duration-300 ease-in-out'>{currentWord}</span>
+                    <span className="ml-1 font-extralight text-gray-400 typing-cursor">|</span>
                 </h1>
-                <p className='text-[18px] font-exo_2 pt-[15px] text-justify'>
+                <p className='pt-[15px] font-exo_2 text-[18px] text-justify'>
                 Enthusiastic and dedicated software developer seeking an opportunity to apply my strong technical skills and passion for coding to effectively contribute to innovative software projects. I am eager to collaborate with a dynamic team of professionals to enhance my knowledge, grow as a software engineer, and deliver cutting-edge solutions that drive technological advancements in the industry. As a driven learner, I aspire to refine my skills under the mentorship of experienced developers and actively contribute to process enhancement within the team.                </p>
 
-                <section id='sociallink' className='flex w-full flex-wrap content-between items-center pt-[100px]'>
+                <section id='sociallink' className='flex flex-wrap items-center content-between pt-[100px] w-full'>
                     <div className="w-[50%]">
-                        <h5 className="uppercase pb-[15px] tracking-[5px] font-semibold text-slate-400">Find with me</h5>
+                        <h5 className="pb-[15px] font-semibold text-slate-400 uppercase tracking-[5px]">Find with me</h5>
 
                         <IconContainer
                             customClass="animate-swapColors1 transition-all duration-300 ease-in-out"
@@ -97,7 +97,7 @@ export default function HomePage() {
                         </IconContainer>
                     </div>
                     <div className='w-[50%]'>
-                        <h5 className='uppercase pb-[15px] tracking-[5px] font-semibold text-slate-400'>Best Skills On</h5>
+                        <h5 className='pb-[15px] font-semibold text-slate-400 uppercase tracking-[5px]'>Best Skills On</h5>
 
                         <IconContainer
                             customClass={'shadow-[#ddf95c] text-[#ddf95c]'}
