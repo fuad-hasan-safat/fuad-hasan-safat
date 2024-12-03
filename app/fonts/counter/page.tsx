@@ -1,8 +1,7 @@
 // Import Redux-related functions and actions
 "use client"
-import { useSelector, useDispatch } from "../../lib/store";
+import { useSelector, useDispatch } from "@/lib/store";
 import { increment, decrement } from "@/lib/features/counter/counterSlice"; 
-
 
 
 const Home: React.FC = () => {
