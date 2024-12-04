@@ -45,6 +45,9 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Fuad Hasan Safat",
   description: "Fuad Hasan Safat",
+  openGraph: {
+    images: ['/profilepic/images (2).jpg']
+  }
 };
 
 export default function RootLayout({
