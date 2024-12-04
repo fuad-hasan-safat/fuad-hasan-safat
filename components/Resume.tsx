@@ -21,7 +21,7 @@ export default function Resume() {
         RenderedComponent = ProfessionalSkill;
     }
     return (
-        < div className='w-full min-h-full'>
+        < div className='flex flex-col justify-center items-center w-full min-h-full'>
             <div className='flex justify-center items-center'>
                 <div>
                     <h6 className='font-thin text-[16px] text-yellow-400'>1 year of experience in web development</h6>
