@@ -67,6 +67,7 @@ export default function Fullbody() {
 
                 <section id="resume" ref={sectionRefs.resume} className="flex justify-center items-center pt-[110px]">
                     <Resume />
+                    
                 </section>
 
                 <section id="contact" ref={sectionRefs.contact} className="pt-[110px]">
