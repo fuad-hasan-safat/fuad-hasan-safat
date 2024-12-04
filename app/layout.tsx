@@ -54,13 +54,17 @@ export default function RootLayout({
 }>) {
   return (
     <Providers>
-    <html lang="en">
-      <body
-        className={`${inter.variable} ${dancing_script.variable} ${exo_2.variable} ${geistSans.variable} ${geistMono.variable} ${playwrite.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
+      <html lang="en">
+        <body
+          className={`${inter.variable} ${dancing_script.variable} ${exo_2.variable} ${geistSans.variable} ${geistMono.variable} ${playwrite.variable} antialiased`}
+        >
+          <meta property="og:image" content="/profilepic/images (2).jpg" />
+          <meta property="og:image:type" content="image/png" />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
+          {children}
+        </body>
+      </html>
     </Providers>
   )
 }
