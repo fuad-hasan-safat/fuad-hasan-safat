@@ -1,19 +1,20 @@
 "use client";
-import React, { useEffect, useRef, useState } from 'react';
-import HomePage from "./HomePage";
-import { useDispatch } from '../lib/store';
-import { setActivePage } from "../lib/features/header/headerSlice";
-import Header from "./header/Header";
-import Resume from "./Resume";
-import StartUpAnimation from './StartUpAnimation';
+import React, { useEffect, useRef } from 'react';
+import HomePage from './HomePage';
+import { useDispatch } from '@/lib/store';
+import { setActivePage } from '@/lib/features/header/headerSlice';
+import Header from './header/Header';
+import Resume from './Resume';
 
 export default function Fullbody() {
     const dispatch = useDispatch();
-    const sectionRefs: {
-        home: React.RefObject<HTMLElement>;
-        about: React.RefObject<HTMLElement>;
-        resume: React.RefObject<HTMLElement>;
-        contact: React.RefObject<HTMLElement>;
+
+    // Define type for sectionRefs object
+    const sectionRefs: { 
+        home: React.RefObject<HTMLElement>; 
+        about: React.RefObject<HTMLElement>; 
+        resume: React.RefObject<HTMLElement>; 
+        contact: React.RefObject<HTMLElement>; 
     } = {
         home: useRef<HTMLElement>(null),
         about: useRef<HTMLElement>(null),
@@ -21,17 +22,8 @@ export default function Fullbody() {
         contact: useRef<HTMLElement>(null),
     };
 
-    const [showAnimation, setShowAnimation] = useState(true);
-
     useEffect(() => {
-        // Set a timer for the duration of your animation in milliseconds
-        const timer = setTimeout(() => setShowAnimation(false), 2000); // 5 seconds
-
-        // Clear the timer if the component unmounts before the animation completes
-        return () => clearTimeout(timer);
-    }, []);
-
-    useEffect(() => {
+        // Define type for entries as IntersectionObserverEntry[]
         const handleIntersection = (entries: IntersectionObserverEntry[]) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
@@ -39,6 +31,7 @@ export default function Fullbody() {
                 }
             });
         };
+
         const observer = new IntersectionObserver(handleIntersection, {
             root: null,
             threshold: 0.7,
@@ -55,17 +48,13 @@ export default function Fullbody() {
         };
     }, [dispatch]);
 
-    if (showAnimation) {
-        return <StartUpAnimation />
-    }
-
     return (
-
         <>
             <Header sectionRefs={sectionRefs} />
-            <div id='fullcombinepage' className='px-[200px] relative'>
-
-                <h1 className='fixed top-[50%] right-[-42px] px-[15px] py-[5px]  text-[26px]  text-slate-400 hover:text-white font-exo_2 shadow-sm  shadow-gray-400 hover:shadow-md hover:shadow-gray-200 z-[99999] tracking-[10px] rotate-[90deg] cursor-pointer'> Fuad </h1>
+            <div id='fullcombinepage' className='relative px-[200px]'>
+                <h1 className='top-[50%] right-[-42px] z-[99999] fixed shadow-gray-400 shadow-sm hover:shadow-md hover:shadow-gray-200 px-[15px] py-[5px] font-exo_2 text-[26px] text-slate-400 hover:text-white tracking-[10px] cursor-pointer rotate-[90deg]'>
+                    Fuad
+                </h1>
 
                 <section id="home" ref={sectionRefs.home} className="pt-[110px]">
                     <HomePage />
@@ -76,13 +65,7 @@ export default function Fullbody() {
                     <HomePage />
                 </section>
 
-                <section id="resume" ref={sectionRefs.resume} className="pt-[110px] ">
-                    <div className='flex justify-center items-center'>
-                        <div>
-                            <h6 className='text-yellow-400 font-thin text-[16px]'>1 year of  experience in web development</h6>
-                            <h1 className={`text-4xl font-semibold text-slate-300 tracking-[10px] pt-[10px]`}>My Resume</h1>
-                        </div>
-                    </div>
+                <section id="resume" ref={sectionRefs.resume} className="pt-[110px]">
                     <Resume />
                 </section>
 
@@ -91,7 +74,6 @@ export default function Fullbody() {
                     <HomePage />
                 </section>
             </div>
-
         </>
     );
 }

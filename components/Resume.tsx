@@ -12,12 +12,26 @@ export default function Resume() {
     const buttonDesign = 'px-[10px] py-[15px] transition duration-900 ease-in-out w-[33.33%]';
     const hoverEffect = 'hover:text-yellow-400 hover:z-[999]  hover:rounded-md hover:shadow-md hover:shadow-slate-500 hover:bg-gradient-to-br from-slate-100 via-sky-200 to-slate-200 ';
     const selectedButtonCss = 'text-yellow-400 z-[999] bg-slate-100 rounded-md shadow-md shadow-slate-500';
-
+    let RenderedComponent = Education;
+    if(selectedButton === 'education'){
+        RenderedComponent = Education;
+    }else if(selectedButton === 'experience'){
+        RenderedComponent = Exprience;
+    }else if(selectedButton === 'skill'){
+        RenderedComponent = ProfessionalSkill;
+    }
     return (
-        <section>
+        < div className='w-full min-h-full'>
+            <div className='flex justify-center items-center'>
+                <div>
+                    <h6 className='font-thin text-[16px] text-yellow-400'>1 year of experience in web development</h6>
+                    <h1 className='pt-[10px] font-semibold text-4xl text-slate-300 tracking-[10px]'>My Resume</h1>
+                </div>
+
+            </div>
             <div
                 id='resumebuttonlist'
-                className="flex w-full justify-center items-center mt-[25px] text-[22px] text-gray-400 bg-black rounded-md shadow-2xl shadow-teal-200 hover:shadow-[8px_8px_15px_rgba(0,0,0,0.25)] transform hover:translate-y-1 transition-all duration-500 ease-in-out"
+                className="flex justify-center items-center bg-black shadow-2xl shadow-teal-200 hover:shadow-[8px_8px_15px_rgba(0,0,0,0.25)] mt-[25px] rounded-md w-full text-[22px] text-gray-400 transform transition-all hover:translate-y-1 duration-500 ease-in-out"
             >
                 <Button
                     className={`${buttonDesign} ${hoverEffect} ${selectedButton === 'education' ? selectedButtonCss : ''} `}
@@ -35,14 +49,8 @@ export default function Resume() {
                     onClick={() => dispatch(setResumeButton('skill'))}
                 />
             </div>
+               <RenderedComponent />
 
-            <div className='flex justify-center'>
-            {selectedButton === 'education' && <Education/>  }
-            {selectedButton === 'experience' && <Exprience/>  }
-            {selectedButton === 'skill' && <ProfessionalSkill/>  }
-            </div>
-
-
-        </section>
+        </div>
     );
 }

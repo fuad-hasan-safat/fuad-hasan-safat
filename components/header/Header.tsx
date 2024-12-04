@@ -1,50 +1,71 @@
-// Header.js
 "use client";
-import React, { useEffect, useState } from 'react';
-import styles from './header.module.css';
-import Image from 'next/image';
-import Button from '../Button';
-import { RootState, useDispatch, useSelector } from '@/lib/store';
-import { setActivePage } from '@/lib/features/header/headerSlice';
+import React, { useEffect, useState } from "react";
+import styles from "./header.module.css";
 import styles1 from './RotatingImageHeader.module.css';
+import Image from "next/image";
+import Button from "../Button";
+import { useDispatch, useSelector } from "@/lib/store";
+import { setActivePage } from "@/lib/features/header/headerSlice";
+import { RootState } from "@/lib/store";
 
+// Define types for the sections and props
 type SectionRefs = {
-    home: React.RefObject<HTMLElement>;
-    about: React.RefObject<HTMLElement>;
-    resume: React.RefObject<HTMLElement>;
-    contact: React.RefObject<HTMLElement>;
+  home: React.RefObject<HTMLElement>;
+  about: React.RefObject<HTMLElement>;
+  resume: React.RefObject<HTMLElement>;
+  contact: React.RefObject<HTMLElement>;
 };
 
 interface HeaderProps {
-    sectionRefs: SectionRefs;
+  sectionRefs: SectionRefs;
 }
 
-
 export default function Header({ sectionRefs }: HeaderProps) {
+  const dispatch = useDispatch();
+  const [isSticky, setIsSticky] = useState(false);
+  const activePage = useSelector((state: RootState) => state.header.activePage);
 
-    const dispatch = useDispatch();
-    const [isSticky, setIsSticky] = useState(false);
-    const activePage = useSelector((state: RootState) => state.header.activePage);
+  const handleNavigation = (page: keyof SectionRefs) => {
+    dispatch(setActivePage(page));
 
-    const handleNavigation = (page: keyof SectionRefs) => {
-        dispatch(setActivePage(page));
-        
-        // Smooth scroll to the section
-        if (sectionRefs[page].current) {
-            sectionRefs[page].current.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start',
-            });
-        }
+    // Smooth scroll to the section
+    if (sectionRefs[page].current) {
+      sectionRefs[page].current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
+  useEffect(() => {
+    const handleScroll = () => setIsSticky(window.scrollY > 100);
+    window.addEventListener("scroll", handleScroll);
+
+    // IntersectionObserver logic
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const sectionId = entry.target.getAttribute("id") as keyof SectionRefs;
+            dispatch(setActivePage(sectionId)); // Update the active page in Redux
+          }
+        });
+      },
+      { threshold: 0.6 } // Adjust threshold to control when a section is considered "in view"
+    );
+
+    // Observe all sections
+    Object.keys(sectionRefs).forEach((key) => {
+      const ref = sectionRefs[key as keyof SectionRefs];
+      if (ref.current) observer.observe(ref.current);
+    });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      observer.disconnect(); // Clean up observer
     };
+  }, [sectionRefs, dispatch]);
 
-
-    useEffect(() => {
-        const handleScroll = () => setIsSticky(window.scrollY > 100);
-        handleScroll();
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
 
     return (
         <header className={`${styles.header} ${isSticky ? styles.sticky : ''}`}>

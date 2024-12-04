@@ -3,7 +3,6 @@ import InformationCard from '../InformationCard';
 
 const Exprience = () => {
   return (
-   <>
    <div className='pt-[20px]'>
         <div  className="education">
             
@@ -27,7 +26,6 @@ const Exprience = () => {
 
         </div>
    </div>
-   </>
   );
 };
 
