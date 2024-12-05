@@ -149,15 +149,13 @@ export default function HomePage() {
                         width={300}
                         height={300}
                     />
-                    {/* Conditionally render rings based on screen size */}
-                    {typeof window !== "undefined" && window.innerWidth > 768 && (
-                        <>
-                            <div className={`${styles.ring}`}></div>
-                            <div className={`${styles.ring}`}></div>
-                            <div className={`${styles.ring}`}></div>
-                            <div className={`${styles.ring}`}></div>
-                        </>
-                    )}
+
+                    <div className={`${styles.ring}`}></div>
+                    <div className={`${styles.ring}`}></div>
+                    <div className={`${styles.ring}`}></div>
+                    <div className={`${styles.ring}`}></div>
+
+
                 </div>
             </div>
 

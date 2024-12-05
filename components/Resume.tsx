@@ -61,7 +61,7 @@ export default function Resume() {
             </div>
 
             {/* Rendered Component */}
-            <div className="mt-8 sm:mt-12 w-full">
+            <div className="flex justify-center mt-8 sm:mt-12 w-full">
                 <RenderedComponent />
             </div>
         </div>
