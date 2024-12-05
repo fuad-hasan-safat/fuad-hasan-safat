@@ -5,6 +5,7 @@ import { useDispatch } from '@/lib/store';
 import { setActivePage } from '@/lib/features/header/headerSlice';
 import Header from './header/Header';
 import Resume from './Resume';
+import Aboutme from './Aboutme';
 
 export default function Fullbody() {
     const dispatch = useDispatch();
@@ -61,8 +62,7 @@ export default function Fullbody() {
                 </section>
 
                 <section id="about" ref={sectionRefs.about} className="pt-[110px]">
-                    <h1>ABOUT</h1>
-                    <HomePage />
+                    <Aboutme />
                 </section>
 
                 <section id="resume" ref={sectionRefs.resume} className="pt-[110px]">
