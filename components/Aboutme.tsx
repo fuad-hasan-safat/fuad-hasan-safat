@@ -1,19 +1,31 @@
-import React from 'react'
-import HighlightWords from './HighlightWords'
+import React from 'react';
+import HighlightWords from './HighlightWords';
 
-export default function Aboutme() {
+export default function AboutMe() {
     return (
-        <div className='font-playwrite text-justify'>
-            <h1 className='font-exo_2 text-3xl'>ABOUT ME</h1>
-            <p className='pt-[10px] text-slate-300 leading-[25px]'>Hi, I&apos;m <HighlightWords>Fuad Hasan</HighlightWords>, a passionate and versatile  <HighlightWords>Programmer</HighlightWords> specializing in <HighlightWords>modern web technologies</HighlightWords>, <HighlightWords>backend development</HighlightWords>, and <HighlightWords>database design</HighlightWords>. With a <HighlightWords>Bachelor&apos;s</HighlightWords> degree in <HighlightWords>Computer Science and Engineering</HighlightWords> and a solid academic foundation, I bring analytical thinking, attention to detail, and a <HighlightWords>problem-solving</HighlightWords> mindset to my work.
+        <div className="font-playwrite text-justify">
+            <h1 className="font-exo_2 text-3xl">ABOUT ME</h1>
+            <p className='pt-[10px] leading-[25px]'>
+                <HighlightWords
+                    highlightWords={['Fuad', 'Hasan', 'Brahmaputra', 'Kurigram', 'Bachelor&apos;s', 'Computer', 'Science', 'Engineering', 'nature', 'plants']}
+                    highlightClassName="text-yellow-200"
+                >
+                    I&apos;m Fuad Hasan, a software developer who has journeyed from Rowmari, Kurigram — a serene town by the
+                    Brahmaputra River often ravaged by deadly floods—to the bustling capital of Bangladesh, Dhaka. Growing up in
+                    such a resilient community instilled in me the values of perseverance, adaptability, and determination. Today, I
+                    channel these traits into my work as a developer, crafting innovative solutions and overcoming challenges with
+                    creativity and grit.<br /><br />
+                    With a Bachelor&apos;s degree in Computer Science and Engineering, I specialize in modern web technologies,
+                    backend development, and database design. I have extensive experience in frontend frameworks like React,
+                    Next.js, and Redux, paired with backend expertise in Node.js, Elysia.js, and Bun.js. My proficiency extends to
+                    database design and management, utilizing tools like MySQL, Prisma, and Sequelize to build scalable and
+                    efficient systems.<br /><br />
+                    My journey from the riverside town of Rowmari to becoming a developer in Dhaka reflects my unwavering commitment
+                    to growth and learning. Beyond the technical world, I&apos;m an introvert with a love for nature, finding peace
+                    and inspiration in the simplicity of plants. Let&apos;s build something amazing together!
 
-                I have extensive experience in frontend technologies like <HighlightWords>React</HighlightWords>, <HighlightWords>Next.js</HighlightWords>, and <HighlightWords>Redux</HighlightWords>, creating seamless and engaging user interfaces. On the backend, I excel in building robust and scalable solutions using tools like <HighlightWords>Node.js</HighlightWords>, <HighlightWords>Elysia.js</HighlightWords>, and <HighlightWords>Bun.js</HighlightWords>. Additionally, I have hands-on expertise in database design and management, proficient in <HighlightWords>MySQL</HighlightWords>, Prisma, Sequelize, and crafting schemas tailored to optimize performance and ensure data integrity.
-
-                My journey has equipped me with the skills to handle end-to-end development, from architecting efficient <HighlightWords>APIs</HighlightWords> to designing relational databases that meet complex requirements. My strong communication skills and commitment to teamwork enable me to thrive in collaborative environments while delivering impactful results.
-
-                Beyond my professional life, I&apos;m an introvert with a  <HighlightWords>love for nature </HighlightWords>, finding inspiration in the simplicity and beauty of  <HighlightWords>plants</HighlightWords>. A firm believer in continuous learning, I constantly explore innovative solutions to deliver exceptional projects.
-
-                Let&apos;s build something amazing together!</p>
+                </HighlightWords>
+            </p>
         </div>
-    )
+    );
 }
