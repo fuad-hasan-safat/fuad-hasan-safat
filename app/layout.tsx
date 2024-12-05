@@ -44,7 +44,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "Fuad Hasan Safat",
-  description: "Fuad Hasan Safat",
+  description: `I am Fuad Hasan, a software developer who has journeyed from Rowmari, Kurigram—a serene town by the Brahmaputra River often ravaged by deadly floods—to the bustling capital of Bangladesh, Dhaka. Growing up in such a resilient community instilled in me the values of perseverance, adaptability, and determination. Today, I channel these traits into my work as a developer, crafting innovative solutions and overcoming challenges with creativity and grit.`,
 };
 
 export default function RootLayout({
