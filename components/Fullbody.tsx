@@ -52,7 +52,7 @@ export default function Fullbody() {
     return (
         <>
             <Header sectionRefs={sectionRefs} />
-            <div id='fullcombinepage' className='relative px-[200px]'>
+            <div id='fullcombinepage' className='relative px-[30px] md:px-[200px]'>
                 <h1 className='top-[50%] right-[-42px] z-[99999] fixed shadow-gray-400 shadow-sm hover:shadow-md hover:shadow-gray-200 px-[15px] py-[5px] font-exo_2 text-[26px] text-slate-400 hover:text-white tracking-[10px] cursor-pointer rotate-[90deg]'>
                     Fuad
                 </h1>

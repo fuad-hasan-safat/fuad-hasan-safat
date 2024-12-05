@@ -1,32 +1,22 @@
 .imageContainer {
   position: relative;
-  width: 400px;
-  height: 400px;
+  /* width: 400px;
+  height: 400px; */
   display: inline-block;
   float: right;
-  overflow: hidden;
-  /* Ensure anything that goes outside is hidden */
-  border-radius: 50%;
-  /* Add this to make the container circular */
+  overflow: hidden; /* Ensures anything outside is hidden */
+  border-radius: 50%; /* Makes the container circular */
 }
 
 .profileImage {
   border-radius: 50%;
-  transition: transform 0.3s ease;
-  /* Smooth scaling effect */
+  transition: transform 0.3s ease, filter 0.3s ease; /* Smooth scaling and brightness effects */
 }
 
 .imageContainer:hover .profileImage {
   filter: brightness(90%);
-  transform: scale(1.1);
-  /* Scale on hover */
-
-  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-
-  --tw-shadow-color: #cbd5e1;
-  --tw-shadow: var(--tw-shadow-colored);
+  transform: scale(1.1); /* Slight zoom on hover */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1); /* Adds shadow effect */
 }
 
 .ring {
@@ -37,61 +27,44 @@
   height: 100%;
   border-radius: 50%;
   border: 10px solid transparent;
-  animation: rotateRing 7s linear infinite;
+  animation: rotateRing 7s linear infinite; /* Infinite rotation */
 }
 
-/* First ring - 25% in red */
+/* First ring */
 .ring:nth-of-type(1) {
-  border-top: 10px solid #7ef44781;
-  /* Visible quarter */
-  transform: rotate(45deg);
-  z-index: 10;
-  /* Offset to position correctly */
-  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-
+  border-top: 10px solid rgba(126, 244, 71, 0.5); /* Light green */
+  transform: rotate(45deg); /* Position offset */
+  z-index: 1;
 }
 
-/* Second ring - 25% in green */
+/* Second ring */
 .ring:nth-of-type(2) {
-  border-right: 10px solid #fdfd54ab;
-  /* Visible quarter */
-  animation-direction: reverse;
+  border-right: 10px solid rgba(253, 253, 84, 0.67); /* Light yellow */
+  animation-direction: reverse; /* Reverse rotation */
   transform: rotate(-45deg);
-  /* Offset to position correctly */
-  z-index: 20;
-  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-
-
+  z-index: 2;
 }
 
-/* Third ring - 25% in orange */
+/* Third ring */
 .ring:nth-of-type(3) {
-  border-bottom: 10px solid #30c1ff98;
-  /* Visible quarter */
+  border-bottom: 10px solid rgba(48, 193, 255, 0.6); /* Light blue */
   transform: rotate(120deg);
-  /* Offset to position correctly */
-  z-index: 30;
-  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-
+  z-index: 3;
 }
 
-/* Fourth ring - 25% in blue */
+/* Fourth ring */
 .ring:nth-of-type(4) {
-  border-left: 10px solid #fa5eff9b;
-  /* Visible quarter */
-  animation-direction: reverse;
+  border-left: 10px solid rgba(250, 94, 255, 0.61); /* Light pink */
+  animation-direction: reverse; /* Reverse rotation */
   transform: rotate(-120deg);
-  /* Offset to position correctly */
-  z-index: 40;
-  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-
+  z-index: 4;
 }
 
+/* Smooth rotation animation for the rings */
 @keyframes rotateRing {
   0% {
     transform: rotate(0deg);
   }
-
   100% {
     transform: rotate(360deg);
   }
