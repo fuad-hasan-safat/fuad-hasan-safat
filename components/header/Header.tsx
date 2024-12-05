@@ -78,6 +78,9 @@ export default function Header({ sectionRefs }: HeaderProps) {
               height={50}
             />
             <div className={`${styles1.ring}`}></div>
+            <div className={`${styles1.ring}`}></div>
+            <div className={`${styles1.ring}`}></div>
+            <div className={`${styles1.ring}`}></div>
           </div>
           <p className={`text-[20px] font-semibold tracking-widest ${styles.text3d}`}>Fuad</p>
         </div>
