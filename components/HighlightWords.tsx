@@ -1,8 +1,8 @@
 import React, { HTMLAttributes, ReactNode } from 'react';
 
 interface HighlightWordsProps extends HTMLAttributes<HTMLSpanElement> {
-  highlightClassName?: string; // Class for highlighted words
-  highlightWords?: string[]; // List of words to highlight
+  highlightClassName?: string; // Class for highlighted strings
+  highlightWords?: string[]; // List of strings to highlight
 }
 
 export default function HighlightWords({
@@ -11,42 +11,45 @@ export default function HighlightWords({
   highlightWords = [],
   ...props
 }: HighlightWordsProps) {
-  // Normalize highlightWords to lowercase for case-insensitive comparison
-  const normalizedHighlightWords = highlightWords.map((word) => word.toLowerCase());
+  // Define a unique key counter to ensure unique keys globally
+  let uniqueKey = 0;
 
-  // Global counter to ensure unique keys
-  let keyCounter = 0;
+  const processText = (text: string): ReactNode[] => {
+    const regex = new RegExp(
+      `(${highlightWords.map((word) => word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})`,
+      'gi' // Global and case-insensitive
+    );
 
-  // Process children into manageable chunks of words and ReactNodes
-  const processWords = (text: string): ReactNode[] => {
-    const regex = /(\b[\w'-]+\b|[^\w\s])/g; // Match words and punctuation
-    const splitText = text.match(regex) || [];
+    const parts = text.split(regex);
 
-    return splitText.map((word) => {
-      const normalizedWord = word.toLowerCase().replace(/[^\w'-]/g, ''); // Remove punctuation for matching
-      const isHighlighted = normalizedHighlightWords.includes(normalizedWord);
+    return parts.map((part) => {
+      const isHighlighted = highlightWords.some(
+        (word) => word.toLowerCase() === part.toLowerCase()
+      );
 
-      return (
-        <span
-          key={`${keyCounter++}`} // Unique key using a global counter
-          className={isHighlighted ? highlightClassName : undefined}
-        >
-          {word}
+      return isHighlighted ? (
+        <span key={`highlight-${uniqueKey++}`} className={highlightClassName}>
+          {part}
         </span>
+      ) : (
+        <span key={`text-${uniqueKey++}`}>{part}</span>
       );
     });
   };
 
+  // Flatten children and process each string child
   const highlightedText = React.Children.toArray(children).flatMap((child) => {
     if (typeof child === 'string') {
-      return processWords(child);
+      return processText(child);
     }
-    return <React.Fragment key={keyCounter++}>{child}</React.Fragment>; // Ensure unique keys for ReactNodes
+    return React.cloneElement(child as React.ReactElement, {
+      key: `child-${uniqueKey++}`,
+    });
   });
 
   return (
     <span {...props}>
-      {highlightedText.reduce<ReactNode[]>((prev, curr) => (prev.length ? [...prev, ' ', curr] : [curr]), [])}
+      {highlightedText}
     </span>
   );
 }

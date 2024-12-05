@@ -7,7 +7,7 @@ export default function AboutMe() {
             <h1 className="font-exo_2 text-3xl">ABOUT ME</h1>
             <p className='pt-[10px] leading-[25px]'>
                 <HighlightWords
-                    highlightWords={['Fuad', 'Hasan', 'Brahmaputra', 'Kurigram', 'Bachelor&apos;s', 'Computer', 'Science', 'Engineering', 'nature', 'plants']}
+                    highlightWords={['Fuad Hasan', 'Brahmaputra', 'Kurigram', 'Bachelor&apos;s', 'Computer Science and Engineering', 'nature', 'plants']}
                     highlightClassName="text-yellow-200"
                 >
                     I&apos;m Fuad Hasan, a software developer who has journeyed from Rowmari, Kurigram — a serene town by the
