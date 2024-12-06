@@ -20,6 +20,11 @@
 	animation: slideDown 0.3s ease forwards;
 }
 
+.navbg{
+	background-color: #166bebce;
+	backdrop-filter: blur(5px);
+}
+
 /* RGB Animated Text */
 .text-rgb-animated {
 	animation: rgbLight 4s infinite;

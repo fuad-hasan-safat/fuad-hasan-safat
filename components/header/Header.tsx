@@ -39,31 +39,38 @@ export default function Header({ sectionRefs }: HeaderProps) {
   };
 
   useEffect(() => {
-    const handleScroll = () => setIsSticky(window.scrollY > 100);
-    window.addEventListener("scroll", handleScroll);
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const sectionId = entry.target.getAttribute("id") as keyof SectionRefs;
-            dispatch(setActivePage(sectionId));
+    const handleScroll = () => {
+      setIsSticky(window.scrollY > 100);
+  
+      // Manually check which section is in view
+      let currentSection: keyof SectionRefs | null = null;
+  
+      Object.keys(sectionRefs).forEach((key) => {
+        const ref = sectionRefs[key as keyof SectionRefs];
+        if (ref.current) {
+          const rect = ref.current.getBoundingClientRect();
+          // Check if the section is in the middle of the viewport
+          if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+            currentSection = key as keyof SectionRefs;
           }
-        });
-      },
-      { threshold: 0.6 }
-    );
-
-    Object.keys(sectionRefs).forEach((key) => {
-      const ref = sectionRefs[key as keyof SectionRefs];
-      if (ref.current) observer.observe(ref.current);
-    });
-
+        }
+      });
+  
+      // Dispatch active page only if it changes
+      if (currentSection && activePage !== currentSection) {
+        dispatch(setActivePage(currentSection));
+      }
+    };
+  
+    // Attach scroll listener
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Run initially to set the correct section
+  
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      observer.disconnect();
     };
-  }, [sectionRefs, dispatch]);
+  }, [sectionRefs, activePage, dispatch]);
+  
 
   return (
     <header className={`${styles.header} ${isSticky ? styles.sticky : ""}`}>
@@ -86,7 +93,7 @@ export default function Header({ sectionRefs }: HeaderProps) {
         </div>
 
         {/* Hamburger Icon */}
-        <div className="md:hidden">
+        <div className="relative md:hidden ">
           {menuOpen ? (
             <FaTimes size={24} onClick={() => setMenuOpen(false)} className="cursor-pointer" />
           ) : (
@@ -96,30 +103,21 @@ export default function Header({ sectionRefs }: HeaderProps) {
 
         {/* Navigation Menu */}
         <nav
-          className={`${
-            menuOpen ? "flex" : "hidden "
-          } absolute md:static top-16 left-0 w-full md:w-auto bg-gray-900 md:bg-transparent flex-col md:flex-row items-center space-y-2 md:space-y-0 md:flex md:space-x-4 z-[999999999]`}
+          className={`${menuOpen ? "flex" : "hidden"
+            } absolute md:static top-16 right-0 md:w-auto bg-gray-900 md:bg-transparent flex-col md:flex-row items-center space-y-2 md:space-y-0 md:flex md:space-x-4 z-[9999]`}
         >
-          <Button
-            text="Home"
-            onClick={() => handleNavigation("home")}
-            className={activePage === "home" ? "text-[#f6e054]" : "text-[#c8c5c5]"}
-          />
-          <Button
-            text="About"
-            onClick={() => handleNavigation("about")}
-            className={activePage === "about" ? "text-[#f6e054]" : "text-[#c8c5c5]"}
-          />
-          <Button
-            text="Resume"
-            onClick={() => handleNavigation("resume")}
-            className={activePage === "resume" ? "text-[#f6e054]" : "text-[#c8c5c5]"}
-          />
-          <Button
-            text="Contact"
-            onClick={() => handleNavigation("contact")}
-            className={activePage === "contact" ? "text-[#f6e054]" : "text-[#c8c5c5]"}
-          />
+          {["home", "about", "resume", "contact"].map((page) => (
+            <Button
+              key={page}
+              text={page.charAt(0).toUpperCase() + page.slice(1)}
+              onClick={() => handleNavigation(page as keyof SectionRefs)}
+              className={
+                activePage === page
+                  ? "text-[#f6e054] font-semibold"
+                  : "text-[#c8c5c5] hover:text-[#f6e054]"
+              }
+            />
+          ))}
         </nav>
       </div>
     </header>

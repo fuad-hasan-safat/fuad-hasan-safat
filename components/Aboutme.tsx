@@ -4,8 +4,8 @@ import HighlightWords from './HighlightWords';
 export default function AboutMe() {
     return (
         <div className="font-playwrite text-justify">
-            <h1 className="font-exo_2 text-3xl">ABOUT ME</h1>
-            <p className='pt-[10px] leading-[25px]'>
+            <h1 className="font-exo_2 text-3xl w-full justify-center text-center font-semibold">ABOUT ME</h1>
+            <p className='pt-[10px] px-[10px] text-[16px] md:text-[20px] md:px-[50px] leading-10'>
                 <HighlightWords
                     highlightWords={['Fuad Hasan', 'Brahmaputra', 'Kurigram', 'Bachelor&apos;s', 'Computer Science and Engineering', 'nature', 'plants']}
                     highlightClassName="text-yellow-200"

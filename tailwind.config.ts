@@ -1,4 +1,6 @@
 import type { Config } from "tailwindcss";
+const plugin = require("tailwindcss-filters");
+
 
 const config: Config = {
   content: [
@@ -44,6 +46,6 @@ const config: Config = {
       }
     },
   },
-  plugins: [],
+  plugins: [plugin],
 };
 export default config;

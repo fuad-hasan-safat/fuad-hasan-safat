@@ -72,10 +72,8 @@ export default function HomePage() {
                     </span>
                     <span className="ml-1 font-extralight text-gray-400 typing-cursor">|</span>
                 </h1>
-                <p className="pt-4 text-[14px] text-justify sm:text-[18px]">
-                    Enthusiastic and dedicated software developer seeking an opportunity to apply
-                    my strong technical skills and passion for coding to effectively contribute to
-                    innovative software projects.
+                <p className="pt-4 text-[18px] text-justify sm:text-[18px] font-playwrite leading-10">
+                Enthusiastic and dedicated software developer seeking an opportunity to apply my strong technical skills and passion for coding to effectively contribute to innovative software projects. I am eager to collaborate with a dynamic team of professionals to enhance my knowledge, grow as a software engineer, and deliver cutting-edge solutions that drive technological advancements in the industry. As a driven learner, I aspire to refine my skills under the mentorship of experienced developers and actively contribute to process enhancement within the team.
                 </p>
 
                 {/* Social Links and Skills */}
