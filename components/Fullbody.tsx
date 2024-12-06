@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import HomePage from './HomePage';
 import { useDispatch } from '@/lib/store';
 import { setActivePage } from '@/lib/features/header/headerSlice';
@@ -10,18 +10,14 @@ import Aboutme from './Aboutme';
 export default function Fullbody() {
     const dispatch = useDispatch();
 
-    // Define type for sectionRefs object
-    const sectionRefs: { 
-        home: React.RefObject<HTMLElement>; 
-        about: React.RefObject<HTMLElement>; 
-        resume: React.RefObject<HTMLElement>; 
-        contact: React.RefObject<HTMLElement>; 
-    } = {
-        home: useRef<HTMLElement>(null),
-        about: useRef<HTMLElement>(null),
-        resume: useRef<HTMLElement>(null),
-        contact: useRef<HTMLElement>(null),
-    };
+    const sectionRefs = useMemo(() => {
+        return {
+            home: React.createRef<HTMLElement>(),
+            about: React.createRef<HTMLElement>(),
+            resume: React.createRef<HTMLElement>(),
+            contact: React.createRef<HTMLElement>(),
+        };
+    }, []);
 
     useEffect(() => {
         // Define type for entries as IntersectionObserverEntry[]
@@ -47,7 +43,7 @@ export default function Fullbody() {
                 if (ref.current) observer.unobserve(ref.current);
             });
         };
-    }, [dispatch]);
+    }, [dispatch, sectionRefs]);
 
     return (
         <>

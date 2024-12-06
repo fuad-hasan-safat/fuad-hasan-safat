@@ -5,7 +5,6 @@ import { setResumeButton } from '../lib/features/resume/resume-slice';
 import Education from './resume/Education';
 import ProfessionalSkill from './resume/ProfessionalSkill';
 import Exprience from './resume/Exprience';
-import DiagonalAnimation from './moonart/DiagonalAnimation';
 
 export default function Resume() {
     const dispatch = useDispatch();
