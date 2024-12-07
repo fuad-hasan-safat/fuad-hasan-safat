@@ -103,9 +103,10 @@ export default function Header({ sectionRefs }: HeaderProps) {
 
         {/* Navigation Menu */}
         <nav
-          className={`${menuOpen ? "flex" : "hidden"
-            } absolute md:static top-16 right-0 md:w-auto bg-gray-900 md:bg-transparent flex-col md:flex-row items-center space-y-2 md:space-y-0 md:flex md:space-x-4 z-[9999]`}
-        >
+  className={` ${
+    menuOpen ? "translate-y-[0px] opacity-100 transform transition-transform duration-300 ease-in" : "-translate-y-[350px] opacity-0 transform transition-transform duration-300 ease-out"
+  } absolute top-[80px] right-0 bg-gray-900 flex flex-col items-center justify-center space-y-4  z-[9998] md:static md:w-auto md:h-auto md:bg-transparent md:translate-y-0 md:opacity-100 md:space-y-0 md:flex-row md:flex md:space-x-4`}
+>
           {["home", "about", "resume", "contact"].map((page) => (
             <Button
               key={page}
