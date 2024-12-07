@@ -6,6 +6,7 @@ import { setActivePage } from '@/lib/features/header/headerSlice';
 import Header from './header/Header';
 import Resume from './Resume';
 import Aboutme from './Aboutme';
+import SendMessage from './SendMessege';
 
 export default function Fullbody() {
     const dispatch = useDispatch();
@@ -67,8 +68,7 @@ export default function Fullbody() {
                 </section>
 
                 <section id="contact" ref={sectionRefs.contact} className="pt-[110px]">
-                    <h1>CONTACT</h1>
-                    <HomePage />
+                    <SendMessage />
                 </section>
             </div>
         </>
