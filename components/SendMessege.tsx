@@ -26,7 +26,7 @@ export default function SendMessage() {
     };
 
     return (
-        <>
+        <section className="z-50 bg-green-400/30 hover:bg-slate-200/20 shadow-green-300 shadow-lg hover:shadow-white backdrop-blur-md hover:backdrop-blur-2xl p-[20px] md:p-[0px] rounded-lg">
 
             <div className="flex flex-col items-center space-y-6 md:p-8">
                 <h1 className="font-exo_2 text-2xl md:text-5xl">CONTACT</h1>
@@ -96,6 +96,6 @@ export default function SendMessage() {
                     Send
                 </button>
             </div>
-        </>
+        </section>
     );
 }

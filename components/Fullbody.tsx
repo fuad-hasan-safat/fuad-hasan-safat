@@ -7,6 +7,7 @@ import Header from './header/Header';
 import Resume from './Resume';
 import Aboutme from './Aboutme';
 import SendMessage from './SendMessege';
+import Footer from './Footer';
 
 export default function Fullbody() {
     const dispatch = useDispatch();
@@ -69,6 +70,10 @@ export default function Fullbody() {
 
                 <section id="contact" ref={sectionRefs.contact} className="pt-[110px]">
                     <SendMessage />
+                </section>
+
+                <section className='pt-[90px]'>
+                    <Footer/>
                 </section>
             </div>
         </>
