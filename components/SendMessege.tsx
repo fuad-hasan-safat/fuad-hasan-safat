@@ -27,10 +27,11 @@ export default function SendMessage() {
 
     return (
         <>
-            <h1 className="text-2xl md:text-5xl">CONTACT</h1>
 
             <div className="flex flex-col items-center space-y-6 md:p-8">
-                <h1 className="text-xl md:text-3xl font-exo_2 font-bold text-left">Send an Email</h1>
+                <h1 className="font-exo_2 text-2xl md:text-5xl">CONTACT</h1>
+
+                <h1 className="font-bold font-exo_2 text-left text-xl md:text-2xl">Send an Email</h1>
 
                 {/* Email Input */}
                 <div className="relative w-full md:w-1/2">
@@ -40,12 +41,12 @@ export default function SendMessage() {
                         id="email"
                         value={formData.email}
                         onChange={handleChange}
-                        className="peer text-gray-800 w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-amber-300 placeholder-transparent"
+                        className="border-gray-300 p-3 border rounded-md focus:ring-2 focus:ring-amber-300 w-full text-gray-800 peer focus:outline-none placeholder-transparent"
                         placeholder="Your Email Address"
                     />
                     <label
                         htmlFor="email"
-                        className="absolute left-3 -top-2 text-sm text-gray-500 rounded-md transition-all duration-300 bg-white px-1 peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-blue-500 "
+                        className="-top-2 peer-focus:-top-2 peer-placeholder-shown:top-3 left-3 absolute bg-white px-1 rounded-md text-gray-500 text-sm peer-focus:text-sm peer-focus:text-blue-500 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 transition-all duration-300"
                     >
                         Your Email Address
                     </label>
@@ -59,12 +60,12 @@ export default function SendMessage() {
                         id="subject"
                         value={formData.subject}
                         onChange={handleChange}
-                        className="peer w-full border text-gray-800 border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-amber-300 placeholder-transparent"
+                        className="border-gray-300 p-3 border rounded-md focus:ring-2 focus:ring-amber-300 w-full text-gray-800 peer focus:outline-none placeholder-transparent"
                         placeholder="Subject"
                     />
                     <label
                         htmlFor="subject"
-                        className="absolute left-3 -top-2 text-sm text-gray-500 rounded-md transition-all duration-300 bg-white px-1 peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-blue-500"
+                        className="-top-2 peer-focus:-top-2 peer-placeholder-shown:top-3 left-3 absolute bg-white px-1 rounded-md text-gray-500 text-sm peer-focus:text-sm peer-focus:text-blue-500 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 transition-all duration-300"
                     >
                         Subject
                     </label>
@@ -77,12 +78,12 @@ export default function SendMessage() {
                         id="message"
                         value={formData.message}
                         onChange={handleChange}
-                        className="peer w-full border text-gray-800 border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-amber-300 placeholder-transparent h-32"
+                        className="border-gray-300 p-3 border rounded-md focus:ring-2 focus:ring-amber-300 w-full h-32 text-gray-800 peer focus:outline-none placeholder-transparent"
                         placeholder="Message"
                     ></textarea>
                     <label
                         htmlFor="message"
-                        className="absolute left-3 -top-2 text-sm text-gray-500 rounded-md transition-all duration-300 bg-white px-1 peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-blue-500"
+                        className="-top-2 peer-focus:-top-2 peer-placeholder-shown:top-3 left-3 absolute bg-white px-1 rounded-md text-gray-500 text-sm peer-focus:text-sm peer-focus:text-blue-500 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 transition-all duration-300"
                     >
                         Message
                     </label>
@@ -90,7 +91,7 @@ export default function SendMessage() {
 
                 <button
                     onClick={handleSend}
-                    className="bg-amber-500 text-white hover:text-amber-400 font-semibold font-exo_2 px-6 py-2 w-full md:w-1/2 rounded-md hover:bg-blue-600 focus:ring-2 focus:ring-blue-400 focus:outline-none transition-all duration-1000 ease-in-out"
+                    className="bg-amber-500 hover:bg-blue-600 px-6 py-2 rounded-md focus:ring-2 focus:ring-blue-400 w-full md:w-1/2 font-exo_2 font-semibold text-white hover:text-amber-400 focus:outline-none transition-all duration-1000 ease-in-out"
                 >
                     Send
                 </button>
