@@ -10,8 +10,8 @@ const ProfessionalSkill = () => {
                 {/* React.js */}
                 <InformationCard title="React.js" subtitleInfo="Live Media Ltd">
                     <p className="text-justify">
-                        I started learning React.js during my early career as a developer. My first project using React.js was 
-                        <Link
+                        I started learning React.js during my early career as a developer. My first project using React.js was  
+                         <Link
                             className="text-amber-300 hover:text-amber-500"
                             href="https://lekharpoka.com"
                             target="_blank"

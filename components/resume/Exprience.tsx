@@ -6,12 +6,12 @@ const Exprience = () => {
    <div className='pt-[20px]'>
         <div  className="education">
             
-        <InformationCard title={'Ahsanullah University of science and technology'} subtitleInfo={'BSc in Computer Science'} cgpa={'3.33/4'}  >
-            <p> Here i complete My BSc</p>
-            <p>Maecenas finibus nec sem ut imperdiet. Ut tincidunt est ac dolor aliquam sodales. Phasellus sed mauris hendrerit, laoreet sem in, lobortis mauris hendrerit ante.</p>
+        <InformationCard title={'Live Media Ltd.'} subtitleInfo={'1+ year of exprience of being full stack devloper'} cgpa={'****'}  >
+            <p>I work here as a associate software devloper</p>
+            <p>I wokrk in both fontend and backend. the technology I am using here, Next Js, Node Js, Express js, Deno Js,Bus Js, Elysia Js.</p>
         </InformationCard>
 
-        <InformationCard title={'St. Joseph Higher Secondary School'} subtitleInfo={'Intermideate school'} cgpa={'5/5'}  >
+        {/* <InformationCard title={'St. Joseph Higher Secondary School'} subtitleInfo={'Intermideate school'} cgpa={'5/5'}  >
             <p> Here i complete My BSc</p>
             <p>Maecenas finibus nec sem ut imperdiet. Ut tincidunt est ac dolor aliquam sodales. Phasellus sed mauris hendrerit, laoreet sem in, lobortis mauris hendrerit ante.</p>
 
@@ -22,7 +22,7 @@ const Exprience = () => {
             <p> Here i complete My BSc</p>
             <p>Maecenas finibus nec sem ut imperdiet. Ut tincidunt est ac dolor aliquam sodales. Phasellus sed mauris hendrerit, laoreet sem in, lobortis mauris hendrerit ante.</p>
 
-        </InformationCard>
+        </InformationCard> */}
 
         </div>
    </div>
