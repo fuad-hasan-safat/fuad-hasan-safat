@@ -8,7 +8,7 @@ const Exprience = () => {
             
         <InformationCard title={'Live Media Ltd.'} subtitleInfo={'1+ year of exprience of being full stack devloper'} cgpa={'****'}  >
             <p>I work here as a associate software devloper</p>
-            <p>I wokrk in both fontend and backend. the technology I am using here, Next Js, Node Js, Express js, Deno Js,Bus Js, Elysia Js.</p>
+            <p>I wokrk in both fontend and backend. the technology I am using here, Next Js, Node Js, Express js, Deno Js, Bun Js, Elysia Js.</p>
         </InformationCard>
 
         {/* <InformationCard title={'St. Joseph Higher Secondary School'} subtitleInfo={'Intermideate school'} cgpa={'5/5'}  >
