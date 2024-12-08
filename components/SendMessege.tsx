@@ -26,7 +26,7 @@ export default function SendMessage() {
     };
 
     return (
-        <section className="z-50 bg-green-400/30 hover:bg-slate-200/20 shadow-green-300 shadow-lg hover:shadow-white backdrop-blur-md hover:backdrop-blur-2xl p-[20px] md:p-[0px] rounded-lg">
+        <section className="z-50 bg-blue-400/40 hover:bg-blue-600/20 shadow-green-300 shadow-lg hover:shadow-white backdrop-blur-md hover:backdrop-blur-2xl p-[20px] md:p-[0px] rounded-lg">
 
             <div className="flex flex-col items-center space-y-6 md:p-8">
                 <h1 className="font-exo_2 text-2xl md:text-5xl">CONTACT</h1>
@@ -41,7 +41,7 @@ export default function SendMessage() {
                         id="email"
                         value={formData.email}
                         onChange={handleChange}
-                        className="border-gray-300 p-3 border rounded-md focus:ring-2 focus:ring-amber-300 w-full text-gray-800 peer focus:outline-none placeholder-transparent"
+                        className="border-gray-300 p-3 border rounded-md focus:ring-2 focus:ring-amber-300 w-full text-gray-800 focus:outline-none peer placeholder-transparent"
                         placeholder="Your Email Address"
                     />
                     <label
@@ -60,7 +60,7 @@ export default function SendMessage() {
                         id="subject"
                         value={formData.subject}
                         onChange={handleChange}
-                        className="border-gray-300 p-3 border rounded-md focus:ring-2 focus:ring-amber-300 w-full text-gray-800 peer focus:outline-none placeholder-transparent"
+                        className="border-gray-300 p-3 border rounded-md focus:ring-2 focus:ring-amber-300 w-full text-gray-800 focus:outline-none peer placeholder-transparent"
                         placeholder="Subject"
                     />
                     <label
@@ -78,7 +78,7 @@ export default function SendMessage() {
                         id="message"
                         value={formData.message}
                         onChange={handleChange}
-                        className="border-gray-300 p-3 border rounded-md focus:ring-2 focus:ring-amber-300 w-full h-32 text-gray-800 peer focus:outline-none placeholder-transparent"
+                        className="border-gray-300 p-3 border rounded-md focus:ring-2 focus:ring-amber-300 w-full h-32 text-gray-800 focus:outline-none peer placeholder-transparent"
                         placeholder="Message"
                     ></textarea>
                     <label
@@ -91,7 +91,7 @@ export default function SendMessage() {
 
                 <button
                     onClick={handleSend}
-                    className="bg-amber-500 hover:bg-blue-600 px-6 py-2 rounded-md focus:ring-2 focus:ring-blue-400 w-full md:w-1/2 font-exo_2 font-semibold text-white hover:text-amber-400 focus:outline-none transition-all duration-1000 ease-in-out"
+                    className="bg-amber-500 hover:bg-blue-600 px-6 py-2 rounded-md focus:ring-2 focus:ring-blue-400 w-full md:w-1/2 font-exo_2 font-semibold text-white hover:text-amber-400 transition-all duration-1000 ease-in-out focus:outline-none"
                 >
                     Send
                 </button>
