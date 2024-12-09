@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     siteName: "Fuad Hasan Safat",
     images: [
       {
-        url: "/profilepic/profilepic.jpg",
+        url: '/profilepic/fuad.jpg',
         width: 1200,
         height: 630,
         alt: "Fuad Hasan Safat Profile Picture"
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     creator: "@fuad_safat", // Update with your actual Twitter handle
     title: "Fuad Hasan Safat - Software Developer",
     description: "Software developer from Rowmari, Kurigram, Bangladesh, specializing in modern web development and database design.",
-    images: "/profilepic/profilepic.jpg"
+    images: "/profilepic/fuad.jpg"
   },
 
 
@@ -86,9 +86,9 @@ export default function RootLayout({
         <body
           className={`${inter.variable} ${dancing_script.variable} ${exo_2.variable} ${geistSans.variable} ${geistMono.variable} ${playwrite.variable} antialiased`}
         >
-          <meta property="og:image" content="/profilepic/profilepic.jpg" />
+          <meta property="og:image" content="/profilepic/fuad.jpg" />
           <meta property="og:image:type" content="image/png" />
-          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:width" content="630" />
           <meta property="og:image:height" content="630" />
           {children}
         </body>
