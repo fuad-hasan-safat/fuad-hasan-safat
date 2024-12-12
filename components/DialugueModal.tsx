@@ -1,39 +1,43 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useRef } from "react";
 
-interface DialugueModalProps {
-  dialogue: string; // Fixed typo
-  fncOfDone: () => void;
+interface DialogueModalProps {
+  alert: string;
+  onYes?: () => void;
   type: string;
 }
 
-const DialugueModal = forwardRef<HTMLDialogElement, DialugueModalProps>(
-  ({ dialogue, fncOfDone, type }, ref) => {
+const DialogueModal = forwardRef<HTMLDialogElement, DialogueModalProps>(
+  ({ alert, onYes, type }, ref) => {
+    function handleClick() {
+      // Close the dialog
+      if (ref && "current" in ref && ref.current) {
+        ref.current.close();
+      }
+
+      // Call the onYes function if provided
+      if (type === "Confirmation" && onYes) {
+        onYes();
+      }
+    }
+
     return (
-      <dialog
-        ref={ref}
-        className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50"
-      >
-        <div className="bg-white shadow-lg p-6 rounded-lg">
-          <h2 className="mb-4 font-semibold text-xl">{type}</h2>
-          <p className="mb-4">{dialogue}</p>
-          <div className="flex justify-end">
-            <button
-              className="bg-blue-500 mr-2 px-4 py-2 rounded text-white"
-              onClick={fncOfDone}
-            >
-              Done
-            </button>
-            <button
-              className="bg-gray-300 px-4 py-2 rounded text-gray-800"
-              onClick={() => console.log('Cancelled')}
-            >
-              Cancel
-            </button>
+      <dialog ref={ref} className="w-1/3 rounded-md">
+        <div className="w-full p-[25px]  ">
+          <h2 className="text-xl text-red-500 flex justify-center">{alert}</h2>
+          <div className="pt-[25px] flex space-x-4 justify-between">
+          <button onClick={() => (ref as React.RefObject<HTMLDialogElement>).current?.close()} className="bg-red-300 rounded-lg p-[5px] text-base">
+            Close
+          </button>
+          {type === "Confirmation" && <button onClick={handleClick} className="ml-[15px] rounded-lg p-[5px] text-base">
+            Done
+          </button>}
           </div>
+         
         </div>
+
       </dialog>
     );
   }
 );
 
-export default DialugueModal;
+export default DialogueModal;

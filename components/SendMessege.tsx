@@ -1,11 +1,23 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import DialugueModal from "./DialugueModal";
 
 export default function SendMessage() {
+
+    const [dialog, setDialog] = useState({
+        type:"Confirmation",   // Confirmation or Error
+        allert: ""
+    })
     const [formData, setFormData] = useState({
         email: "",
         subject: "",
         message: "",
     });
+
+    const dialogRef = useRef<HTMLDialogElement>(null);
+
+    const handleOpen = () => dialogRef.current?.showModal();
+    const handleClose = () => dialogRef.current?.close();
+
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -14,19 +26,43 @@ export default function SendMessage() {
     const handleSend = () => {
         const { email, subject, message } = formData;
         if (!email || !subject || !message) {
-            alert("Please fill in all fields.");
+            setDialog( prevData => ({
+                ...prevData,
+                type: "error",
+                allert: "Fill all the inputs"
+            }))
+            handleOpen();
             return;
         }
+
+        setDialog( prevData => ({
+            ...prevData,
+            type: "Confirmation",
+            allert: "Do you realy want to send the mail?"
+        }))
+        handleOpen();
+
+
+    };
+
+    function sendMail() {
+        const { email, subject, message } = formData;
 
         const encodedSubject = encodeURIComponent(subject);
         const encodedMessage = encodeURIComponent(`From: ${email}\n\n${message}`);
         const mailtoLink = `mailto:fuadsafat16@gmail.com?subject=${encodedSubject}&body=${encodedMessage}`;
 
         window.location.href = mailtoLink;
-    };
+    }
 
     return (
         <section className="z-50 bg-blue-400/40 hover:bg-blue-600/20 shadow-green-300 shadow-lg hover:shadow-white backdrop-blur-md hover:backdrop-blur-2xl p-[20px] md:p-[0px] rounded-lg">
+            <DialugueModal
+                ref={dialogRef}
+                alert={dialog.allert}
+                onYes={sendMail}
+                type={dialog.type}
+            />
 
             <div className="flex flex-col items-center space-y-6 md:p-8">
                 <h1 className="font-exo_2 text-2xl md:text-5xl">CONTACT</h1>
