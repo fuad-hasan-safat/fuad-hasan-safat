@@ -33,6 +33,7 @@ export default function SendMessage() {
         const { email, subject, message } = formData;
         if (!email || !subject || !message) {
             setDialog(prevData => ({
+                ...prevData,
                 type: "error",
                 allert: "Fill all the inputs"
             }))
