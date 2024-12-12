@@ -20,7 +20,7 @@ const DialogueModal = forwardRef<HTMLDialogElement, DialogueModalProps>( functio
     }
 
     return (
-      <dialog ref={ref} className="w-1/3 rounded-md">
+      <dialog ref={ref} className=" w-full md:w-1/3 rounded-md">
         <div className="w-full p-[25px]  ">
           <h2 className="text-xl text-red-500 flex justify-center">{alert}</h2>
           <div className="pt-[25px] flex space-x-4 justify-between">
