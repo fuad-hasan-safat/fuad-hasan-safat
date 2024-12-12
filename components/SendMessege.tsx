@@ -16,7 +16,6 @@ export default function SendMessage() {
     const dialogRef = useRef<HTMLDialogElement>(null);
 
     const handleOpen = () => dialogRef.current?.showModal();
-    const handleClose = () => dialogRef.current?.close();
 
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

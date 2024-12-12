@@ -1,4 +1,4 @@
-import React, { forwardRef, useRef } from "react";
+import React, { forwardRef } from "react";
 
 interface DialogueModalProps {
   alert: string;
@@ -6,8 +6,7 @@ interface DialogueModalProps {
   type: string;
 }
 
-const DialogueModal = forwardRef<HTMLDialogElement, DialogueModalProps>(
-  ({ alert, onYes, type }, ref) => {
+const DialogueModal = forwardRef<HTMLDialogElement, DialogueModalProps>( function DialogueModal ({ alert, onYes, type }, ref) {
     function handleClick() {
       // Close the dialog
       if (ref && "current" in ref && ref.current) {
