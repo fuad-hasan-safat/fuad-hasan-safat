@@ -4,7 +4,7 @@ import DialugueModal from "./DialugueModal";
 export default function SendMessage() {
 
     const [dialog, setDialog] = useState({
-        type:"Confirmation",   // Confirmation or Error
+        type: "Confirmation",   // Confirmation or Error
         allert: ""
     })
     const [formData, setFormData] = useState({
@@ -22,11 +22,17 @@ export default function SendMessage() {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
+    const validateEmail = (email: string) => {
+        // Regular expression for validating an email address
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    };
+
+
     const handleSend = () => {
         const { email, subject, message } = formData;
         if (!email || !subject || !message) {
-            setDialog( prevData => ({
-                ...prevData,
+            setDialog(prevData => ({
                 type: "error",
                 allert: "Fill all the inputs"
             }))
@@ -34,7 +40,19 @@ export default function SendMessage() {
             return;
         }
 
-        setDialog( prevData => ({
+        if (!validateEmail(email)) {
+            console.log("Invalid email address");
+            setDialog((prevData) => ({
+                ...prevData,
+                type: "error",
+                allert: "Please enter a valid email address",
+            }));
+            handleOpen();
+            return;
+        }
+
+
+        setDialog(prevData => ({
             ...prevData,
             type: "Confirmation",
             allert: "Do you realy want to send the mail?"
@@ -57,6 +75,7 @@ export default function SendMessage() {
     return (
         <section className="z-50 bg-blue-400/40 hover:bg-blue-600/20 shadow-green-300 shadow-lg hover:shadow-white backdrop-blur-md hover:backdrop-blur-2xl p-[20px] md:p-[0px] rounded-lg">
             <DialugueModal
+                key={dialog.allert}
                 ref={dialogRef}
                 alert={dialog.allert}
                 onYes={sendMail}
