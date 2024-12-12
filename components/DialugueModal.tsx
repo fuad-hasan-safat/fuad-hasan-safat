@@ -20,14 +20,14 @@ const DialogueModal = forwardRef<HTMLDialogElement, DialogueModalProps>( functio
     }
 
     return (
-      <dialog ref={ref} className=" w-full md:w-1/3 rounded-md">
+      <dialog ref={ref} className=" w-full backdrop-blur-md bg-gray-400/65 md:w-1/3 rounded-md">
         <div className="w-full p-[25px]  ">
-          <h2 className="text-xl text-red-500 flex justify-center">{alert}</h2>
+          <h2 className="text-xl text-white flex justify-center">{alert}</h2>
           <div className="pt-[25px] flex space-x-4 justify-between">
-          <button onClick={() => (ref as React.RefObject<HTMLDialogElement>).current?.close()} className="bg-red-300 rounded-lg p-[5px] text-base">
+          <button onClick={() => (ref as React.RefObject<HTMLDialogElement>).current?.close()} className="bg-red-300 hover:bg-red-500 ease-in-out duration-300  rounded-lg p-[5px] px-[10px] text-sm md:text-base font-exo_2">
             Close
           </button>
-          {type === "Confirmation" && <button onClick={handleClick} className="ml-[15px] rounded-lg p-[5px] text-base">
+          {type === "Confirmation" && <button onClick={handleClick} className="ml-[15px] bg-green-300 hover:bg-green-500 ease-in-out duration-500 rounded-lg p-[5px] px-[10px] text-sm md:text-base font-exo_2">
             Done
           </button>}
           </div>
