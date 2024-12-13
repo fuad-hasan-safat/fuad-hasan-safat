@@ -1,42 +1,53 @@
 import React, { forwardRef } from "react";
 
-interface DialogueModalProps {
-  alert: string;
-  onYes?: () => void;
-  type: string;
-}
+type DialogueModalProps = {
+    alert: string;
+    type: "Confirmation" | "Error";
+    onYes: () => void;
+};
 
-const DialogueModal = forwardRef<HTMLDialogElement, DialogueModalProps>( function DialogueModal ({ alert, onYes, type }, ref) {
-    function handleClick() {
-      // Close the dialog
-      if (ref && "current" in ref && ref.current) {
-        ref.current.close();
-      }
+const DialogueModal = forwardRef<HTMLDialogElement, DialogueModalProps>(
+    ({ alert, type, onYes }, ref) => {
+        const isError = type === "Error";
 
-      // Call the onYes function if provided
-      if (type === "Confirmation" && onYes) {
-        onYes();
-      }
+        return (
+            <dialog
+                ref={ref}
+                className="w-full max-w-md backdrop-blur-sm bg-white border border-gray-300 rounded-lg shadow-lg p-6 transform transition-transform duration-300 scale-100 open:scale-100 open:opacity-100 opacity-0"
+            >
+                <div className="text-center">
+                    {/* Header */}
+                    <div className={`text-2xl font-semibold ${isError ? "text-red-600" : "text-green-600"}`}>
+                        {isError ? "Error" : "Confirmation"}
+                    </div>
+
+                    {/* Alert Message */}
+                    <p className="mt-4 text-gray-700">{alert}</p>
+
+                    {/* Buttons */}
+                    <div className="mt-6 flex justify-center gap-4">
+                        {type === "Confirmation" && (
+                            <button
+                                onClick={onYes}
+                                className="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400"
+                            >
+                                Yes
+                            </button>
+                        )}
+                        <button
+                            onClick={() =>
+                                (ref as React.RefObject<HTMLDialogElement>).current?.close()
+                            }
+                            className="bg-gray-600 text-white px-6 py-2 rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400"
+                        >
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </dialog>
+        );
     }
-
-    return (
-      <dialog ref={ref} className=" w-full backdrop-blur-md bg-gray-700/60 md:w-1/3 rounded-md">
-        <div className="w-full p-[25px]  ">
-          <h2 className="text-[25px] text-yellow-400 font-semibold font-exo_2 flex justify-center">{alert}</h2>
-          <div className="pt-[25px] flex space-x-4 justify-between">
-          <button onClick={() => (ref as React.RefObject<HTMLDialogElement>).current?.close()} className="bg-red-300 hover:bg-red-500 ease-in-out duration-300  rounded-lg p-[5px] px-[10px] text-sm md:text-base font-exo_2">
-            Close
-          </button>
-          {type === "Confirmation" && <button onClick={handleClick} className="ml-[15px] bg-green-300 hover:bg-green-500 ease-in-out duration-500 rounded-lg p-[5px] px-[10px] text-sm md:text-base font-exo_2">
-            Done
-          </button>}
-          </div>
-         
-        </div>
-
-      </dialog>
-    );
-  }
 );
+DialogueModal.displayName = "DialogueModal";
 
 export default DialogueModal;
