@@ -41,10 +41,10 @@ export default function Header({ sectionRefs }: HeaderProps) {
   useEffect(() => {
     const handleScroll = () => {
       setIsSticky(window.scrollY > 100);
-  
+
       // Manually check which section is in view
       let currentSection: keyof SectionRefs | null = null;
-  
+
       Object.keys(sectionRefs).forEach((key) => {
         const ref = sectionRefs[key as keyof SectionRefs];
         if (ref.current) {
@@ -55,22 +55,27 @@ export default function Header({ sectionRefs }: HeaderProps) {
           }
         }
       });
-  
+
       // Dispatch active page only if it changes
       if (currentSection && activePage !== currentSection) {
         dispatch(setActivePage(currentSection));
       }
     };
-  
+
     // Attach scroll listener
     window.addEventListener("scroll", handleScroll);
     handleScroll(); // Run initially to set the correct section
-  
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [sectionRefs, activePage, dispatch]);
-  
+
+
+  function downloadResume() {
+
+  }
+
 
   return (
     <header className={`${styles.header} ${isSticky ? styles.sticky : ""}`}>
@@ -103,10 +108,9 @@ export default function Header({ sectionRefs }: HeaderProps) {
 
         {/* Navigation Menu */}
         <nav
-  className={` ${
-    menuOpen ? "translate-y-[0px] opacity-100 transform transition-transform duration-300 ease-in" : "-translate-y-[350px] opacity-0 transform transition-transform duration-300 ease-out"
-  } absolute top-[80px] right-0 bg-gray-900 flex flex-col items-center justify-center space-y-4  z-[9998] md:static md:w-auto md:h-auto md:bg-transparent md:translate-y-0 md:opacity-100 md:space-y-0 md:flex-row md:flex md:space-x-4`}
->
+          className={` ${menuOpen ? "translate-y-[0px] opacity-100 transform transition-transform duration-300 ease-in" : "-translate-y-[350px] opacity-0 transform transition-transform duration-300 ease-out"
+            } absolute top-[80px] right-0 bg-gray-900 flex flex-col items-center justify-center space-y-4  z-[9998] md:static md:w-auto md:h-auto md:bg-transparent md:translate-y-0 md:opacity-100 md:space-y-0 md:flex-row md:flex md:space-x-4`}
+        >
           {["home", "about", "resume", "contact"].map((page) => (
             <Button
               key={page}
@@ -119,6 +123,21 @@ export default function Header({ sectionRefs }: HeaderProps) {
               }
             />
           ))}
+
+          <a
+            href="FuadHasan CV.docx.pdf" // Relative path to the PDF in the public folder
+            // download="fuadhasan_cv.pdf" // This sets the downloaded file's name
+            target="_blank" // Opens the link in a new tab
+            rel="noopener noreferrer"
+          >
+            <Button
+              text="Download CV"
+              onClick={downloadResume}
+              className={"bg-slate-500 p-4"}
+            />
+
+          </a>
+
         </nav>
       </div>
     </header>
