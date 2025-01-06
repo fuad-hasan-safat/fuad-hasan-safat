@@ -133,7 +133,7 @@ export default function Header({ sectionRefs }: HeaderProps) {
             <Button
               text="Download CV"
               onClick={downloadResume}
-              className={"bg-slate-500 p-4"}
+              className={"bg-slate-500 p-4 hover:bg-yellow-400 hover:text-black ease-in-out duration-300"}
             />
 
           </a>
