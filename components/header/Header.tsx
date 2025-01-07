@@ -125,7 +125,7 @@ export default function Header({ sectionRefs }: HeaderProps) {
           ))}
 
           <a
-            href="FuadHasan CV.docx.pdf" // Relative path to the PDF in the public folder
+            href="_FuadHasan SOLID version.docx.pdf" // Relative path to the PDF in the public folder
             // download="fuadhasan_cv.pdf" // This sets the downloaded file's name
             target="_blank" // Opens the link in a new tab
             rel="noopener noreferrer"
