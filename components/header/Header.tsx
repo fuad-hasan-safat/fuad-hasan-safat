@@ -109,7 +109,7 @@ export default function Header({ sectionRefs }: HeaderProps) {
         {/* Navigation Menu */}
         <nav
           className={` ${menuOpen ? "translate-y-[0px] opacity-100 transform transition-transform duration-300 ease-in" : "-translate-y-[350px] opacity-0 transform transition-transform duration-300 ease-out"
-            } absolute top-[80px] right-0 bg-gray-900 flex flex-col items-center justify-center space-y-4  z-[9998] md:static md:w-auto md:h-auto md:bg-transparent md:translate-y-0 md:opacity-100 md:space-y-0 md:flex-row md:flex md:space-x-4`}
+            } absolute top-[80px] w-full py-[10px] md:p-0 right-0 bg-gray-900 flex flex-col items-center justify-center space-y-4  z-[9998] md:static md:w-auto md:h-auto md:bg-transparent md:translate-y-0 md:opacity-100 md:space-y-0 md:flex-row md:flex md:space-x-4`}
         >
           {["home", "about", "resume", "contact"].map((page) => (
             <Button
