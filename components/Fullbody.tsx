@@ -8,6 +8,7 @@ import Resume from './Resume';
 import Aboutme from './Aboutme';
 import SendMessage from './SendMessege';
 import Footer from './Footer';
+import Loader from './Loader';
 
 export default function Fullbody() {
     const dispatch = useDispatch();
@@ -20,6 +21,8 @@ export default function Fullbody() {
             contact: React.createRef<HTMLElement>(),
         };
     }, []);
+
+    const [isMounted, setIsMounted] = React.useState(false);
 
     useEffect(() => {
         // Define type for entries as IntersectionObserverEntry[]
@@ -47,8 +50,19 @@ export default function Fullbody() {
         };
     }, [dispatch, sectionRefs]);
 
+    useEffect(() => {
+        setTimeout(() => {
+            setIsMounted(true);
+        }, 1500);
+    }, []);
+
+    if(!isMounted){
+       return <Loader/>
+    }
+
     return (
         <>
+        {/* <Loader/> */}
             <Header sectionRefs={sectionRefs} />
             <div id='fullcombinepage' className='relative px-[30px] md:px-[200px]'>
                 <h1 className='top-[50%] right-[-42px] z-[99999] fixed shadow-gray-400 shadow-sm hover:shadow-md hover:shadow-gray-200 px-[15px] py-[5px] font-exo_2 text-[26px] text-slate-400 hover:text-white tracking-[10px] cursor-pointer rotate-[90deg]'>
