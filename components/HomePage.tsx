@@ -56,7 +56,7 @@ export default function HomePage() {
     return (
         <div className="flex md:flex-row flex-col-reverse items-center px-4 sm:px-8 lg:px-16 w-full">
             {/* Left Section */}
-            <div className="w-full md:w-[50%] text-center md:text-left">
+            <div className="w-full md:w-[50%] text-left">
                 <h6 className="font-inter text-[14px] text-slate-400 sm:text-[16px] uppercase">
                     Welcome to My World
                 </h6>
@@ -139,7 +139,7 @@ export default function HomePage() {
 
             {/* Right Section */}
             <div className="flex justify-center items-center mb-6 md:mb-0 w-full md:w-[50%]">
-                <div className={`${styles.imageContainer} shadow-lg hover:shadow-slate-500`}>
+                <div className={`${styles.imageContainer} shadow-lg shadow-slate-400 hover:shadow-slate-500`}>
                     <Image
                         className={`${styles.profileImage}`}
                         src="/profilepic/fuad.jpg"
@@ -148,10 +148,10 @@ export default function HomePage() {
                         height={300}
                     />
 
+                    {/* <div className={`${styles.ring}`}></div>
                     <div className={`${styles.ring}`}></div>
                     <div className={`${styles.ring}`}></div>
-                    <div className={`${styles.ring}`}></div>
-                    <div className={`${styles.ring}`}></div>
+                    <div className={`${styles.ring}`}></div> */}
 
 
                 </div>

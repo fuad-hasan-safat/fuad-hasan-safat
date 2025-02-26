@@ -1,6 +1,5 @@
 /* From Uiverse.io by Yaya12085 */ 
 .loader {
-  font-size: 30px;
   display: flex;
   gap: 10px;
 }
@@ -14,7 +13,9 @@
   color: #aa41fe;
   background-color: #dbd5f3;
   border-radius: 8px;
-  min-width: 40px;
+  /* min-width: 40px; */
+  padding-left: 5px;
+  padding-right: 5px;
   animation: peek 1s both infinite;
   animation-delay: var(--d);
 }

@@ -5,8 +5,8 @@ const Loader = () => {
 
     return (
 
-        <div className={styles.loader}>
-            <span style={{ "--d": "100ms" } as React.CSSProperties}>F</span>
+        <div className={`${styles.loader} md:text-[30px] text-[20px] min-w-[20px] md:min-w-[40px]`}>
+            <span  style={{ "--d": "100ms" } as React.CSSProperties}>F</span>
             <span style={{ "--d": "250ms" } as React.CSSProperties}>U</span>
             <span style={{ "--d": "400ms" } as React.CSSProperties}>A</span>
             <span style={{ "--d": "550ms" } as React.CSSProperties}>D</span>
