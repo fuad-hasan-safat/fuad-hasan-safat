@@ -66,7 +66,7 @@ export default function SendMessage() {
   };
 
   return (
-    <section className="z-50 bg-blue-400/40 hover:bg-blue-600/20 shadow-green-300 shadow-lg hover:shadow-white backdrop-blur-md hover:backdrop-blur-2xl p-[20px] md:p-[0px] rounded-lg">
+    <section className="">
       <DialogueModal
         ref={dialogRef}
         alert={dialog.alert}

@@ -84,7 +84,7 @@ export default function Header({ sectionRefs }: HeaderProps) {
           <div className={styles1.imageContainer}>
             <Image
               className={`${styles1.profileImage}`}
-              src="/profilepic/fuad.png"
+              src="/profilepic/FUADlogo.png"
               alt="Fuad"
               width={50}
               height={50}
@@ -118,8 +118,8 @@ export default function Header({ sectionRefs }: HeaderProps) {
               onClick={() => handleNavigation(page as keyof SectionRefs)}
               className={
                 activePage === page
-                  ? "text-[#f6e054] font-semibold"
-                  : "text-[#c8c5c5] hover:text-[#f6e054]"
+                  ? "text-[#f3b020] font-semibold"
+                  : "text-[#c8c5c5] hover:text-[#f3ef20]"
               }
             />
           ))}

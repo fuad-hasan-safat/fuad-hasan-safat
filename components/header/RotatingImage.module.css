@@ -47,7 +47,7 @@
 
 /* Third ring */
 .ring:nth-of-type(3) {
-  border-bottom: 10px solid rgba(48, 193, 255, 0.6); /* Light blue */
+  border-bottom: 10px solid #30c1ff99; /* Light blue */
   transform: rotate(120deg);
   z-index: 3;
 }

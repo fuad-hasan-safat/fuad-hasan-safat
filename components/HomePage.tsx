@@ -57,12 +57,12 @@ export default function HomePage() {
         <div className="flex md:flex-row flex-col-reverse items-center px-4 sm:px-8 lg:px-16 w-full">
             {/* Left Section */}
             <div className="w-full md:w-[50%] text-center md:text-left">
-                <h6 className="font-inter text-[14px] text-slate-200 sm:text-[16px] uppercase">
+                <h6 className="font-inter text-[14px] text-slate-400 sm:text-[16px] uppercase">
                     Welcome to My World
                 </h6>
                 <h1 className="pt-3 font-bold text-2xl sm:text-4xl leading-[40px] sm:leading-[60px]">
                     Hi, I’m{" "}
-                    <span className="font-dancing_script text-[#edf339] text-3xl sm:text-5xl">
+                    <span className="font-dancing_script text-[#f3d139] text-3xl sm:text-5xl">
                         Fuad Hasan
                     </span>
                     <br />
@@ -72,7 +72,7 @@ export default function HomePage() {
                     </span>
                     <span className="ml-1 font-extralight text-gray-400 typing-cursor">|</span>
                 </h1>
-                <p className="pt-4 text-[18px] text-justify sm:text-[18px] font-playwrite leading-10">
+                <p className="pt-4 text-[18px] text-justify sm:text-[18px] font-mono leading-10">
                 Enthusiastic and dedicated software developer seeking an opportunity to apply my strong technical skills and passion for coding to effectively contribute to innovative software projects. I am eager to collaborate with a dynamic team of professionals to enhance my knowledge, grow as a software engineer, and deliver cutting-edge solutions that drive technological advancements in the industry. As a driven learner, I aspire to refine my skills under the mentorship of experienced developers and actively contribute to process enhancement within the team.
                 </p>
 
@@ -84,7 +84,7 @@ export default function HomePage() {
                     {/* Social Links */}
                     <div className="mb-6 md:mb-0 w-full md:w-[50%]">
                         <h5 className="pb-4 text-slate-400 text-sm uppercase tracking-[5px]">
-                            Find with me
+                            Find me on
                         </h5>
                         <div className="flex justify-center md:justify-start space-x-4">
                             <IconContainer
@@ -142,7 +142,7 @@ export default function HomePage() {
                 <div className={`${styles.imageContainer} shadow-lg hover:shadow-slate-500`}>
                     <Image
                         className={`${styles.profileImage}`}
-                        src="/profilepic/fuad.png"
+                        src="/profilepic/fuad.jpg"
                         alt="fuad"
                         width={300}
                         height={300}

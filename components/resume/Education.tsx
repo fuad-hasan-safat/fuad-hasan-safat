@@ -4,7 +4,7 @@ import InformationCard from "../InformationCard";
 const Education = () => {
     return (
         <div className="pt-[20px]">
-            <div className="education">
+            <div className="education flex flex-row flex-wrap justify-between ">
                 {/* Ahsanullah University of Science and Technology */}
                 <InformationCard
                     title={"Ahsanullah University of Science and Technology"}

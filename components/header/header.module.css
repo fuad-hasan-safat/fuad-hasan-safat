@@ -4,7 +4,7 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	background-color: #1684ebce;
+	background-color: #ffffffc4;
 	transition: all 0.3s ease;
 	z-index: 9999; /* Keeps header on top */
 }
@@ -21,7 +21,7 @@
 }
 
 .navbg {
-	background-color: #166bebce;
+	background-color: #ffffffc4;
 	backdrop-filter: blur(5px);
 }
 

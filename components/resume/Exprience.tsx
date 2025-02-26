@@ -4,7 +4,7 @@ import InformationCard from '../InformationCard';
 const Exprience = () => {
   return (
    <div className='pt-[20px]'>
-        <div  className="education">
+        <div  className="education flex flex-row flex-wrap justify-between">
             
         <InformationCard title={'Live Media Ltd.'} subtitleInfo={'1+ year of exprience of being full stack devloper'} cgpa={'****'}  >
             <p>I work here as a associate software devloper</p>

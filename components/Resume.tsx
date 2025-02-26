@@ -12,8 +12,8 @@ export default function Resume() {
 
     const buttonDesign = 'px-[10px] py-[15px] transition duration-900 ease-in-out w-full sm:w-[33.33%]';
     const hoverEffect =
-        'hover:text-yellow-400 hover:z-[999] hover:rounded-md hover:shadow-md hover:shadow-slate-500 hover:bg-gradient-to-br from-slate-100 via-sky-200 to-slate-200';
-    const selectedButtonCss = 'text-yellow-400 z-[999] bg-slate-100 rounded-md shadow-md shadow-slate-500';
+        'hover:text-yellow-400 hover:z-[999] hover:rounded-md hover:shadow-md hover:shadow-slate-500';
+    const selectedButtonCss = 'text-[#30c1ff99] z-[999] bg-slate-100 rounded-md shadow-md shadow-slate-500';
 
     let RenderedComponent = Education;
     if (selectedButton === 'education') {
@@ -41,7 +41,7 @@ export default function Resume() {
             {/* Button List */}
             <div
                 id="resumebuttonlist"
-                className="flex sm:flex-row flex-col justify-center items-center bg-black shadow-2xl shadow-teal-200 hover:shadow-[8px_8px_15px_rgba(0,0,0,0.25)] mt-[25px] rounded-md w-full text-[15px] md:text-[20px] text-gray-400 sm:text-[22px] transform transition-all hover:translate-y-1 duration-500 ease-in-out"
+                className="flex sm:flex-row flex-col justify-center items-center bg-gray-100 shadow-2xl shadow-teal-200 hover:shadow-[8px_8px_15px_rgba(0,0,0,0.25)] mt-[25px] rounded-md w-full text-[15px] md:text-[20px] text-gray-400 sm:text-[22px] transform transition-all hover:translate-y-1 duration-500 ease-in-out"
             >
                 <Button
                     className={`${buttonDesign} ${hoverEffect} ${selectedButton === 'education' ? selectedButtonCss : ''}`}
