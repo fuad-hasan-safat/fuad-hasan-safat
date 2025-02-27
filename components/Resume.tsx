@@ -41,7 +41,7 @@ export default function Resume() {
             {/* Button List */}
             <div
                 id="resumebuttonlist"
-                className="flex sm:flex-row flex-col justify-center items-center bg-gray-100 shadow-2xl shadow-teal-200 hover:shadow-[8px_8px_15px_rgba(0,0,0,0.25)] mt-[25px] rounded-md w-full text-[15px] md:text-[20px] text-gray-400 sm:text-[22px] transform transition-all hover:translate-y-1 duration-500 ease-in-out"
+                className="flex sm:flex-row flex-col justify-center items-center bg-gray-100 shadow-[8px_8px_15px_rgba(0,0,0,0.25)] hover:shadow-teal-200 mt-[25px] rounded-md w-full text-[15px] md:text-[20px] text-gray-400 sm:text-[22px] transform transition-all hover:translate-y-1 duration-500 ease-in-out"
             >
                 <Button
                     className={`${buttonDesign} ${hoverEffect} ${selectedButton === 'education' ? selectedButtonCss : ''}`}
