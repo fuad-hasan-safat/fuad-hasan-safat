@@ -5,7 +5,7 @@ import Link from 'next/link';
 const ProfessionalSkill = () => {
     return (
         <div id='resume' className='pt-[20px]'>
-            <div className="education flex flex-row flex-wrap justify-between">
+            <div className="education grid grid-cols-2 gap-4">
 
                 {/* React.js */}
                 <InformationCard title="React.js" subtitleInfo="Live Media Ltd">
