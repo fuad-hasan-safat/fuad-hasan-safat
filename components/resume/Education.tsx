@@ -4,7 +4,7 @@ import InformationCard from "../InformationCard";
 const Education = () => {
     return (
         <div className="pt-[20px]">
-            <div className="education grid grid-cols-2 gap-4">
+            <div className="education grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* Ahsanullah University of Science and Technology */}
                 <InformationCard
                     title={"Ahsanullah University of Science and Technology"}

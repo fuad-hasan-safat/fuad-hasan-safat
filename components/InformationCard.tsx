@@ -24,7 +24,7 @@ export default function InformationCard({ title, subtitleInfo, cgpa, children }:
 
         {/* CGPA - positioned absolutely and not scaled */}
         {cgpa && (
-          <div className={`absolute top-[30px] right-[0px] text-red-400`}>
+          <div className={`absolute hidden md:block top-[30px] right-[0px] text-red-400`}>
             <span>{cgpa}</span>
           </div>
         )}
