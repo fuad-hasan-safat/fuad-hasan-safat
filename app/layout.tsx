@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { Inter, Dancing_Script, Exo_2, Playwrite_US_Modern } from 'next/font/google';
+import { Inter, Dancing_Script, Exo_2, Playwrite_US_Modern, Geologica } from 'next/font/google';
 import { Providers } from "@/lib/Providers";
+import { HeroProviders } from "./heroproviders";
+import Head from "next/head";
 
 
 const inter = Inter({
@@ -42,11 +44,17 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+const geologica = Geologica({
+  subsets: ['latin'],
+  variable: '--geologica',
+  weight: ["400", "500", "600", "700"]
+});
+
 export const metadata: Metadata = {
   title: "Fuad Hasan Safat - Software Developer",
   description: "I am Fuad Hasan, a software developer from Rowmari, Kurigram, Bangladesh. I specialize in frontend, backend, and database design, crafting innovative solutions with perseverance and adaptability.",
   keywords: ["Fuad Hasan", "Software Developer", "Bangladesh", "Full Stack Developer", "Database Design", "Frontend Development", "Backend Development"],
-  authors: [{name: "Fuad Hasan Safat", url:"https://fuad-hasan-safat.vercel.app/"}],
+  authors: [{ name: "Fuad Hasan Safat", url: "https://fuad-hasan-safat.vercel.app/" }],
   creator: "Fuad Hasan Safat",
   publisher: "Fuad Hasan Safat",
   openGraph: {
@@ -83,14 +91,22 @@ export default function RootLayout({
   return (
     <Providers>
       <html lang="en">
-        <body
-          className={`${inter.variable} ${dancing_script.variable} ${exo_2.variable} ${geistSans.variable} ${geistMono.variable} ${playwrite.variable} antialiased`}
-        >
+        <Head>
+          <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap" rel="stylesheet"></link>
           <meta property="og:image" content="/profilepic/fuad.jpg" />
           <meta property="og:image:type" content="image/png" />
           <meta property="og:image:width" content="630" />
           <meta property="og:image:height" content="630" />
-          {children}
+        </Head>
+        <body
+          className={`${inter.variable} ${dancing_script.variable} ${exo_2.variable} ${geistSans.variable} ${geistMono.variable} ${playwrite.variable} ${geologica.variable} antialiased`}
+        >
+
+
+          <HeroProviders>
+            {children}
+          </HeroProviders>
+
         </body>
       </html>
     </Providers>

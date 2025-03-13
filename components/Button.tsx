@@ -10,7 +10,7 @@ type ButtonProps = {
   className?: string;
 };
 
-const Button: React.FC<ButtonProps> = ({
+const ButtonM: React.FC<ButtonProps> = ({
   text,
   onClick,
   type = undefined,
@@ -42,4 +42,4 @@ const Button: React.FC<ButtonProps> = ({
   );
 };
 
-export default Button;
+export default ButtonM;

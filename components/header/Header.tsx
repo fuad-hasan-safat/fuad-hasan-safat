@@ -3,11 +3,14 @@ import React, { useEffect, useState } from "react";
 import styles from "./header.module.css";
 import styles1 from "./RotatingImageHeader.module.css";
 import Image from "next/image";
-import Button from "../Button";
 import { useDispatch, useSelector } from "@/lib/store";
 import { setActivePage } from "@/lib/features/header/headerSlice";
 import { RootState } from "@/lib/store";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { useRouter } from "next/navigation";
+import ButtonM from "../Button";
+import { Button } from "@heroui/react";
+import Link from "next/link";
 
 type SectionRefs = {
   home: React.RefObject<HTMLElement>;
@@ -22,6 +25,7 @@ interface HeaderProps {
 
 export default function Header({ sectionRefs }: HeaderProps) {
   const dispatch = useDispatch();
+  const router = useRouter()
   const [isSticky, setIsSticky] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const activePage = useSelector((state: RootState) => state.header.activePage);
@@ -112,7 +116,7 @@ export default function Header({ sectionRefs }: HeaderProps) {
             } absolute top-[80px] right-0 bg-gray-900 flex flex-col items-center justify-center space-y-4  z-[9998] md:static md:w-auto md:h-auto md:bg-transparent md:translate-y-0 md:opacity-100 md:space-y-0 md:flex-row md:flex md:space-x-4`}
         >
           {["home", "about", "resume", "contact"].map((page) => (
-            <Button
+            <ButtonM
               key={page}
               text={page.charAt(0).toUpperCase() + page.slice(1)}
               onClick={() => handleNavigation(page as keyof SectionRefs)}
@@ -123,7 +127,13 @@ export default function Header({ sectionRefs }: HeaderProps) {
               }
             />
           ))}
+          <Link
+            href="/blog">
 
+            <Button
+              color="primary"
+            >Blog</Button>
+          </Link>
           <a
             href="_FuadHasan SOLID version.docx.pdf" // Relative path to the PDF in the public folder
             // download="fuadhasan_cv.pdf" // This sets the downloaded file's name
@@ -131,10 +141,11 @@ export default function Header({ sectionRefs }: HeaderProps) {
             rel="noopener noreferrer"
           >
             <Button
-              text="Download CV"
-              onClick={downloadResume}
-              className={"bg-slate-500 p-4 hover:bg-yellow-400 hover:text-slate-700 ease-in-out duration-300"}
-            />
+              color="primary"
+              onPress={downloadResume}
+            >
+              Download CV
+            </Button>
 
           </a>
 
