@@ -7,7 +7,6 @@ import { useDispatch, useSelector } from "@/lib/store";
 import { setActivePage } from "@/lib/features/header/headerSlice";
 import { RootState } from "@/lib/store";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { useRouter } from "next/navigation";
 import ButtonM from "../Button";
 import { Button } from "@heroui/react";
 import Link from "next/link";
@@ -25,7 +24,6 @@ interface HeaderProps {
 
 export default function Header({ sectionRefs }: HeaderProps) {
   const dispatch = useDispatch();
-  const router = useRouter()
   const [isSticky, setIsSticky] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const activePage = useSelector((state: RootState) => state.header.activePage);
