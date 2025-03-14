@@ -62,7 +62,7 @@ export default function Page() {
               className="p-4 border border-gray-300 rounded-lg shadow-md flex justify-between items-center
                 hover:bg-blue-500 hover:text-white transition-all"
             >
-              <div>
+              <div className="flex flex-col justify-start items-start place-content-start">
                 <p className="text-lg font-bold">{index + 1} {greet.german}</p>
                 <p className="text-sm text-gray-600">{greet.bangla}</p>
                 <p className="text-xs italic">{greet.meaning}</p>
