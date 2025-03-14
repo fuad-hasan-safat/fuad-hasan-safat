@@ -11,7 +11,7 @@ interface CharacterData {
 
 const DasAlphabet: React.FC = () => {
     const [speech, setSpeech] = useState<Speech | null>(null);
-    const [isInitializing, setIsInitializing] = useState(true);
+    // const [isInitializing, setIsInitializing] = useState(true);
     // const [availableVoices, setAvailableVoices] = useState<SpeechSynthesisVoice[]>([]);
 
     // German characters with Bengali pronunciations
@@ -74,7 +74,7 @@ const DasAlphabet: React.FC = () => {
             } catch (error) {
                 console.error("TTS Initialization Error:", error);
             } finally {
-                setIsInitializing(false);
+                // setIsInitializing(false);
             }
         };
     
@@ -92,13 +92,13 @@ const DasAlphabet: React.FC = () => {
         speech.speak({ text });
     };
 
-    if (isInitializing) {
-        return (
-            <div className="p-4 text-center text-gray-500">
-                Initialisiere Sprachausgabe...
-            </div>
-        );
-    }
+    // if (isInitializing) {
+    //     return (
+    //         <div className="p-4 text-center text-gray-500">
+    //             Initialisiere Sprachausgabe...
+    //         </div>
+    //     );
+    // }
 
     return (
         <div className="max-w-2xl mx-auto p-6">

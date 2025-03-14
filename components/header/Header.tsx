@@ -100,7 +100,7 @@ export default function Header({ sectionRefs }: HeaderProps) {
         </div>
 
         {/* Hamburger Icon */}
-        <div className="relative md:hidden ">
+        <div className="relative md:hidden z-[9999]">
           {menuOpen ? (
             <FaTimes size={24} onClick={() => setMenuOpen(false)} className="cursor-pointer" />
           ) : (
@@ -132,6 +132,7 @@ export default function Header({ sectionRefs }: HeaderProps) {
               color="primary"
             >Blog</Button>
           </Link>
+          
           <a
             href="_FuadHasan SOLID version.docx.pdf" // Relative path to the PDF in the public folder
             // download="fuadhasan_cv.pdf" // This sets the downloaded file's name

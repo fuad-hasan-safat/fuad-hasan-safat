@@ -1,4 +1,5 @@
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem } from '@heroui/react'
+import Link from 'next/link'
 import React from 'react'
 
 export default function BlogHeader() {
@@ -6,15 +7,12 @@ export default function BlogHeader() {
     <Navbar >
       <NavbarBrand>
         {/* //<AcmeLogo /> */}
-        <p className="font-bold text-inherit">BLOG</p>
+        <Link href={'/blog'} className="font-bold text-inherit">BLOG</Link>
       </NavbarBrand>
       <NavbarContent >
         <NavbarItem 
         isActive={true}
         >
-      
-            <p className='text-2xl font-geologica'>Welcome to fuad&quot;s blogs</p>
-        
         </NavbarItem>
       </NavbarContent>
     </Navbar>
