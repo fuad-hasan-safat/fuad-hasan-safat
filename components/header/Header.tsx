@@ -114,7 +114,7 @@ export default function Header({ sectionRefs }: HeaderProps) {
               className={`text-lg md:text-base px-6 py-3 md:py-2 rounded-lg transition-colors
                 ${activePage === page 
                   ? "text-primary-400 font-bold bg-gray-800/50 md:bg-transparent"
-                  : "text-gray-200 hover:text-primary-300"}`}
+                  : "text-gray-400 hover:text-primary-300"}`}
             />
           ))}
           
