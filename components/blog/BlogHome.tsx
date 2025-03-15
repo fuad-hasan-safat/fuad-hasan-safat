@@ -1,10 +1,31 @@
 'use client'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button, Card, CardFooter, Image, Link } from "@heroui/react";
+import LoaderHeart from '../LoaderHeart';
 
 export default function BlogHome() {
+     const [isMounted, setIsMounted] = useState(false);
+        const [fadeOut, setFadeOut] = useState(false);
+
+         useEffect(() => {
+                setTimeout(() => {
+                    setFadeOut(true); // Start fading out the loader
+                    setTimeout(() => {
+                        setIsMounted(true); // Finally remove loader after animation
+                    }, 700); // Fade-out duration
+                }, 900);
+            }, []);
+        
+
     return (
-        <div className="max-w-[900px] gap-2 grid grid-cols-12 grid-rows-2 px-8">
+        <>
+          {/* Loader Overlay */}
+          {!isMounted && (
+                <div className={`fixed inset-0 z-[10000] flex items-center justify-center transition-opacity duration-700 ${fadeOut ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
+                    <LoaderHeart />
+                </div>
+            )}
+        <div className={`max-w-[900px] gap-2 grid grid-cols-12 grid-rows-2 px-8  transition-opacity duration-700 ${fadeOut ? "opacity-100" : "opacity-0"}`}>
             <Link href="/blog/dasalphabet" className="col-span-12 sm:col-span-7 z-[9]">
                 <Card className="w-full h-[300px] cursor-pointer shadow-md shadow-slate-500 hover:shadow-amber-500">
                     <Image
@@ -54,5 +75,6 @@ export default function BlogHome() {
                 </Card>
             </Link>
         </div>
+        </>
     )
 }
