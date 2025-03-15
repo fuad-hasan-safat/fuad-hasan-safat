@@ -5,14 +5,14 @@ import React from 'react'
 export default function BlogHeader() {
   return (
     <Navbar >
-      <NavbarBrand>
+      <NavbarBrand className='flex justify-between items-center'>
         {/* //<AcmeLogo /> */}
         <Link href={'/blog'} className="font-bold text-inherit">BLOG</Link>
       </NavbarBrand>
       <NavbarContent >
         <NavbarItem 
-        isActive={true}
         >
+          <Link href={'/'} className="font-bold text-inherit">Portfolio</Link>
         </NavbarItem>
       </NavbarContent>
     </Navbar>
