@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: "Fuad Hasan Safat",
     images: [
       {
-        url: '/profilepic/fuad.jpg',
+        url: "/blogthumb/BLOG.png",
         width: 1200,
         height: 630,
         alt: "Fuad Hasan Safat Profile Picture"
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     creator: "@fuad_safat", // Update with your actual Twitter handle
     title: "Fuad Hasan Safat - Software Developer",
     description: "Software developer from Rowmari, Kurigram, Bangladesh, specializing in modern web development and database design.",
-    images: "/profilepic/fuad.jpg"
+    images: "/blogthumb/BLOG.png"
   },
 
 

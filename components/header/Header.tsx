@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import styles from "./header.module.css";
 import styles1 from "./RotatingImageHeader.module.css";
 import Image from "next/image";
@@ -10,6 +10,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import ButtonM from "../Button";
 import { Button } from "@heroui/react";
 import Link from "next/link";
+import { useOnClickOutside } from "usehooks-ts";
 
 type SectionRefs = {
   home: React.RefObject<HTMLElement>;
@@ -27,63 +28,51 @@ export default function Header({ sectionRefs }: HeaderProps) {
   const [isSticky, setIsSticky] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const activePage = useSelector((state: RootState) => state.header.activePage);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  useOnClickOutside(menuRef, () => setMenuOpen(false));
 
   const handleNavigation = (page: keyof SectionRefs) => {
     dispatch(setActivePage(page));
-    setMenuOpen(false); // Close menu on navigation
-
-    if (sectionRefs[page].current) {
-      sectionRefs[page].current.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
+    setMenuOpen(false);
+    sectionRefs[page].current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   useEffect(() => {
     const handleScroll = () => {
       setIsSticky(window.scrollY > 100);
+      
+      if (menuOpen) setMenuOpen(false);
 
-      // Manually check which section is in view
+      const viewportCenter = window.innerHeight / 2;
       let currentSection: keyof SectionRefs | null = null;
 
-      Object.keys(sectionRefs).forEach((key) => {
-        const ref = sectionRefs[key as keyof SectionRefs];
-        if (ref.current) {
-          const rect = ref.current.getBoundingClientRect();
-          // Check if the section is in the middle of the viewport
-          if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-            currentSection = key as keyof SectionRefs;
-          }
+      Object.entries(sectionRefs).forEach(([key, ref]) => {
+        const rect = ref.current?.getBoundingClientRect();
+        if (rect && rect.top <= viewportCenter && rect.bottom >= viewportCenter) {
+          currentSection = key as keyof SectionRefs;
         }
       });
 
-      // Dispatch active page only if it changes
       if (currentSection && activePage !== currentSection) {
         dispatch(setActivePage(currentSection));
       }
     };
 
-    // Attach scroll listener
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Run initially to set the correct section
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [sectionRefs, activePage, dispatch]);
-
-
-  function downloadResume() {
-
-  }
-
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [sectionRefs, activePage, dispatch, menuOpen]);
 
   return (
-    <header className={`${styles.header} ${isSticky ? styles.sticky : ""}`}>
-      <div className="flex justify-between items-center px-6 md:px-24 h-16 md:h-[100px] font-exo_2 text-[18px]">
-        <div onClick={() => handleNavigation("home")} className="flex items-center space-x-2 cursor-pointer">
-          <div className={styles1.imageContainer}>
+    <header className={`${styles.header} ${isSticky ? styles.sticky : ""} fixed top-0 left-0 w-full z-50 bg-gray-900/80 backdrop-blur-md shadow-lg`}>
+      <div className="flex justify-between items-center px-4 md:px-24 h-16 md:h-20 font-exo_2">
+        
+        {/* Logo Section */}
+        <div 
+          onClick={() => handleNavigation("home")} 
+          className="flex items-center space-x-2 cursor-pointer"
+        >
+           <div className={styles1.imageContainer}>
             <Image
               className={`${styles1.profileImage}`}
               src="/profilepic/FUADlogo.png"
@@ -96,58 +85,57 @@ export default function Header({ sectionRefs }: HeaderProps) {
             <div className={`${styles1.ring}`}></div>
             <div className={`${styles1.ring}`}></div>
           </div>
-          <p className={`text-[20px] font-semibold tracking-widest ${styles.text3d}`}>Fuad</p>
+          <p className={`text-lg md:text-xl font-semibold tracking-wide ${styles.text3d}`}>
+            Fuad
+          </p>
         </div>
 
-        {/* Hamburger Icon */}
-        <div className="relative md:hidden z-[9999]">
-          {menuOpen ? (
-            <FaTimes size={24} onClick={() => setMenuOpen(false)} className="cursor-pointer" />
-          ) : (
-            <FaBars size={24} onClick={() => setMenuOpen(true)} className="cursor-pointer" />
-          )}
-        </div>
+        {/* Mobile Menu Button */}
+        <button 
+          aria-label="Toggle menu"
+          className="md:hidden z-50 p-2 "
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? <FaTimes className="text-2xl text-white" /> : <FaBars className="text-2xl text-black" />}
+        </button>
 
         {/* Navigation Menu */}
         <nav
-          className={` ${menuOpen ? "translate-y-[0px] opacity-100 transform transition-transform duration-300 ease-in" : "-translate-y-[350px] opacity-0 transform transition-transform duration-300 ease-out"
-            } absolute top-[80px] right-0 bg-gray-900 flex flex-col items-center justify-center space-y-4  z-[9998] md:static md:w-auto md:h-auto md:bg-transparent md:translate-y-0 md:opacity-100 md:space-y-0 md:flex-row md:flex md:space-x-4`}
+          ref={menuRef}
+          className={`fixed md:static top-0 right-0 w-64 md:w-auto h-screen md:h-auto bg-gray-900 md:bg-transparent 
+          flex flex-col md:flex-row items-center justify-center md:space-x-6 space-y-6 md:space-y-0 transition-all duration-300 ease-out
+          ${menuOpen ? "translate-x-0 opacity-100" : "translate-x-full md:translate-x-0 opacity-0 md:opacity-100"}`}
         >
           {["home", "about", "resume", "contact"].map((page) => (
             <ButtonM
               key={page}
               text={page.charAt(0).toUpperCase() + page.slice(1)}
               onClick={() => handleNavigation(page as keyof SectionRefs)}
-              className={
-                activePage === page
-                  ? "text-[#f3b020] font-semibold"
-                  : "text-[#c8c5c5] hover:text-[#f3ef20]"
-              }
+              className={`text-lg md:text-base px-6 py-3 md:py-2 rounded-lg transition-colors
+                ${activePage === page 
+                  ? "text-primary-400 font-bold bg-gray-800/50 md:bg-transparent"
+                  : "text-gray-200 hover:text-primary-300"}`}
             />
           ))}
-          <Link
-            href="/blog">
-
-            <Button
-              color="primary"
-            >Blog</Button>
-          </Link>
           
-          <a
-            href="_FuadHasan SOLID version.docx.pdf" // Relative path to the PDF in the public folder
-            // download="fuadhasan_cv.pdf" // This sets the downloaded file's name
-            target="_blank" // Opens the link in a new tab
-            rel="noopener noreferrer"
-          >
-            <Button
-              color="primary"
-              onPress={downloadResume}
+          <div className="flex flex-col md:flex-row items-center gap-4 mt-6 md:mt-0">
+            <Link href="/blog" passHref>
+              <Button className="w-32 text-center" color="warning" variant="ghost">
+                Blog
+              </Button>
+            </Link>
+            
+            <a
+              href="_FuadHasan SOLID version.docx.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="no-underline"
             >
-              Download CV
-            </Button>
-
-          </a>
-
+              <Button color="primary" className="w-32">
+                Download CV
+              </Button>
+            </a>
+          </div>
         </nav>
       </div>
     </header>
