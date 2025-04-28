@@ -4,7 +4,7 @@ import React from 'react'
 
 export default function BlogHeader() {
   return (
-    <Navbar >
+    <Navbar className='shadow-md shadow-slate-300 sticky top-0 z-50 opacity-95' >
       <NavbarBrand className='flex justify-between items-center'>
         {/* //<AcmeLogo /> */}
         <Link href={'/blog'} className="font-bold text-inherit">BLOG</Link>
