@@ -15,7 +15,7 @@ const ProfessionalSkill = () => {
           name: "React Ecosystem",
           icon: <RiReactjsLine className="w-8 h-8" />,
           description: "Modern frontend development with React ecosystem",
-          techs: ["Next.js", "Redux", "React Query", "React Router", "React Hook Form", "ROC"],
+          techs: ["Next.js", "Redux", "React Query", "React Router", "React Hook Form", "HOC"],
           category: "Frontend"
         },
         {
