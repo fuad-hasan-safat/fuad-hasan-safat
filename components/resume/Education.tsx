@@ -149,7 +149,7 @@ const Education = () => {
                     {extendedEducation.map((item, index) => (
                         <div
                             key={index}
-                            className="w-full flex-shrink-0 px-4 flex items-center justify-center"
+                            className="w-full flex-shrink-0 px-4 flex justify-center"
                         >
                             <InformationCard
                                 title={item.title}

@@ -9,10 +9,11 @@ interface CardProps {
 
 export default function InformationCard({ title, subtitleInfo, cgpa, children }: CardProps) {
   return (
-    <div className="relative w-full max-w-2xl bg-white rounded-xl md:rounded-2xl shadow-md hover:shadow-xl md:hover:shadow-2xl transition-shadow duration-300 p-6 md:p-8 border border-gray-100 group mx-4 sm:mx-auto">
+    <div className="relative w-full  bg-white rounded-xl md:rounded-2xl shadow-md hover:shadow-xl md:hover:shadow-2xl transition-shadow duration-300 p-6 md:p-8 
+    border border-gray-100 group hover:border-gray-200">
       {/* Timeline Indicator - Hidden on mobile */}
       <div className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2">
-        <div className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-gradient-to-br from-blue-500 to-cyan-400 shadow-md md:shadow-lg flex items-center justify-center">
+        <div className="w-full h-5 md:w-6 md:h-6 rounded-full bg-gradient-to-br from-blue-500 to-cyan-400 shadow-md md:shadow-lg flex items-center justify-center">
           <div className="w-2 h-2 bg-white rounded-full" />
         </div>
       </div>
