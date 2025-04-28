@@ -59,7 +59,7 @@ export default function RootLayout({
     <Providers>
       <html lang="en">
         <Head>
-          <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap" rel="stylesheet"></link>
+          {/* <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap" rel="stylesheet"></link> */}
           <meta property="og:image" content="/profilepic/fuad.jpg" />
           <meta property="og:image:type" content="image/png" />
           <meta property="og:image:width" content="630" />
