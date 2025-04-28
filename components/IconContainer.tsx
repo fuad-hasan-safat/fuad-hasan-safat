@@ -21,7 +21,7 @@ const IconContainer: React.FC<IconProps> = ({ children, onClick, isClickable = f
         display: 'inline-block',
         padding: '10px',
         margin: '5px',
-        backgroundColor: '#2E2E2E',
+        backgroundColor: '#212E2E',
         borderRadius: '8px',
         cursor: isClickable ? 'pointer' : 'default',
       }}

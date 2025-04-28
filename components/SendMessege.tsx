@@ -1,5 +1,7 @@
 "use client";
-import React, {useRef, useState } from "react";
+import React, { useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { FiSend, FiMail, FiMessageSquare, FiAlertCircle } from "react-icons/fi";
 import DialogueModal from "./DialugueModal";
 
 export default function SendMessage() {
@@ -66,85 +68,102 @@ export default function SendMessage() {
   };
 
   return (
-    <section className="">
+    <section className="py-16 px-4 sm:px-6 lg:px-8">
       <DialogueModal
         ref={dialogRef}
         alert={dialog.alert}
-        type={dialog.type === "Confirmation" ? "Confirmation" : "Error"}
+        type={dialog.type}
         onYes={sendMail}
       />
 
-      <div className="flex flex-col items-center space-y-6 md:p-8">
-        <h1 className="font-exo_2 text-2xl md:text-5xl">CONTACT</h1>
-
-        <h2 className="font-bold font-exo_2 text-left text-xl md:text-2xl">Send an Email</h2>
-
-        {/* Email Input */}
-        <div className="relative w-full md:w-1/2">
-          <input
-            type="email"
-            name="email"
-            id="email"
-            value={formData.email}
-            onChange={handleChange}
-            className="border-gray-300 p-3 border rounded-md focus:ring-2 focus:ring-amber-300 w-full text-gray-800 focus:outline-none peer placeholder-transparent"
-            placeholder="Your Email Address"
-            aria-label="Your Email Address"
-          />
-          <label
-            htmlFor="email"
-            className="-top-2 peer-focus:-top-2 peer-placeholder-shown:top-3 left-3 absolute bg-white px-1 rounded-md text-gray-500 text-sm peer-focus:text-sm peer-focus:text-blue-500 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 transition-all duration-300"
-          >
-            Your Email Address
-          </label>
-        </div>
-
-        {/* Subject Input */}
-        <div className="relative w-full md:w-1/2">
-          <input
-            type="text"
-            name="subject"
-            id="subject"
-            value={formData.subject}
-            onChange={handleChange}
-            className="border-gray-300 p-3 border rounded-md focus:ring-2 focus:ring-amber-300 w-full text-gray-800 focus:outline-none peer placeholder-transparent"
-            placeholder="Subject"
-            aria-label="Subject"
-          />
-          <label
-            htmlFor="subject"
-            className="-top-2 peer-focus:-top-2 peer-placeholder-shown:top-3 left-3 absolute bg-white px-1 rounded-md text-gray-500 text-sm peer-focus:text-sm peer-focus:text-blue-500 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 transition-all duration-300"
-          >
-            Subject
-          </label>
-        </div>
-
-        {/* Message Textarea */}
-        <div className="relative w-full md:w-1/2">
-          <textarea
-            name="message"
-            id="message"
-            value={formData.message}
-            onChange={handleChange}
-            className="border-gray-300 p-3 border rounded-md focus:ring-2 focus:ring-amber-300 w-full h-32 text-gray-800 focus:outline-none peer placeholder-transparent"
-            placeholder="Message"
-            aria-label="Message"
-          ></textarea>
-          <label
-            htmlFor="message"
-            className="-top-2 peer-focus:-top-2 peer-placeholder-shown:top-3 left-3 absolute bg-white px-1 rounded-md text-gray-500 text-sm peer-focus:text-sm peer-focus:text-blue-500 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 transition-all duration-300"
-          >
-            Message
-          </label>
-        </div>
-
-        {/* Send Button */}
-        <button
-          onClick={handleSend}
-          className="px-6 py-2 rounded-md focus:ring-2 focus:ring-blue-400 w-full md:w-1/2 font-exo_2 font-semibold text-white transition-all duration-1000 ease-in-out bg-amber-500 hover:bg-blue-600 hover:text-amber-400"
+      <div className="max-w-2xl mx-auto space-y-8">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center space-y-4"
         >
-          Send
-        </button>
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+            Get in Touch
+          </h1>
+          <p className="text-slate-400 text-lg">
+            Have a question or want to collaborate? Let&apos;s connect!
+          </p>
+        </motion.div>
+
+        <div className="space-y-6 bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-slate-700/50 shadow-xl">
+          {/* Email Input */}
+          <div className="relative group">
+            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-lg opacity-0 group-focus-within:opacity-100 transition-opacity" />
+            <div className="relative flex items-center gap-3">
+              <FiMail className="w-6 h-6 text-cyan-400 ml-3" />
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="w-full bg-transparent py-4 px-4 text-slate-200 placeholder-slate-500 focus:outline-none"
+                placeholder="Your email address"
+              />
+            </div>
+            <div className="h-px bg-slate-700/50 group-focus-within:bg-gradient-to-r from-cyan-400 to-blue-500 transition-colors" />
+          </div>
+
+          {/* Subject Input */}
+          <div className="relative group">
+            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-lg opacity-0 group-focus-within:opacity-100 transition-opacity" />
+            <div className="relative flex items-center gap-3">
+              <FiMessageSquare className="w-6 h-6 text-cyan-400 ml-3" />
+              <input
+                type="text"
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                className="w-full bg-transparent py-4 px-4 text-slate-200 placeholder-slate-500 focus:outline-none"
+                placeholder="Subject"
+              />
+            </div>
+            <div className="h-px bg-slate-700/50 group-focus-within:bg-gradient-to-r from-cyan-400 to-blue-500 transition-colors" />
+          </div>
+
+          {/* Message Input */}
+          <div className="relative group">
+            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-lg opacity-0 group-focus-within:opacity-100 transition-opacity" />
+            <div className="relative flex items-start gap-3">
+              <FiSend className="w-6 h-6 text-cyan-400 ml-3 mt-4" />
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                className="w-full bg-transparent py-4 px-4 text-slate-200 placeholder-slate-500 focus:outline-none resize-none h-32"
+                placeholder="Your message..."
+              />
+            </div>
+            <div className="h-px bg-slate-700/50 group-focus-within:bg-gradient-to-r from-cyan-400 to-blue-500 transition-colors" />
+          </div>
+
+          {/* Submit Button */}
+          <motion.button
+            onClick={handleSend}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="w-full py-4 px-8 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl font-semibold text-white flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-cyan-500/20 transition-all"
+          >
+            <FiSend className="w-5 h-5" />
+            Send Message
+          </motion.button>
+        </div>
+
+        {/* Error/Success Messages */}
+        {dialog.type === "Error" && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex items-center gap-3 text-red-400 bg-red-900/30 p-4 rounded-lg"
+          >
+            <FiAlertCircle className="w-6 h-6" />
+            <span>{dialog.alert}</span>
+          </motion.div>
+        )}
       </div>
     </section>
   );

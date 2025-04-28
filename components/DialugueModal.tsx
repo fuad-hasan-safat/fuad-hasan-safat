@@ -2,7 +2,7 @@ import React, { forwardRef } from "react";
 
 type DialogueModalProps = {
     alert: string;
-    type: "Confirmation" | "Error";
+    type: string | "Confirmation" | "Error";
     onYes: () => void;
 };
 

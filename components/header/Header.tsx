@@ -1,15 +1,11 @@
 "use client";
 import React, { useEffect, useState, useRef } from "react";
-import styles from "./header.module.css";
-import styles1 from "./RotatingImageHeader.module.css";
 import Image from "next/image";
 import { useDispatch, useSelector } from "@/lib/store";
 import { setActivePage } from "@/lib/features/header/headerSlice";
 import { RootState } from "@/lib/store";
-import { FaBars, FaTimes } from "react-icons/fa";
-import ButtonM from "../Button";
-import { Button } from "@heroui/react";
-import Link from "next/link";
+import { FiMenu, FiX, FiDownload } from "react-icons/fi";
+import { motion, AnimatePresence } from "framer-motion";
 import { useOnClickOutside } from "usehooks-ts";
 
 type SectionRefs = {
@@ -35,108 +31,151 @@ export default function Header({ sectionRefs }: HeaderProps) {
   const handleNavigation = (page: keyof SectionRefs) => {
     dispatch(setActivePage(page));
     setMenuOpen(false);
-    sectionRefs[page].current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    sectionRefs[page].current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
   };
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsSticky(window.scrollY > 100);
-      
+      setIsSticky(window.scrollY > 50);
       if (menuOpen) setMenuOpen(false);
-
-      const viewportCenter = window.innerHeight / 2;
-      let currentSection: keyof SectionRefs | null = null;
-
-      Object.entries(sectionRefs).forEach(([key, ref]) => {
-        const rect = ref.current?.getBoundingClientRect();
-        if (rect && rect.top <= viewportCenter && rect.bottom >= viewportCenter) {
-          currentSection = key as keyof SectionRefs;
-        }
-      });
-
-      if (currentSection && activePage !== currentSection) {
-        dispatch(setActivePage(currentSection));
-      }
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [sectionRefs, activePage, dispatch, menuOpen]);
+  }, [menuOpen]);
+
+  const navItems = [
+    { id: 'home', label: 'Home' },
+    { id: 'about', label: 'About' },
+    { id: 'resume', label: 'Resume' },
+    { id: 'contact', label: 'Contact' }
+  ];
 
   return (
-    <header className={`${styles.header} ${isSticky ? styles.sticky : ""} fixed top-0 left-0 w-full z-50 bg-gray-900/80 backdrop-blur-md shadow-lg`}>
-      <div className="flex justify-between items-center px-4 md:px-24 h-16 md:h-20 font-exo_2">
-        
-        {/* Logo Section */}
-        <div 
-          onClick={() => handleNavigation("home")} 
-          className="flex items-center space-x-2 cursor-pointer"
-        >
-           <div className={styles1.imageContainer}>
-            <Image
-              className={`${styles1.profileImage}`}
-              src="/profilepic/FUADlogo.png"
-              alt="Fuad"
-              width={50}
-              height={50}
-            />
-            <div className={`${styles1.ring}`}></div>
-            <div className={`${styles1.ring}`}></div>
-            <div className={`${styles1.ring}`}></div>
-            <div className={`${styles1.ring}`}></div>
-          </div>
-          <p className={`text-lg md:text-xl font-semibold tracking-wide ${styles.text3d}`}>
-            Fuad
-          </p>
-        </div>
+    <header className={`fixed w-full top-0 z-50 transition-all duration-300
+      ${isSticky ? 'bg-white/95 backdrop-blur-md shadow-sm' : 'bg-transparent'}`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16 md:h-20">
+          {/* Logo */}
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            onClick={() => handleNavigation("home")}
+            className="flex items-center space-x-2 cursor-pointer group"
+          >
+            <div className="relative w-10 h-10">
+              <Image
+                src="/profilepic/FUADlogo.png"
+                alt="Fuad"
+                width={40}
+                height={40}
+                className="rounded-full border-2 border-cyan-400/80"
+              />
+              <div className="absolute inset-0 rounded-full border-2 border-cyan-400/30 animate-ping-slow" />
+            </div>
+            <span className={`text-xl font-bold bg-gradient-to-r from-cyan-600 to-blue-500 bg-clip-text text-transparent`}>
+              Fuad
+            </span>
+          </motion.div>
 
-        {/* Mobile Menu Button */}
-        <button 
-          aria-label="Toggle menu"
-          className="md:hidden z-50 p-2 "
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          {menuOpen ? <FaTimes className="text-2xl text-white" /> : <FaBars className="text-2xl text-black" />}
-        </button>
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-8">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => handleNavigation(item.id as keyof SectionRefs)}
+                className="relative px-4 py-2 text-sm font-medium transition-colors"
+              >
+                <span className={`transition-colors ${activePage === item.id ? 'text-cyan-600' : 'text-slate-600 hover:text-cyan-500'}`}>
+                  {item.label}
+                </span>
+                {activePage === item.id && (
+                  <motion.div
+                    className="absolute bottom-0 left-0 w-full h-0.5 bg-cyan-500"
+                    layoutId="activeNav"
+                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                  />
+                )}
+              </button>
+            ))}
 
-        {/* Navigation Menu */}
-        <nav
-          ref={menuRef}
-          className={`fixed md:static top-0 right-0 w-64 md:w-auto h-screen md:h-auto bg-gray-900 md:bg-transparent 
-          flex flex-col md:flex-row items-center justify-center md:space-x-6 space-y-6 md:space-y-0 transition-all duration-300 ease-out
-          ${menuOpen ? "translate-x-0 opacity-100" : "translate-x-full md:translate-x-0 opacity-0 md:opacity-100"}`}
-        >
-          {["home", "about", "resume", "contact"].map((page) => (
-            <ButtonM
-              key={page}
-              text={page.charAt(0).toUpperCase() + page.slice(1)}
-              onClick={() => handleNavigation(page as keyof SectionRefs)}
-              className={`text-lg md:text-base px-6 py-3 md:py-2 rounded-lg transition-colors
-                ${activePage === page 
-                  ? "text-primary-400 font-bold bg-gray-800/50 md:bg-transparent"
-                  : "text-gray-400 hover:text-primary-300"}`}
-            />
-          ))}
-          
-          <div className="flex flex-col md:flex-row items-center gap-4 mt-6 md:mt-0">
-            <Link href="/blog" passHref>
-              <Button className="w-32 text-center" color="warning" variant="ghost">
+            <div className="flex items-center space-x-4 ml-4">
+              {/* <Link
+                href="/blog"
+                className="px-4 py-2 text-slate-600 hover:text-cyan-500 transition-colors"
+              >
                 Blog
-              </Button>
-            </Link>
-            
-            <a
-              href="_FuadHasan SOLID version.docx.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="no-underline"
-            >
-              <Button color="primary" className="w-32">
-                Download CV
-              </Button>
-            </a>
-          </div>
-        </nav>
+              </Link> */}
+              <button
+                onClick={() => window.open("https://docs.google.com/document/d/1dyxCrJJTvh4DfL_aYt3D1Xc4jb-WKbeeY5A4Fe49S50/edit?usp=sharing", "_blank")}
+                className="flex items-center px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-full hover:shadow-lg transition-shadow"
+              >
+                <FiDownload className="mr-2" />
+                Resume
+              </button>
+            </div>
+          </nav>
+
+          {/* Mobile Menu Button */}
+          <button
+            aria-label="Toggle menu"
+            className="md:hidden p-2 z-50"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            {menuOpen ? (
+              <FiX className="w-6 h-6 text-slate-700" />
+            ) : (
+              <FiMenu className="w-6 h-6 text-slate-700" />
+            )}
+          </button>
+
+          {/* Mobile Navigation */}
+          <AnimatePresence>
+            {menuOpen && (
+              <motion.nav
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 100 }}
+                transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                ref={menuRef}
+                className="md:hidden fixed top-0 right-0 w-64 h-screen bg-white/95 backdrop-blur-lg shadow-xl p-8"
+              >
+                <div className="flex flex-col h-full justify-between">
+                  <div className="space-y-6">
+                    {navItems.map((item) => (
+                      <button
+                        key={item.id}
+                        onClick={() => handleNavigation(item.id as keyof SectionRefs)}
+                        className={`text-lg ${activePage === item.id ? 'text-cyan-600' : 'text-slate-700'}`}
+                      >
+                        {item.label}
+                      </button>
+                    ))}
+                  </div>
+
+                  <div className="space-y-4 border-t pt-4">
+                    {/* <Link
+                      href="/blog"
+                      className="block py-2 text-slate-700 hover:text-cyan-500"
+                    >
+                      Blog
+                    </Link> */}
+                    <button
+                      onClick={() => window.open("https://docs.google.com/document/d/1dyxCrJJTvh4DfL_aYt3D1Xc4jb-WKbeeY5A4Fe49S50/edit?usp=sharing", "_blank")}
+                      className="flex items-center px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-full hover:shadow-lg transition-shadow"
+                    >
+                      <FiDownload className="mr-2" />
+                      Resume
+                    </button>
+                  </div>
+                </div>
+              </motion.nav>
+            )}
+          </AnimatePresence>
+        </div>
       </div>
     </header>
   );

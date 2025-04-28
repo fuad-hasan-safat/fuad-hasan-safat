@@ -4,65 +4,87 @@ import { RootState, useDispatch, useSelector } from '@/lib/store';
 import { setResumeButton } from '../lib/features/resume/resume-slice';
 import Education from './resume/Education';
 import ProfessionalSkill from './resume/ProfessionalSkill';
-import Exprience from './resume/Exprience';
+import ExprienceLayout from './resume/Exprience';
+
+
 
 export default function Resume() {
     const dispatch = useDispatch();
     const selectedButton = useSelector((state: RootState) => state.resume.selectedButton);
 
-    const buttonDesign = 'px-[10px] py-[15px] transition duration-900 ease-in-out w-full sm:w-[33.33%]';
-    const hoverEffect =
-        'hover:text-yellow-400 hover:z-[999] hover:rounded-md hover:shadow-md hover:shadow-slate-500';
-    const selectedButtonCss = 'text-[#30c1ff99] z-[999] bg-slate-100 rounded-md shadow-md shadow-slate-500';
-
-    let RenderedComponent = Education;
-    if (selectedButton === 'education') {
-        RenderedComponent = Education;
-    } else if (selectedButton === 'experience') {
-        RenderedComponent = Exprience;
-    } else if (selectedButton === 'skill') {
-        RenderedComponent = ProfessionalSkill;
-    }
+    const RenderedComponent = {
+        education: Education,
+        experience: ExprienceLayout,
+        skill: ProfessionalSkill,
+    }[selectedButton];
 
     return (
-        <div className="flex flex-col justify-center items-center px-4 sm:px-8 w-full min-h-full">
+        <div className="flex flex-col items-center px-4 sm:px-8 w-full min-h-full space-y-8">
             {/* Header Section */}
-            <div className="flex justify-center items-center text-center">
-                <div>
-                    <h6 className="font-thin text-[14px] text-yellow-400 sm:text-[16px]">
-                        1 year of experience in web development
-                    </h6>
-                    <h1 className="pt-[10px] font-semibold text-3xl text-slate-300 sm:text-4xl tracking-[5px] sm:tracking-[10px]">
-                        My Resume
-                    </h1>
+            <div className="text-center space-y-4">
+                <div className="inline-flex items-center bg-gradient-to-r from-cyan-500 to-blue-600 px-6 py-2 rounded-full shadow-lg">
+                    <span className="text-sm font-semibold text-white tracking-wide">
+                        1 Year 4 Months Professional Experience
+                    </span>
                 </div>
+                <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                    Professional Journey
+                </h1>
             </div>
 
-            {/* Button List */}
-            <div
-                id="resumebuttonlist"
-                className="flex sm:flex-row flex-col justify-center items-center bg-gray-100 shadow-[8px_8px_15px_rgba(0,0,0,0.25)] hover:shadow-teal-200 mt-[25px] rounded-md w-full text-[15px] md:text-[20px] text-gray-400 sm:text-[22px] transform transition-all hover:translate-y-1 duration-500 ease-in-out"
-            >
+            {/* Navigation Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-4xl">
                 <Button
-                    className={`${buttonDesign} ${hoverEffect} ${selectedButton === 'education' ? selectedButtonCss : ''}`}
-                    text="Education"
+                    className={`p-6 rounded-xl transition-all duration-300 ${
+                        selectedButton === 'education' 
+                            ? 'bg-gradient-to-br from-cyan-500 to-blue-600 shadow-2xl shadow-cyan-100 text-white'
+                            : 'bg-white hover:bg-gray-50 shadow-md hover:shadow-lg border border-gray-100'
+                    }`}
+                    text={
+                        <div className="flex flex-col items-center">
+                            <span className="text-2xl font-semibold mb-2">Education</span>
+                            <span className="text-sm">Academic Background</span>
+                        </div>
+                    }
                     onClick={() => dispatch(setResumeButton('education'))}
                 />
+                
                 <Button
-                    className={`${buttonDesign} ${hoverEffect} ${selectedButton === 'experience' ? selectedButtonCss : ''}`}
-                    text="Experience"
+                    className={`p-6 rounded-xl transition-all duration-300 ${
+                        selectedButton === 'experience' 
+                            ? 'bg-gradient-to-br from-purple-500 to-indigo-600 shadow-2xl shadow-purple-100 text-white'
+                            : 'bg-white hover:bg-gray-50 shadow-md hover:shadow-lg border border-gray-100'
+                    }`}
+                    text={
+                        <div className="flex flex-col items-center">
+                            <span className="text-2xl font-semibold mb-2">Experience</span>
+                            <span className="text-sm">Work History</span>
+                        </div>
+                    }
                     onClick={() => dispatch(setResumeButton('experience'))}
                 />
+                
                 <Button
-                    className={`${buttonDesign} ${hoverEffect} ${selectedButton === 'skill' ? selectedButtonCss : ''}`}
-                    text="Professional Skill"
+                    className={`p-6 rounded-xl transition-all duration-300 ${
+                        selectedButton === 'skill' 
+                            ? 'bg-gradient-to-br from-green-500 to-emerald-600 shadow-2xl shadow-green-100 text-white'
+                            : 'bg-white hover:bg-gray-50 shadow-md hover:shadow-lg border border-gray-100'
+                    }`}
+                    text={
+                        <div className="flex flex-col items-center">
+                            <span className="text-2xl font-semibold mb-2">Skills</span>
+                            <span className="text-sm">Technical Expertise</span>
+                        </div>
+                    }
                     onClick={() => dispatch(setResumeButton('skill'))}
                 />
             </div>
 
-            {/* Rendered Component */}
-            <div className="flex justify-center mt-8 sm:mt-12 w-full">
-                <RenderedComponent />
+            {/* Animated Content Area */}
+            <div className="w-full max-w-6xl">
+                <div className="rounded-2xl bg-white shadow-xl p-6 md:p-8 border border-gray-100 transition-all duration-300 hover:shadow-2xl">
+                    <RenderedComponent />
+                </div>
             </div>
         </div>
     );

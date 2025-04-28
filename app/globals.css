@@ -112,6 +112,11 @@ body {
   }
 }
 
+.hexagon {
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  @apply w-10 h-10 flex items-center justify-center transition-all;
+}
+
 @layer base {
   * {
     @apply border-border;

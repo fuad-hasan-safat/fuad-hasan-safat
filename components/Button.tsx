@@ -4,12 +4,11 @@ import { motion } from 'framer-motion';
 import React from 'react';
 
 type ButtonProps = {
-  text: string;
+  text: React.ReactNode;
   onClick: () => void;
   type?: 'button' | 'submit' | 'reset' | undefined;
   className?: string;
 };
-
 const ButtonM: React.FC<ButtonProps> = ({
   text,
   onClick,

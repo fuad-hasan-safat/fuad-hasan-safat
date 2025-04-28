@@ -119,17 +119,50 @@ const config: Config = {
 						color: '#f95c5c',
 						boxShadow: '0px 0px 10px #f95c5c'
 					}
+				},
+				slideInRight: {
+					'0%': { transform: 'translateX(20%)', opacity: '0' },
+					'100%': { transform: 'translateX(0)', opacity: '1' },
 				}
 			},
 			animation: {
 				swapColors1: 'swapColors1 6s ease-in-out infinite',
 				swapColors2: 'swapColors2 6s ease-in-out infinite',
-				swapColors3: 'swapColors3 6s ease-in-out infinite'
+				swapColors3: 'swapColors3 6s ease-in-out infinite',
+				'slide-in-right': 'slideInRight 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards',
+				ping: 'ping 2s cubic-bezier(0, 0, 0.2, 1) infinite',
+				pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+				'ping-slow': 'ping 3s cubic-bezier(0, 0, 0.2, 1) infinite',
+			},
+			animationDelay: {
+				'100': '100ms',
+				'200': '200ms',
+			},
+			transitionProperty: {
+				'transform': 'transform',
+				'shadow': 'box-shadow',
+				'scale': 'scale'
+			},
+			transitionDuration: {
+				'300': '300ms',
+				'500': '500ms'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
+			},
+			boxShadow: {
+				'3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.15)',
+				'xl': '0 20px 25px -5px rgba(0, 0, 0, 0.08)',
+				'2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.15)'
+			},
+			backdropBlur: {
+				xs: '2px',
+				sm: '4px',
+			},
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 			}
 		}
 	},
