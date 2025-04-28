@@ -143,8 +143,8 @@ export default function Header({ sectionRefs }: HeaderProps) {
                 ref={menuRef}
                 className="md:hidden fixed top-0 right-0 w-64 h-screen bg-white/95 backdrop-blur-lg shadow-xl p-8"
               >
-                <div className="flex flex-col h-full justify-between">
-                  <div className="space-y-6">
+                <div className=" h-full justify-between">
+                  <div className="flex flex-col space-y-6">
                     {navItems.map((item) => (
                       <button
                         key={item.id}
@@ -154,15 +154,6 @@ export default function Header({ sectionRefs }: HeaderProps) {
                         {item.label}
                       </button>
                     ))}
-                  </div>
-
-                  <div className="space-y-4 border-t pt-4">
-                    {/* <Link
-                      href="/blog"
-                      className="block py-2 text-slate-700 hover:text-cyan-500"
-                    >
-                      Blog
-                    </Link> */}
                     <button
                       onClick={() => window.open("https://docs.google.com/document/d/1dyxCrJJTvh4DfL_aYt3D1Xc4jb-WKbeeY5A4Fe49S50/edit?usp=sharing", "_blank")}
                       className="flex items-center px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-full hover:shadow-lg transition-shadow"
@@ -170,6 +161,9 @@ export default function Header({ sectionRefs }: HeaderProps) {
                       <FiDownload className="mr-2" />
                       Resume
                     </button>
+                  </div>
+                  <div className="flex items-center justify-center mt-8">
+                    <span className="text-sm text-slate-500">© 2023 Fuad. All rights reserved.</span>
                   </div>
                 </div>
               </motion.nav>
