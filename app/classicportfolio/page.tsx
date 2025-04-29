@@ -2,11 +2,6 @@
 "use client";
 import { motion } from "framer-motion";
 import Footer from "@/components/Footer";
-import Header from "@/components/header/Header";
-import HomePage from "@/components/HomePage";
-import AboutMe from "@/components/Aboutme";
-import Resume from "@/components/Resume";
-import SendMessage from "@/components/SendMessege";
 import ClassicHeader from "@/components/header/ClassicHeader";
 import ClassicHomePage from "@/components/ClassicHomePage";
 import CClassicAboutMe from "@/components/ClassicAboutMe";
