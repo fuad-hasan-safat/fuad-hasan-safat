@@ -103,8 +103,8 @@ export default function CClassicAboutMe() {
           className="bg-slate-50 mt-16 p-8 rounded-lg text-center"
         >
           <blockquote className="mx-auto max-w-2xl text-slate-600 text-xl italic">
-            "Good code is its own best documentation. Focus on writing clear, 
-            maintainable solutions that stand the test of time."
+          &quot;Good code is its own best documentation. Focus on writing clear, 
+            maintainable solutions that stand the test of time.&quot;
           </blockquote>
         </motion.div>
       </div>
