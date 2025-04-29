@@ -1,6 +1,5 @@
 "use client";
 import { motion } from "framer-motion";
-import InformationCard from "./InformationCard";
 import ClassicInformationCard from "./ClassicInformationCard";
 
 export default function ClassicResume() {
