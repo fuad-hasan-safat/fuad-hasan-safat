@@ -5,6 +5,17 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }
 
 .container{
@@ -114,7 +125,7 @@ body {
 
 .hexagon {
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  @apply w-10 h-10 flex items-center justify-center transition-all;
+  @apply flex justify-center items-center w-10 h-10 transition-all;
 }
 
 @layer base {
