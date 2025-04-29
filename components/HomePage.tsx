@@ -54,7 +54,7 @@ export default function HomePage() {
     };
 
     return (
-        <div className="flex justify-center items-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 shadow-blue-400 shadow-inner hover:shadow-md hover:shadow-slate-100 px-4 sm:px-8 lg:px-16 rounded-tr-[40%] rounded-bl-[40%] w-full min-h-screen">
+        <div className="flex justify-center items-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 px-4 sm:px-8 lg:px-16 w-full min-h-screen">
             <div className="flex md:flex-row flex-col-reverse items-center gap-16 py-16 w-full max-w-7xl">
                 {/* Left Section */}
                 <div className="space-y-10 w-full md:w-1/2">
@@ -205,7 +205,7 @@ export default function HomePage() {
                         <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/30 to-blue-500/30 opacity-40 blur-3xl rounded-full animate-pulse-slow" />
 
                         {/* Image Container */}
-                        <div className="z-10 relative rounded-full ring-8 ring-cyan-400/10 overflow-hidden group-hover:scale-100 transition-transform duration-300">
+                        <div className="z-10 relative rounded-full ring-8 ring-cyan-400/10 overflow-hidden group-hover:scale-105 transition-transform duration-300">
                             <Image
                                 src="/profilepic/fuad.jpg"
                                 alt="Fuad Hasan"
