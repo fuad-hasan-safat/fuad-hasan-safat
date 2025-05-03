@@ -7,8 +7,6 @@
 
 <p align="left"> <a href="https://twitter.com/" target="blank"><img src="https://img.shields.io/twitter/follow/?logo=twitter&style=for-the-badge" alt="" /></a> </p>
 
-[![NASA Project CI](https://github.com/fuad-hasan-safat/Nasa-Project-Github-Action-/actions/workflows/node.yml/badge.svg)](https://github.com/fuad-hasan-safat/Nasa-Project-Github-Action-/actions/workflows/node.yml)
-
 
 - 🔭 I’m currently working on **Lekharpoka, azarapay**
 
@@ -32,3 +30,5 @@
 <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=fuad-hasan-safat&show_icons=true&locale=en" alt="fuad-hasan-safat" /></p>
 
 <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=fuad-hasan-safat&" alt="fuad-hasan-safat" /></p>
+<h3>CI/CD Pipeline</h3>
+[![NASA Project CI](https://github.com/fuad-hasan-safat/Nasa-Project-Github-Action-/actions/workflows/node.yml/badge.svg)](https://github.com/fuad-hasan-safat/Nasa-Project-Github-Action-/actions/workflows/node.yml)
