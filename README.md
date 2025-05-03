@@ -7,6 +7,9 @@
 
 <p align="left"> <a href="https://twitter.com/" target="blank"><img src="https://img.shields.io/twitter/follow/?logo=twitter&style=for-the-badge" alt="" /></a> </p>
 
+[![NASA Project CI](https://github.com/fuad-hasan-safat/Nasa-Project-Github-Action-/actions/workflows/node.yml/badge.svg)](https://github.com/fuad-hasan-safat/Nasa-Project-Github-Action-/actions/workflows/node.yml)
+
+
 - 🔭 I’m currently working on **Lekharpoka, azarapay**
 
 - 🌱 I’m currently learning **GraphQL**
