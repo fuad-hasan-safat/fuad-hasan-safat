@@ -7,13 +7,15 @@
 
 <p align="left"> <a href="https://twitter.com/" target="blank"><img src="https://img.shields.io/twitter/follow/?logo=twitter&style=for-the-badge" alt="" /></a> </p>
 
+<p align="left"><a href="https://github.com/fuad-hasan-safat/Nasa-Project-Github-Action-/actions/workflows/node.yml"> <img align="left" src="https://github.com/fuad-hasan-safat/Nasa-Project-Github-Action-/actions/workflows/node.yml/badge.svg"/></a></p> </br>
+
 - 🔭 I’m currently working on **Lekharpoka, azarapay**
 
-- 🌱 I’m currently learning **web socket, bun js**
+- 🌱 I’m currently learning **GraphQL**
 
 - 👨‍💻 All of my projects are available at [https://fuad-hasan-safat.vercel.app/](https://fuad-hasan-safat.vercel.app/)
 
-- 💬 Ask me about **react, next js, redux, node js, deno js**
+- 💬 Ask me about **react, next js, redux, node js, deno js, nest js, CI/CD pipeline, node cluster**
 
 - 📫 How to reach me **fuadsafat16@gmail.com**
 
@@ -29,3 +31,4 @@
 <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=fuad-hasan-safat&show_icons=true&locale=en" alt="fuad-hasan-safat" /></p>
 
 <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=fuad-hasan-safat&" alt="fuad-hasan-safat" /></p>
+
