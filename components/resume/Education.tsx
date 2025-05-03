@@ -228,60 +228,70 @@ const Education = () => {
 
 
     return (
-        <div className="relative py-16 bg-gray-50">
+        <div className="relative py-8 md:py-16 bg-gray-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 md:mb-12 text-center">
                     Education Timeline
                     <div className="mt-2 w-12 h-1 bg-blue-500 rounded-full mx-auto" />
                 </h2>
-
-                <div className="relative pl-8 sm:pl-24 md:pl-36 space-y-16 before:absolute before:left-0 sm:before:left-[12%] before:top-0 before:w-[2px] before:h-full before:bg-gradient-to-b from-blue-400/50 to-cyan-300/50 before:shadow-[0_0_15px_3px_rgba(96,165,250,0.15)]">
+    
+                <div className="relative md:pl-8 lg:pl-24 xl:pl-36 space-y-8 md:space-y-16 
+                    before:hidden md:before:block before:absolute before:left-0 before:top-0 before:w-[2px] before:h-full before:bg-gradient-to-b from-blue-400/50 to-cyan-300/50 before:shadow-[0_0_15px_3px_rgba(96,165,250,0.15)]">
+                    
                     {educationData.map((item, index) => (
                         <div
                             key={index}
                             className="relative group"
                         >
-                            {/* Animated Timeline Marker */}
-                            <div className="absolute left-0 sm:-left-20 -ml-4 mt-6 flex items-center justify-center">
+                            {/* Timeline Marker - Mobile */}
+                            <div className="md:hidden flex flex-col items-center mb-4">
+                                <div className="w-6 h-6 rounded-full bg-white border-2 border-blue-500 flex items-center justify-center mb-2">
+                                    <div className="w-2 h-2 bg-blue-600 rounded-full" />
+                                </div>
+                                <span className="text-xs font-medium text-blue-600">
+                                    {item.stratpoint}
+                                </span>
+                            </div>
+    
+                            {/* Timeline Marker - Desktop */}
+                            <div className="hidden md:block absolute left-0 md:-left-20 -ml-4 mt-6 items-center justify-center">
                                 <div className="relative group">
-                                    {/* Main marker with interactive border */}
                                     <div className="w-8 h-8 rounded-full bg-white border-2 border-blue-500 flex items-center justify-center 
-            transition-all duration-300 hover:bg-blue-50 hover:scale-110 hover:shadow-md
-            before:absolute before:-inset-2 before:rounded-full before:border-2 before:border-blue-100 before:opacity-0 
-            before:hover:opacity-100 before:transition-opacity">
-
-                                        {/* Animated center dot */}
+                                        transition-all duration-300 hover:bg-blue-50 hover:scale-110 hover:shadow-md
+                                        before:absolute before:-inset-2 before:rounded-full before:border-2 before:border-blue-100 before:opacity-0 
+                                        before:hover:opacity-100 before:transition-opacity">
+                                        
                                         <div className="w-2 h-2 bg-blue-600 rounded-full transition-transform duration-300 
-                group-hover:scale-150 group-hover:bg-cyan-500" />
-
-                                        {/* Year indicator appear on hover */}
+                                            group-hover:scale-150 group-hover:bg-cyan-500" />
+                                        
                                         <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-xs font-medium text-blue-600 
-                opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+                                            opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
                                             {item.stratpoint}➔
                                         </span>
                                     </div>
-
-                                    {/* Subtle connection line */}
                                     <div className="absolute top-8 left-1/2 w-0.5 h-12 bg-gradient-to-b from-blue-200 to-transparent" />
                                 </div>
                             </div>
-                            {/* Dynamic Connector Line */}
-                            <div className="absolute left-0 sm:-left-20 w-[2px] h-16 -bottom-16 bg-gradient-to-b from-cyan-300/50 to-blue-400/50 group-hover:from-cyan-300 group-hover:to-blue-400 transition-colors" />
-
-                            {/* Glowing Card Container */}
-                            <div className="relative transform transition-all duration-500 hover:-translate-y-2 
-                before:absolute before:-inset-1 before:bg-gradient-to-r before:from-blue-400/20 before:to-cyan-300/20 before:rounded-xl before:opacity-0 group-hover:before:opacity-100 before:transition-opacity">
+    
+                            {/* Connector Line - Desktop */}
+                            <div className="hidden md:block absolute left-0 md:-left-20 w-[2px] h-16 -bottom-16 bg-gradient-to-b from-cyan-300/50 to-blue-400/50 group-hover:from-cyan-300 group-hover:to-blue-400 transition-colors" />
+    
+                            {/* Card Container */}
+                            <div className="relative md:transform md:transition-all md:duration-500 md:hover:-translate-y-2 
+                                before:absolute before:-inset-1 before:bg-gradient-to-r before:from-blue-400/20 before:to-cyan-300/20 before:rounded-xl before:opacity-0 md:group-hover:before:opacity-100 before:transition-opacity">
+                                
                                 <InformationCard
                                     title={item.title}
                                     subtitleInfo={
-                                        <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+                                        <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent
+                                            md:text-inherit md:bg-none">
                                             {`${item.subtitle} | ${item.period}`}
                                         </span>
                                     }
                                     cgpa={item.cgpa}
-                                    className="relative bg-gradient-to-br from-white to-gray-50 backdrop-blur-sm border border-gray-200/70 hover:border-blue-200/50 transition-all" // Add className prop to InformationCard
+                                    className="relative bg-gradient-to-br from-white to-gray-50 backdrop-blur-sm border border-gray-200/70 md:hover:border-blue-200/50 transition-all
+                                        md:before:absolute md:before:top-0 md:before:-left-6 md:before:h-full md:before:w-1 md:before:bg-gradient-to-b md:before:from-blue-400 md:before:to-cyan-300 md:before:opacity-0 md:group-hover:before:opacity-100 md:before:transition-opacity md:before:duration-300"
                                 >
-                                    <div className="absolute top-0 -left-6 h-full w-1 bg-gradient-to-b from-blue-400 to-cyan-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                                     {item.content}
                                 </InformationCard>
                             </div>
