@@ -5,7 +5,7 @@ import Image from "next/image";
 import { FiDownload, FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 
 const professions = ["Software Developer", "Web Designer", "Problem Solver"];
-const skills = ["React", "TypeScript", "Node.js", "HTML5", "CSS3", "SQL"];
+const skills = ["React", "TypeScript", "Node.js", "HTML5", "CSS3", "SQL", "MongoDB", "Tailwind CSS", "Figma", "Git", "Next.js", "Express.js", "REST APIs", "GraphQL", "Agile Methodologies"];
 
 export default function ClassicHomePage() {
   const [currentProfession, setCurrentProfession] = useState("");
@@ -74,13 +74,13 @@ export default function ClassicHomePage() {
             </a>
             
             <div className="flex justify-center gap-4">
-              <a href="https://github.com" target="_blank" rel="noopener" className="p-3 text-slate-600 hover:text-slate-800 transition-colors">
+              <a href="https://github.com/fuad-hasan-safat" target="_blank" rel="noopener" className="p-3 text-slate-600 hover:text-slate-800 transition-colors">
                 <FiGithub className="w-6 h-6" />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener" className="p-3 text-slate-600 hover:text-slate-800 transition-colors">
+              <a href="https://linkedin.com/in/fuad-hasan-safat" target="_blank" rel="noopener" className="p-3 text-slate-600 hover:text-slate-800 transition-colors">
                 <FiLinkedin className="w-6 h-6" />
               </a>
-              <a href="mailto:contact@fuadhasan.com" className="p-3 text-slate-600 hover:text-slate-800 transition-colors">
+              <a href="mailto:contact@fuadsafat16@gmail.com" className="p-3 text-slate-600 hover:text-slate-800 transition-colors">
                 <FiMail className="w-6 h-6" />
               </a>
             </div>

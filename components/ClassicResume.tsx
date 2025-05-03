@@ -15,11 +15,11 @@ export default function ClassicResume() {
           Fuad Hasan
         </motion.h1>
         <div className="flex justify-center space-x-6 text-slate-600">
-          <a href="mailto:fuad@example.com" className="hover:text-blue-600 transition-colors">
-            fuad@example.com
+          <a href="mailto:fuadsafat16@gmail.com" className="hover:text-blue-600 transition-colors">
+            mailme
           </a>
           <span>•</span>
-          <a href="https://linkedin.com/in/fuad" className="hover:text-blue-600 transition-colors">
+          <a href="https://linkedin.com/in/fuad-hasan-safat" target="_blank" className="hover:text-blue-600 transition-colors">
             LinkedIn
           </a>
           <span>•</span>
@@ -37,13 +37,16 @@ export default function ClassicResume() {
           
           <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
             <ClassicInformationCard
-              title="Senior Software Engineer"
-              subtitle="Tech Solutions Ltd."
-              duration="2020 - Present"
+              title="Software Engineer"
+              subtitle="Live Media Ltd."
+              duration="2024 - Present"
               location="Dhaka, Bangladesh"
             >
               <ul className="space-y-2 pl-6 text-slate-600 list-disc">
-                <li>Led development of enterprise applications using React and Node.js</li>
+                <li>Led frontend development for 2 enterprise React and Nest applications</li>
+                <li>Development of enterprise applications using React and Node.js</li>
+                <li>Optimized application performance, reducing load times by 30%</li>
+                <li>Collaborated with cross-functional teams to define and implement new features</li>
                 <li>Implemented CI/CD pipelines reducing deployment time by 40%</li>
                 <li>Mentored junior developers in best practices</li>
               </ul>
@@ -62,7 +65,7 @@ export default function ClassicResume() {
               title="BSc in Computer Science"
               subtitle="University of Dhaka"
               duration="2016 - 2020"
-              gpa="3.8/4.0"
+              gpa="3.3/4.0"
             >
               <p className="text-slate-600">
                 Relevant coursework: Algorithms, Data Structures, Web Development, Database Systems
@@ -88,11 +91,11 @@ export default function ClassicResume() {
             </div>
             <div className="bg-slate-50 p-4 rounded-lg">
               <h3 className="mb-2 font-semibold">Backend</h3>
-              <p className="text-slate-600">Node.js, Python, REST APIs</p>
+              <p className="text-slate-600">Node.js, Python, REST APIs, GraphQL, MongoDB, MySQL</p>
             </div>
             <div className="bg-slate-50 p-4 rounded-lg">
               <h3 className="mb-2 font-semibold">Tools</h3>
-              <p className="text-slate-600">Git, Docker, AWS, Jenkins</p>
+              <p className="text-slate-600">Git, Docker, AWS, Jest</p>
             </div>
           </motion.div>
         </section>

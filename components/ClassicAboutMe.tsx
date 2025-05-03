@@ -21,7 +21,7 @@ export default function CClassicAboutMe() {
               <div className="bg-slate-300 w-full h-[2px]" />
               
               <p className="text-slate-600 text-lg leading-relaxed">
-                I&aposm Fuad Hasan, a full-stack developer with 2 years of experience 
+                I am Fuad Hasan, a full-stack developer with 2 years of experience 
                 crafting web applications. My passion lies in creating efficient, 
                 maintainable solutions that solve real-world problems.
               </p>

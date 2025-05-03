@@ -2,20 +2,21 @@ import React from "react";
 
 interface CardProps {
   title: string;
-  subtitleInfo: string;
+  subtitleInfo: React.ReactNode;
   cgpa?: string;
   children: React.ReactNode;
+  className?: string;
 }
 
-export default function InformationCard({ title, subtitleInfo, cgpa, children }: CardProps) {
+export default function InformationCard({ title, subtitleInfo, cgpa, children, className }: CardProps) {
   return (
-    <div className="relative w-full  bg-white rounded-xl md:rounded-2xl shadow-md hover:shadow-xl md:hover:shadow-2xl transition-shadow duration-300 p-6 md:p-8 
-    border border-gray-100 group hover:border-gray-200">
+    <div className={`relative w-full  bg-white rounded-xl md:rounded-2xl shadow-md hover:shadow-xl md:hover:shadow-2xl transition-shadow duration-300 p-6 md:p-8 
+    border border-gray-100 group hover:border-gray-200 ${className}`}>
       {/* Timeline Indicator - Hidden on mobile */}
       <div className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2">
-        <div className="w-full h-5 md:w-6 md:h-6 rounded-full bg-gradient-to-br from-blue-500 to-cyan-400 shadow-md md:shadow-lg flex items-center justify-center">
+        {/* <div className="w-full h-5 md:w-6 md:h-6 rounded-full bg-gradient-to-br from-blue-500 to-cyan-400 shadow-md md:shadow-lg flex items-center justify-center">
           <div className="w-2 h-2 bg-white rounded-full" />
-        </div>
+        </div> */}
       </div>
 
       {/* Header Section */}
