@@ -13,7 +13,7 @@
 
 - 👨‍💻 All of my projects are available at [https://fuad-hasan-safat.vercel.app/](https://fuad-hasan-safat.vercel.app/)
 
-- 💬 Ask me about **react, next js, redux, node js, deno js**
+- 💬 Ask me about **react, next js, redux, node js, deno js, nest js, CI/CD pipeline, node cluster**
 
 - 📫 How to reach me **fuadsafat16@gmail.com**
 
