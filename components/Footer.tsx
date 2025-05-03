@@ -41,7 +41,7 @@ export default function Footer() {
           {/* Social Links */}
           <div className="flex justify-center space-x-6 mb-6">
             <motion.a
-              href="https://github.com/yourusername"
+              href="https://github.com/fuad-hasan-safat"
               target="_blank"
               rel="noopener"
               whileHover={{ y: -2 }}
@@ -51,7 +51,7 @@ export default function Footer() {
             </motion.a>
             
             <motion.a
-              href="https://linkedin.com/in/yourprofile"
+              href="https://linkedin.com/in/fuad-hasan-safat"
               target="_blank"
               rel="noopener"
               whileHover={{ y: -2 }}
@@ -61,7 +61,7 @@ export default function Footer() {
             </motion.a>
             
             <motion.a
-              href="mailto:your@email.com"
+              href="mailto:fuadsafat16@gmail.com"
               whileHover={{ y: -2 }}
               className="p-3 rounded-lg bg-slate-100 hover:bg-red-100 text-slate-600 hover:text-red-600 transition-colors"
             >
