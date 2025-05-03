@@ -7,7 +7,7 @@ const Education = () => {
         {
             title: "Ahsanullah University of Science and Technology",
             subtitle: "B.Sc. in Computer Science and Engineering",
-            cgpa: "3.90/4.00",
+            cgpa: "3.33/4.00",
             content: (
                 <>
                     <div className="grid gap-4 md:grid-cols-2">
