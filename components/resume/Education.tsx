@@ -1,5 +1,5 @@
 // Education.tsx
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import InformationCard from "../InformationCard";
 
 const Education = () => {
@@ -225,36 +225,7 @@ const Education = () => {
             )
         },
     ];
-    const extendedEducation = [...educationData, educationData[0]];
-    const totalItems = extendedEducation.length;
 
-    const [activeIndex, setActiveIndex] = useState(0);
-    const [isHovered, setIsHovered] = useState(false);
-    const [transitionEnabled, setTransitionEnabled] = useState(true);
-
-    const timeoutRef = useRef<NodeJS.Timeout>();
-
-    useEffect(() => {
-        if (!isHovered) {
-            timeoutRef.current = setInterval(() => {
-                setActiveIndex((prev) => (prev + 1) % totalItems);
-            }, 5000);
-        }
-        return () => {
-            if (timeoutRef.current) clearInterval(timeoutRef.current);
-        };
-    }, [isHovered, totalItems]);
-
-    useEffect(() => {
-        if (activeIndex === totalItems - 1) {
-            // When reaching the clone, reset to 0 after animation
-            setTimeout(() => {
-                setTransitionEnabled(false);
-                setActiveIndex(0);
-                setTimeout(() => setTransitionEnabled(true), 20);
-            }, 500);
-        }
-    }, [activeIndex, totalItems]);
 
     return (
         <div className="relative py-16 bg-gray-50">
