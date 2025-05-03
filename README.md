@@ -9,7 +9,7 @@
 
 - 🔭 I’m currently working on **Lekharpoka, azarapay**
 
-- 🌱 I’m currently learning **web socket, bun js**
+- 🌱 I’m currently learning **GraphQL**
 
 - 👨‍💻 All of my projects are available at [https://fuad-hasan-safat.vercel.app/](https://fuad-hasan-safat.vercel.app/)
 
