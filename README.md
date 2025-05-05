@@ -1,13 +1,11 @@
-<h1 align="center">Hi 👋, I'm Fuad Hasan</h1>
-<h3 align="center">A passionate fulstack devloper from Bangladesh</h3>
-
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=fuad-hasan-safat&label=Profile%20views&color=0e75b6&style=flat" alt="fuad-hasan-safat" /> </p>
-
-
-
 <p align="left"><a href="https://github.com/fuad-hasan-safat/Nasa-Project-Github-Action-/actions/workflows/node.yml"> <img align="left" src="https://github.com/fuad-hasan-safat/Nasa-Project-Github-Action-/actions/workflows/node.yml/badge.svg"/></a></p> </br>
 
 [![trophy](https://github-profile-trophy.vercel.app/?username=fuad-hasan-safat&theme=onedark)](https://github.com/fuad-hasan-safat/github-profile-trophy)
+<h1 align="center">Hi 👋, I'm Fuad Hasan</h1>
+<h3 align="center">A passionate fulstack devloper from Bangladesh</h3>
+
+
 
 - 🔭 I’m currently working on **Lekharpoka, azarapay**
 
