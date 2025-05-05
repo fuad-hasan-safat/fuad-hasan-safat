@@ -3,9 +3,7 @@
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=fuad-hasan-safat&label=Profile%20views&color=0e75b6&style=flat" alt="fuad-hasan-safat" /> </p>
 
-<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=fuad-hasan-safat" alt="fuad-hasan-safat" /></a> </p>
 
-<p align="left"> <a href="https://twitter.com/" target="blank"><img src="https://img.shields.io/twitter/follow/?logo=twitter&style=for-the-badge" alt="" /></a> </p>
 
 <p align="left"><a href="https://github.com/fuad-hasan-safat/Nasa-Project-Github-Action-/actions/workflows/node.yml"> <img align="left" src="https://github.com/fuad-hasan-safat/Nasa-Project-Github-Action-/actions/workflows/node.yml/badge.svg"/></a></p> </br>
 
