@@ -9,6 +9,8 @@
 
 <p align="left"><a href="https://github.com/fuad-hasan-safat/Nasa-Project-Github-Action-/actions/workflows/node.yml"> <img align="left" src="https://github.com/fuad-hasan-safat/Nasa-Project-Github-Action-/actions/workflows/node.yml/badge.svg"/></a></p> </br>
 
+[![trophy](https://github-profile-trophy.vercel.app/?username=fuad-hasan-safat&theme=onedark)](https://github.com/fuad-hasan-safat/github-profile-trophy)
+
 - 🔭 I’m currently working on **Lekharpoka, azarapay**
 
 - 🌱 I’m currently learning **GraphQL**
