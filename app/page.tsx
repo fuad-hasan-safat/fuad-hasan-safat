@@ -3,36 +3,60 @@ import { Metadata } from "next";
 
 
 export const metadata: Metadata = {
-  title: "Fuad Hasan Safat - Software Developer",
-  description: "I am Fuad Hasan, a software developer from Rowmari, Kurigram, Bangladesh. I specialize in frontend, backend, and database design, crafting innovative solutions with perseverance and adaptability.",
-  keywords: ["Fuad Hasan", "Software Developer", "Bangladesh", "Full Stack Developer", "Database Design", "Frontend Development", "Backend Development"],
-  authors: [{ name: "Fuad Hasan Safat", url: "https://fuad-hasan-safat.vercel.app/" }],
+  title: "Fuad Hasan Safat | Full Stack Software Developer in Bangladesh",
+  description:
+    "Fuad Hasan Safat is a professional full stack software developer from Rowmari, Kurigram, Bangladesh. Expert in frontend, backend, database design, API development, and modern web technologies.",
+  keywords: [
+    "Fuad Hasan Safat",
+    "Fuad Hasan",
+    "Fuad",
+    "Hasan",
+    "Safat",
+    "Software Developer Bangladesh",
+    "Full Stack Developer Bangladesh",
+    "Frontend Developer Bangladesh",
+    "Backend Developer Bangladesh",
+    "Web Developer Rowmari",
+    "Kurigram Developer",
+    "Modern Web Technologies",
+    "React Developer",
+    "Node.js Developer",
+    "MERN Stack Developer",
+    "API Developer",
+    "Bangladeshi Software Engineer"
+  ],
+  authors: [
+    {
+      name: "Fuad Hasan Safat",
+      url: "https://fuad-hasan-safat.vercel.app/"
+    }
+  ],
   creator: "Fuad Hasan Safat",
   publisher: "Fuad Hasan Safat",
   openGraph: {
-    title: "Fuad Hasan Safat - Software Developer",
-    description: "Discover Fuad Hasan Safat, a software developer from Rowmari, Kurigram, Bangladesh, specializing in modern web technologies, backend development, and database design.",
-    url: "https://fuad-hasan-safat.vercel.app/",  // Update with your actual website URL
-    siteName: "Fuad Hasan Safat",
+    title: "Fuad Hasan Safat | Full Stack Software Developer in Bangladesh",
+    description:
+      "Discover the professional portfolio of Fuad Hasan Safat – a passionate and skilled full stack software developer from Rowmari, Kurigram, Bangladesh. Specialized in modern frontend, backend, and database systems.",
+    url: "https://fuad-hasan-safat.vercel.app/",
+    siteName: "Fuad Hasan Safat - Software Developer",
     images: [
       {
-        url: '/profilepic/fuad.jpg',
+        url: "/profilepic/fuad.jpg",
         width: 1200,
         height: 630,
         alt: "Fuad Hasan Safat Profile Picture"
       }
-    ],
+    ]
   },
   twitter: {
     card: "summary_large_image",
-    site: "@fuad_safat",  // Update with your actual Twitter handle
-    creator: "@fuad_safat", // Update with your actual Twitter handle
-    title: "Fuad Hasan Safat - Software Developer",
-    description: "Software developer from Rowmari, Kurigram, Bangladesh, specializing in modern web development and database design.",
-    images: "/profilepic/fuad.jpg"
-  },
-
-
+    site: "@fuad_safat",
+    creator: "@fuad_safat",
+    title: "Fuad Hasan Safat | Full Stack Developer from Bangladesh",
+    description:
+      "Explore Fuad Hasan Safat’s portfolio – expert in frontend, backend, database design, and scalable web development.",
+    images: ["/profilepic/fuad.jpg"]
+  }
 };
 
 export default function Home() {
