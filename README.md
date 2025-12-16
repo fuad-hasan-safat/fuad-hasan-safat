@@ -21,7 +21,7 @@
 
 ## 🚀 About Me
 
-- 🔭 I’m currently working on **Lekharpoka** and **Azrapay**
+- 🔭 I’m currently working as **Full Stack Web Devloper**
 - 🌱 Currently learning **GraphQL, WebSockets**, and **Serverless architecture**
 - 💡 Exploring **AI integrations**, **real-time apps**, and advanced **CI/CD pipelines**
 - 👨‍💻 All of my projects are showcased at: [fuad-hasan-safat.vercel.app](https://fuad-hasan-safat.vercel.app/)
