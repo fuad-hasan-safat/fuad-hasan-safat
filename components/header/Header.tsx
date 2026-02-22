@@ -7,13 +7,7 @@ import { RootState } from "@/lib/store";
 import { FiMenu, FiX, FiDownload } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
 import { useOnClickOutside } from "usehooks-ts";
-
-type SectionRefs = {
-  home: React.RefObject<HTMLElement>;
-  about: React.RefObject<HTMLElement>;
-  resume: React.RefObject<HTMLElement>;
-  contact: React.RefObject<HTMLElement>;
-};
+import { SectionRefs, SectionKey } from "@/types/sections";
 
 interface HeaderProps {
   sectionRefs: SectionRefs;
@@ -24,16 +18,18 @@ export default function Header({ sectionRefs }: HeaderProps) {
   const [isSticky, setIsSticky] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const activePage = useSelector((state: RootState) => state.header.activePage);
-  const menuRef = useRef<HTMLDivElement>(null);
+  const menuRef = useRef<HTMLElement | null>(null);
 
-  useOnClickOutside(menuRef, () => setMenuOpen(false));
+  useOnClickOutside(menuRef as React.RefObject<HTMLElement>, () =>
+    setMenuOpen(false),
+  );
 
   const handleNavigation = (page: keyof SectionRefs) => {
     dispatch(setActivePage(page));
     setMenuOpen(false);
     sectionRefs[page].current?.scrollIntoView({
       behavior: "smooth",
-      block: "start"
+      block: "start",
     });
   };
 
@@ -47,16 +43,17 @@ export default function Header({ sectionRefs }: HeaderProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [menuOpen]);
 
-  const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'resume', label: 'Resume' },
-    { id: 'contact', label: 'Contact' }
+  const navItems: { id: keyof SectionRefs; label: string }[] = [
+    { id: "home", label: "Home" },
+    { id: "about", label: "About" },
+    { id: "resume", label: "Resume" },
+    { id: "contact", label: "Contact" },
   ];
 
   return (
-    <header className={`fixed w-full top-0 z-50 transition-all duration-300
-      ${isSticky ? 'bg-white/95 backdrop-blur-md shadow-sm' : 'bg-transparent'}`}
+    <header
+      className={`fixed w-full top-0 z-50 transition-all duration-300
+      ${isSticky ? "bg-white/95 backdrop-blur-md shadow-sm" : "bg-transparent"}`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:h-20">
@@ -76,7 +73,9 @@ export default function Header({ sectionRefs }: HeaderProps) {
               />
               <div className="absolute inset-0 rounded-full border-2 border-cyan-400/30 animate-ping-slow" />
             </div>
-            <span className={`text-xl font-bold bg-gradient-to-r from-cyan-600 to-blue-500 bg-clip-text text-transparent`}>
+            <span
+              className={`text-xl font-bold bg-gradient-to-r from-cyan-600 to-blue-500 bg-clip-text text-transparent`}
+            >
               Fuad
             </span>
           </motion.div>
@@ -89,14 +88,16 @@ export default function Header({ sectionRefs }: HeaderProps) {
                 onClick={() => handleNavigation(item.id as keyof SectionRefs)}
                 className="relative px-4 py-2 text-sm font-medium transition-colors"
               >
-                <span className={`transition-colors ${activePage === item.id ? 'text-cyan-600' : 'text-slate-600 hover:text-cyan-500'}`}>
+                <span
+                  className={`transition-colors ${activePage === item.id ? "text-cyan-600" : "text-slate-600 hover:text-cyan-500"}`}
+                >
                   {item.label}
                 </span>
                 {activePage === item.id && (
                   <motion.div
                     className="absolute bottom-0 left-0 w-full h-0.5 bg-cyan-500"
                     layoutId="activeNav"
-                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   />
                 )}
               </button>
@@ -110,7 +111,12 @@ export default function Header({ sectionRefs }: HeaderProps) {
                 Blog
               </Link> */}
               <button
-                onClick={() => window.open("https://docs.google.com/document/d/1dyxCrJJTvh4DfL_aYt3D1Xc4jb-WKbeeY5A4Fe49S50/edit?usp=sharing", "_blank")}
+                onClick={() =>
+                  window.open(
+                    "https://docs.google.com/document/d/1dyxCrJJTvh4DfL_aYt3D1Xc4jb-WKbeeY5A4Fe49S50/edit?usp=sharing",
+                    "_blank",
+                  )
+                }
                 className="flex items-center px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-full hover:shadow-lg transition-shadow"
               >
                 <FiDownload className="mr-2" />
@@ -139,7 +145,7 @@ export default function Header({ sectionRefs }: HeaderProps) {
                 initial={{ opacity: 0, x: 100 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 100 }}
-                transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 ref={menuRef}
                 className="md:hidden fixed top-0 right-0 w-64 h-screen bg-white/95 backdrop-blur-lg shadow-xl p-8"
               >
@@ -148,14 +154,21 @@ export default function Header({ sectionRefs }: HeaderProps) {
                     {navItems.map((item) => (
                       <button
                         key={item.id}
-                        onClick={() => handleNavigation(item.id as keyof SectionRefs)}
-                        className={`text-lg ${activePage === item.id ? 'text-cyan-600' : 'text-slate-700'}`}
+                        onClick={() =>
+                          handleNavigation(item.id as keyof SectionRefs)
+                        }
+                        className={`text-lg ${activePage === item.id ? "text-cyan-600" : "text-slate-700"}`}
                       >
                         {item.label}
                       </button>
                     ))}
                     <button
-                      onClick={() => window.open("https://docs.google.com/document/d/1dyxCrJJTvh4DfL_aYt3D1Xc4jb-WKbeeY5A4Fe49S50/edit?usp=sharing", "_blank")}
+                      onClick={() =>
+                        window.open(
+                          "https://docs.google.com/document/d/1dyxCrJJTvh4DfL_aYt3D1Xc4jb-WKbeeY5A4Fe49S50/edit?usp=sharing",
+                          "_blank",
+                        )
+                      }
                       className="flex items-center px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-full hover:shadow-lg transition-shadow"
                     >
                       <FiDownload className="mr-2" />
@@ -163,7 +176,9 @@ export default function Header({ sectionRefs }: HeaderProps) {
                     </button>
                   </div>
                   <div className="flex items-center justify-center mt-8">
-                    <span className="text-sm text-slate-500">© 2023 Fuad. All rights reserved.</span>
+                    <span className="text-sm text-slate-500">
+                      © 2023 Fuad. All rights reserved.
+                    </span>
                   </div>
                 </div>
               </motion.nav>

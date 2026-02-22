@@ -10,13 +10,15 @@ export default function ClassicHeader() {
   const navRef = useRef<HTMLDivElement>(null);
   const [activeNav, setActiveNav] = useState("home");
   const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'resume', label: 'Resume' },
-    { id: 'contact', label: 'Contact' }
+    { id: "home", label: "Home" },
+    { id: "about", label: "About" },
+    { id: "resume", label: "Resume" },
+    { id: "contact", label: "Contact" },
   ];
 
-  useOnClickOutside(navRef, () => setMenuOpen(false));
+  useOnClickOutside(navRef as React.RefObject<HTMLElement>, () =>
+    setMenuOpen(false),
+  );
 
   return (
     <header className="top-0 z-50 fixed bg-white/95 backdrop-blur-md border-slate-200 border-b w-full">
@@ -70,7 +72,11 @@ export default function ClassicHeader() {
             className="md:hidden p-2 text-slate-600 hover:text-slate-900"
             onClick={() => setMenuOpen(!menuOpen)}
           >
-            {menuOpen ? <FiX className="w-6 h-6" /> : <FiMenu className="w-6 h-6" />}
+            {menuOpen ? (
+              <FiX className="w-6 h-6" />
+            ) : (
+              <FiMenu className="w-6 h-6" />
+            )}
           </button>
         </div>
 

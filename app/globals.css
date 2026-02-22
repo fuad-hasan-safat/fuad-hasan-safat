@@ -1,7 +1,4 @@
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -10,8 +7,15 @@ body {
 
 /* Custom animations */
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 .animate-float {
@@ -19,15 +23,22 @@ body {
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
 }
 
 .group:hover .float-animation {
   animation: float 3s ease-in-out infinite;
 }
 
-.container{
+.container {
   height: 300px;
   width: 300px;
   position: absolute;
@@ -36,7 +47,7 @@ body {
   margin: -150px 0 0 -150px;
 }
 
-.square{
+.square {
   height: 94%;
   width: 94%;
   /* background: white; */
@@ -46,34 +57,39 @@ body {
   margin: -47% 0 0 -47%;
 }
 
-.black{ 
-  background: black;  
-  animation: rotate 13s infinite linear; 
+.black {
+  background: black;
+  animation: rotate 13s infinite linear;
 }
 
-.red{ 
-  background: rgb(232, 38, 38);  
-  animation: rotate 13s infinite linear; 
+.red {
+  background: rgb(232, 38, 38);
+  animation: rotate 13s infinite linear;
 }
 
-.green{ 
-  background: rgb(8, 232, 142);  
-  animation: rotate 13s infinite linear; 
+.green {
+  background: rgb(8, 232, 142);
+  animation: rotate 13s infinite linear;
 }
 
-.blue{ 
-  background: rgb(42, 8, 232);  
-  animation: rotate 13s infinite linear; 
+.blue {
+  background: rgb(42, 8, 232);
+  animation: rotate 13s infinite linear;
 }
 
-.yellow{ 
-  background: rgb(210, 232, 8);  
-  animation: rotate 13s infinite linear; 
+.yellow {
+  background: rgb(210, 232, 8);
+  animation: rotate 13s infinite linear;
 }
 
-@keyframes rotate{
-  0%{ transform: rotate(0deg); }
-  100%{ transform: rotate(360deg); }	
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @layer base {
@@ -104,6 +120,7 @@ body {
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
+
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -137,11 +154,3 @@ body {
   @apply flex justify-center items-center w-10 h-10 transition-all;
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}

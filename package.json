@@ -15,6 +15,7 @@
     "@mui/material": "^6.1.6",
     "@reduxjs/toolkit": "^2.3.0",
     "@remixicon/react": "^4.5.0",
+    "autoprefixer": "^10.4.24",
     "axios": "^1.7.7",
     "bangladatejs": "^1.0.2",
     "class-variance-authority": "^0.7.1",
@@ -33,13 +34,14 @@
     "usehooks-ts": "^3.1.1"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.2.0",
     "@types/node": "^20",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
     "eslint": "^10.0.1",
     "eslint-config-next": "^0.2.4",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.2.0",
     "tailwindcss-filters": "^3.0.0",
     "typescript": "^5.7.2"
   },
