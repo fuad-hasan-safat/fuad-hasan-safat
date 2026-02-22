@@ -2,7 +2,7 @@ import styles from "@/components/LoaderHeart.module.css";
 
 const LoaderHeart = () => {
   return (
-    <div className={styles.container}>
+    <div className={styles["loader-container"]}>
       <div className={styles.preloader}>
         <span></span>
         <span></span>
