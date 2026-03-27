@@ -18,13 +18,20 @@ export default function Resume() {
         skill: ProfessionalSkill,
     }[selectedButton];
 
+    const startDate = new Date('2024-02-18');
+    const professionalExprience = Math.floor((new Date().getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24 * 30)); // Approximate months
+    const professionalExprienceYear = Math.floor(professionalExprience / 12);
+    const professionalExprienceMonth = professionalExprience % 12;
+
     return (
         <div className="flex flex-col items-center px-4 sm:px-8 w-full min-h-full space-y-8">
             {/* Header Section */}
             <div className="text-center space-y-4">
                 <div className="inline-flex items-center bg-gradient-to-r from-cyan-500 to-blue-600 px-6 py-2 rounded-full shadow-lg">
                     <span className="text-sm font-semibold text-white tracking-wide">
-                        1 Year 4 Months Professional Experience
+                        {professionalExprienceYear > 0 && `${professionalExprienceYear} year${professionalExprienceYear > 1 ? 's' : ''} `}
+                        {professionalExprienceMonth > 0 && `${professionalExprienceMonth} month${professionalExprienceMonth > 1 ? 's' : ''} `}
+                        Professional Experience
                     </span>
                 </div>
                 <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">

@@ -213,7 +213,7 @@ export default function HomePage() {
               <p>📍 Relocating to Germany (Harz University of Applied Sciences)</p>
               <p>🎓 MSc in Technology and Innovation Management</p>
               <p>💼 Available for Werkstudent roles</p>
-              <p>🗣 English (Fluent), German (Learning)</p>
+              <p>🗣 English (Fluent), German (Learning A1)</p>
             </div>
           </motion.div>
         </div>
