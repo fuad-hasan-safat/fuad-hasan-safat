@@ -7,58 +7,81 @@ import { HeroProviders } from "./heroproviders";
 import Head from "next/head";
 
 export const metadata: Metadata = {
-  title: "Fuad Hasan Safat | Full Stack Software Developer in Bangladesh",
+  title: "Fuad Hasan | Werkstudent Full Stack Developer in Germany | MERN, NestJS",
+  
   description:
-    "Fuad Hasan Safat is a professional full stack software developer from Rowmari, Kurigram, Bangladesh. Expert in frontend, backend, database design, API development, and modern web technologies.",
+    "Fuad Hasan is a Full Stack Developer based in Germany with 2+ years of experience in MERN and NestJS. MSc student in Innovation & Technology Management at Harz University. Open to Werkstudent Software Developer roles in Germany.",
+  
   keywords: [
-    "Fuad Hasan Safat",
+    // Core Identity
     "Fuad Hasan",
-    "Fuad",
-    "Hasan",
-    "Safat",
-    "Software Developer Bangladesh",
-    "Full Stack Developer Bangladesh",
-    "Frontend Developer Bangladesh",
-    "Backend Developer Bangladesh",
-    "Web Developer Rowmari",
-    "Kurigram Developer",
-    "Modern Web Technologies",
-    "React Developer",
-    "Node.js Developer",
-    "MERN Stack Developer",
-    "API Developer",
-    "Bangladeshi Software Engineer"
+    "Full Stack Developer Germany",
+    "Software Developer Germany",
+
+    // Primary Target (VERY IMPORTANT)
+    "Werkstudent Software Developer Germany",
+    "Werkstudent Full Stack Developer",
+    "Werkstudent Node.js Developer",
+    "Werkstudent React Developer",
+
+    // Student + Hiring Intent
+    "Student Software Developer Germany",
+    "International Student Developer Germany",
+    "Part-time Developer Germany",
+    "Working Student Developer Germany",
+
+    // Tech Stack SEO
+    "MERN Stack Developer Germany",
+    "NestJS Developer Germany",
+    "React Next.js Developer Germany",
+    "Node.js Backend Developer Germany",
+    "API Developer Germany",
+
+    // Recruiter Search Variations
+    "Junior Software Engineer Germany",
+    "Full Stack Engineer Germany",
+    "Web Developer Germany",
+    "Backend Developer NestJS",
+    "Frontend Developer React",
+
+    // University Signal
+    "Harz University Student Developer",
+    "MSc Student Germany Developer"
   ],
+
   authors: [
     {
-      name: "Fuad Hasan Safat",
-      url: "https://fuad-hasan-safat.vercel.app/"
+      name: "Fuad Hasan",
+      url: "https://fuadhasan.pro.bd/"
     }
   ],
-  creator: "Fuad Hasan Safat",
-  publisher: "Fuad Hasan Safat",
+
+  creator: "Fuad Hasan",
+  publisher: "Fuad Hasan",
+
   openGraph: {
-    title: "Fuad Hasan Safat | Full Stack Software Developer in Bangladesh",
+    title: "Fuad Hasan | Werkstudent Full Stack Developer | Germany",
     description:
-      "Discover the professional portfolio of Fuad Hasan Safat – a passionate and skilled full stack software developer from Rowmari, Kurigram, Bangladesh. Specialized in modern frontend, backend, and database systems.",
-    url: "https://fuad-hasan-safat.vercel.app/",
-    siteName: "Fuad Hasan Safat - Software Developer",
+      "Full Stack Developer based in Germany with experience in MERN and NestJS. MSc student at Harz University. Actively seeking Werkstudent Software Developer opportunities.",
+    url: "https://fuadhasan.pro.bd/",
+    siteName: "Fuad Hasan - Werkstudent Developer",
     images: [
       {
         url: "/profilepic/fuad.jpg",
         width: 1200,
         height: 630,
-        alt: "Fuad Hasan Safat Profile Picture"
+        alt: "Fuad Hasan Profile Picture"
       }
     ]
   },
+
   twitter: {
     card: "summary_large_image",
     site: "@fuad_safat",
     creator: "@fuad_safat",
-    title: "Fuad Hasan Safat | Full Stack Developer from Bangladesh",
+    title: "Werkstudent Full Stack Developer in Germany | Fuad Hasan",
     description:
-      "Explore Fuad Hasan Safat’s portfolio – expert in frontend, backend, database design, and scalable web development.",
+      "MERN & NestJS developer based in Germany. MSc student at Harz University. Open to Werkstudent roles.",
     images: ["/profilepic/fuad.jpg"]
   }
 };
