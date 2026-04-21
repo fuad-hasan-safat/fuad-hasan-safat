@@ -225,18 +225,18 @@ export default function HomePage() {
           transition={{ duration: 0.8 }}
           className="flex justify-center w-full md:w-1/2"
         >
-          <div className="group relative w-72 md:w-96 h-72 md:h-96">
+          <div className="group relative w-72 md:w-72 h-72 md:h-72 rounded-full ring-8 ring-cyan-400/10 overflow-hidden">
             {/* Gradient Background */}
             <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/30 to-blue-500/30 opacity-40 blur-3xl rounded-full animate-pulse-slow" />
 
             {/* Image Container */}
-            <div className="z-10 relative rounded-full ring-8 ring-cyan-400/10 overflow-hidden group-hover:scale-105 transition-transform duration-300">
+            <div className="z-10 relative rounded-full ring-8  ring-cyan-400/10 overflow-hidden group-hover:scale-105 transition-transform duration-300">
               <Image
-                src="/profilepic/fuad.jpg"
+                src="/profilepic/Fuad_Hasan_Safat_Pro.png"
                 alt="Fuad Hasan"
                 width={512}
                 height={512}
-                className="w-full h-full object-cover"
+                className="w-full object-cover overflow-hidden"
               />
             </div>
 
