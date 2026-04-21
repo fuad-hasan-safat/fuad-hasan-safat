@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     siteName: "Fuad Hasan - Werkstudent Developer",
     images: [
       {
-        url: "/profilepic/Fuad_Hasan_Pro.jpg",
+        url: "/profilepic/Fuad_Hasan_Safat_Pro.png",
         width: 1200,
         height: 630,
         alt: "Fuad Hasan Profile Picture"
@@ -82,7 +82,7 @@ export const metadata: Metadata = {
     title: "Werkstudent Full Stack Developer in Germany | Fuad Hasan",
     description:
       "MERN & NestJS developer based in Germany. MSc student at Harz University. Open to Werkstudent roles.",
-    images: ["/profilepic/Fuad_Hasan_Pro.jpg"]
+    images: ["/profilepic/Fuad_Hasan_Safat_Pro.png"]
   }
 };
 
@@ -141,7 +141,7 @@ export default function RootLayout({
       <html lang="en">
         <Head>
           {/* <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap" rel="stylesheet"></link> */}
-          <meta property="og:image" content="/profilepic/Fuad_Hasan_Pro.jpg" />
+          <meta property="og:image" content="/profilepic/Fuad_Hasan_Safat_Pro.png" />
           <meta property="og:image:type" content="image/png" />
           <meta property="og:image:width" content="630" />
           <meta property="og:image:height" content="630" />

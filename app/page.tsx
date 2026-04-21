@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     siteName: "Fuad Hasan - Full Stack Developer",
     images: [
       {
-        url: "/profilepic/Fuad_Hasan_Pro.jpg",
+        url: "/profilepic/Fuad_Hasan_Safat_Pro.png",
         width: 1200,
         height: 630,
         alt: "Fuad Hasan Profile Picture"
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     title: "Werkstudent Full Stack Developer in Germany | Fuad Hasan",
     description:
       "Full Stack Developer (MERN & NestJS) based in Germany. MSc student at Hochschule Harz. Open to Werkstudent roles.",
-    images: ["/profilepic/Fuad_Hasan_Pro.jpg"]
+    images: ["/profilepic/Fuad_Hasan_Safat_Pro.png"]
   }
 };
 
