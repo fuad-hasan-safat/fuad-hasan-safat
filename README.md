@@ -52,7 +52,7 @@ at Live Media Ltd., Bangladesh
 📫 Email: **[fuadsafat16@gmail.com](mailto:fuadsafat16@gmail.com)**
 
 🌐 Portfolio:
-**https://fuad-hasan-safat.vercel.app**
+**https://fuadhasan.pro.bd/**
 
 ---
 
