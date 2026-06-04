@@ -1,4 +1,3 @@
-// InformationCard.tsx (simplified)
 import React from "react";
 
 interface CardProps {
@@ -11,28 +10,20 @@ interface CardProps {
 
 export default function InformationCard({ title, subtitleInfo, cgpa, children, className }: CardProps) {
   return (
-    <div className={`bg-white rounded-xl border border-gray-200 p-6 ${className}`}>
-      {/* Header Section */}
+    <div className={`bg-slate-800/40 backdrop-blur-sm rounded-xl border border-slate-700/50 p-6 ${className}`}>
       <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-4">
         <div className="flex-1">
-          <h1 className="text-xl font-bold text-gray-800">
-            {title}
-          </h1>
-          <h2 className="text-sm text-gray-600 mt-1">
-            {subtitleInfo}
-          </h2>
+          <h1 className="text-lg font-bold text-white">{title}</h1>
+          <h2 className="text-sm text-slate-400 mt-1">{subtitleInfo}</h2>
         </div>
-        
         {cgpa && (
-          <div className="flex items-center bg-gray-100 px-3 py-1 rounded-full self-start md:self-auto">
-            <span className="text-sm font-semibold text-gray-700">{cgpa}</span>
-            <span className="text-xs text-gray-600 ml-1">CGPA</span>
+          <div className="flex items-center bg-cyan-400/10 border border-cyan-400/20 px-3 py-1 rounded-full self-start">
+            <span className="text-sm font-semibold text-cyan-400">{cgpa}</span>
+            <span className="text-xs text-cyan-400/70 ml-1">CGPA</span>
           </div>
         )}
       </div>
-
-      {/* Content */}
-      <div className="space-y-4 text-gray-700 text-sm border-t border-gray-100 pt-4">
+      <div className="space-y-4 text-slate-300 text-sm border-t border-slate-700/50 pt-4">
         {children}
       </div>
     </div>

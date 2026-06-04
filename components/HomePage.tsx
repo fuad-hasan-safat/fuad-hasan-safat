@@ -15,7 +15,7 @@ import {
 
 const words = [
   "MERN & NestJS Developer",
-  "Incoming MSc @ Hochschile Harz",
+  "MSc Student @ Hochschule Harz",
   "Open to Werkstudent Roles (Germany)",
 ];
 
@@ -77,7 +77,8 @@ export default function HomePage() {
                 transition={{ delay: 0.4 }}
                 className="bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 font-medium text-transparent text-lg uppercase tracking-widest"
               >
-                Full-Stack Engineer | Open to Work in Germany
+                Full-Stack Engineer | Based in Germany | Seeking Werkstudent
+                Roles
               </motion.div>
 
               <h1 className="font-bold text-5xl md:text-7xl leading-tight">
@@ -103,8 +104,8 @@ export default function HomePage() {
               >
                 Crafting scalable full-stack applications using MERN and NestJS
                 with a strong focus on clean architecture and performance.
-                Incoming MSc student in Innovation & Technology Management at
-                Harz University, Germany. Actively seeking Werkstudent
+                Currently pursuing an MSc in Innovation & Technology Management
+                at Harz University, Germany. Actively seeking Werkstudent
                 (part-time) opportunities where I can contribute to real-world
                 products, collaborate in agile teams, and grow within the German
                 tech ecosystem.
@@ -210,7 +211,9 @@ export default function HomePage() {
               </div>
             </div>
             <div className="text-slate-400 text-sm space-y-1">
-              <p>📍 Relocating to Germany (Harz University of Applied Sciences)</p>
+              <p>
+                📍 Based in Harz, Germany (Harz University of Applied Sciences)
+              </p>
               <p>🎓 MSc in Technology and Innovation Management</p>
               <p>💼 Available for Werkstudent roles</p>
               <p>🗣 English (Fluent), German (Learning A1)</p>
@@ -232,7 +235,7 @@ export default function HomePage() {
             {/* Image Container */}
             <div className="z-10 relative rounded-full ring-8  ring-cyan-400/10 overflow-hidden group-hover:scale-110 transition-transform duration-300">
               <Image
-                src="/profilepic/Fuad_Hasan_Pro.jpg"
+                src="/profilepic/fuad.png"
                 alt="Fuad Hasan"
                 width={512}
                 height={512}
