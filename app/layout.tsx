@@ -1,17 +1,24 @@
 import "./globals.css";
 import localFont from "next/font/local";
 import { Metadata } from "next";
-import { Inter, Dancing_Script, Exo_2, Playwrite_US_Modern, Geologica } from 'next/font/google';
+import {
+  Inter,
+  Dancing_Script,
+  Exo_2,
+  Playwrite_US_Modern,
+  Geologica,
+} from "next/font/google";
 import { Providers } from "@/lib/Providers";
 import { HeroProviders } from "./heroproviders";
 import Head from "next/head";
 
 export const metadata: Metadata = {
-  title: "Fuad Hasan | Werkstudent Full Stack Developer in Germany | MERN, NestJS",
-  
+  title:
+    "Fuad Hasan | Werkstudent Full Stack Developer in Germany | MERN, NestJS",
+
   description:
     "Fuad Hasan is a Full Stack Developer based in Germany with 2+ years of experience in MERN and NestJS. MSc student in Innovation & Technology Management at Harz University. Open to Werkstudent Software Developer roles in Germany.",
-  
+
   keywords: [
     // Core Identity
     "Fuad Hasan",
@@ -46,14 +53,14 @@ export const metadata: Metadata = {
 
     // University Signal
     "Harz University Student Developer",
-    "MSc Student Germany Developer"
+    "MSc Student Germany Developer",
   ],
 
   authors: [
     {
       name: "Fuad Hasan",
-      url: "https://fuadhasan.pro.bd/"
-    }
+      url: "https://fuadhasan.pro.bd/",
+    },
   ],
 
   creator: "Fuad Hasan",
@@ -67,12 +74,12 @@ export const metadata: Metadata = {
     siteName: "Fuad Hasan - Werkstudent Developer",
     images: [
       {
-        url: "/profilepic/Fuad_Hasan_Safat_Pro.png",
+        url: "/profilepic/FUADlogo.png",
         width: 1200,
         height: 630,
-        alt: "Fuad Hasan Profile Picture"
-      }
-    ]
+        alt: "Fuad Hasan Profile Picture",
+      },
+    ],
   },
 
   twitter: {
@@ -82,26 +89,25 @@ export const metadata: Metadata = {
     title: "Werkstudent Full Stack Developer in Germany | Fuad Hasan",
     description:
       "MERN & NestJS developer based in Germany. MSc student at Harz University. Open to Werkstudent roles.",
-    images: ["/profilepic/Fuad_Hasan_Safat_Pro.png"]
-  }
+    images: ["/profilepic/FUADlogo.png"],
+  },
 };
 
-
 const inter = Inter({
-  subsets: ['latin'],
-  variable: '--inter',
+  subsets: ["latin"],
+  variable: "--inter",
 });
 
 const dancing_script = Dancing_Script({
-  subsets: ['latin'],
-  variable: '--dancing_script',
-  weight: ["400", "500", "600", "700"]
+  subsets: ["latin"],
+  variable: "--dancing_script",
+  weight: ["400", "500", "600", "700"],
 });
 
 const exo_2 = Exo_2({
-  subsets: ['latin'],
+  subsets: ["latin"],
   variable: "--exo_2",
-  weight: ["400", "500", "600", "700"]
+  weight: ["400", "500", "600", "700"],
 });
 
 const playwrite = Playwrite_US_Modern({
@@ -109,9 +115,8 @@ const playwrite = Playwrite_US_Modern({
   display: "swap",
   fallback: ["serif", "sans-serif"],
   variable: "--playwrite",
-  weight: ["400", "100", "200", "300"]
+  weight: ["400", "100", "200", "300"],
 });
-
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -125,11 +130,10 @@ const geistMono = localFont({
 });
 
 const geologica = Geologica({
-  subsets: ['latin'],
-  variable: '--geologica',
-  weight: ["400", "500", "600", "700"]
+  subsets: ["latin"],
+  variable: "--geologica",
+  weight: ["400", "500", "600", "700"],
 });
-
 
 export default function RootLayout({
   children,
@@ -141,7 +145,7 @@ export default function RootLayout({
       <html lang="en">
         <Head>
           {/* <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap" rel="stylesheet"></link> */}
-          <meta property="og:image" content="/profilepic/Fuad_Hasan_Safat_Pro.png" />
+          <meta property="og:image" content="/profilepic/FUADlogo.png" />
           <meta property="og:image:type" content="image/png" />
           <meta property="og:image:width" content="630" />
           <meta property="og:image:height" content="630" />
@@ -149,14 +153,9 @@ export default function RootLayout({
         <body
           className={`${inter.variable} ${dancing_script.variable} ${exo_2.variable} ${geistSans.variable} ${geistMono.variable} ${playwrite.variable} ${geologica.variable} antialiased`}
         >
-
-
-          <HeroProviders>
-            {children}
-          </HeroProviders>
-
+          <HeroProviders>{children}</HeroProviders>
         </body>
       </html>
     </Providers>
-  )
+  );
 }
