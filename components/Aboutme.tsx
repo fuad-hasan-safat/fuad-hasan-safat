@@ -1,98 +1,150 @@
-import React from 'react';
-import HighlightWords from './HighlightWords';
+"use client";
+import HighlightWords from "./HighlightWords";
+
+const highlights = [
+  "Fuad Hasan",
+  "Next.js",
+  "React",
+  "Node.js",
+  "NestJS",
+  "Associate Software Engineer",
+  "Live Media Ltd",
+  "Harz University",
+];
 
 export default function AboutMe() {
-    return (
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <div className="relative bg-white rounded-[2rem] shadow-2xl p-8 md:p-12 lg:p-16 border-8 border-indigo-50/60 backdrop-blur-sm overflow-hidden">
-                {/* Decorative Elements */}
-                <div className="absolute inset-0 opacity-5 bg-[url('/noise.png')]" />
-                <div className="absolute -right-20 -top-20 w-96 h-96 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-full blur-2xl" />
+  return (
+    <div className="space-y-10 w-full">
+      {/* Header */}
+      <div className="text-center space-y-2">
+        <h2 className="text-4xl md:text-5xl font-bold bg-linear-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+          About Fuad
+        </h2>
+        <p className="text-slate-400 text-lg">
+          Full-Stack Engineer · M.Eng Student · Open to Werkstudent Roles
+        </p>
+      </div>
 
-                {/* Content Container */}
-                <div className="relative z-10 space-y-8">
-                    <h1 className="text-4xl md:text-5xl font-bold text-center bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
-                        About Fuad
-                    </h1>
+      {/* Main layout */}
+      <div className="grid md:grid-cols-5 gap-6">
+        {/* Left — bio */}
+        <div className="md:col-span-3 space-y-5">
+          <p className="text-slate-300 text-base leading-relaxed text-justify">
+            <HighlightWords
+              highlightWords={highlights}
+              highlightClassName="text-cyan-400 font-semibold"
+            >
+              {`Hello! I'm Fuad Hasan, a full-stack developer with 2+ years of professional experience building scalable web applications. I work as an Associate Software Engineer at Live Media Ltd, designing backend systems and responsive frontend applications with a focus on clean architecture and performance. I'm currently pursuing my MSc at Harz University, Germany, and actively seeking Werkstudent opportunities to contribute to real-world engineering teams.`}
+            </HighlightWords>
+          </p>
 
-                    <div className="grid md:grid-cols-2 gap-8 items-start">
-                        {/* Text Content */}
-                        <div className="space-y-6 text-lg leading-relaxed text-gray-700">
-                            <HighlightWords
-                                highlightWords={['Fuad Hasan', 'Software Developer', 'Next.js', 'React', 'Node.js', 'Redux', 'Bun', 'Elysia.js', 'Associate Software Engineer', 'Live Media Ltd']}
-                                highlightClassName="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent font-semibold"
-                            >
-                                <div className="space-y-6">
-                                    <p className="text-xl">
-                                        👋 Hello! I'm <strong>Fuad Hasan</strong>, a full-stack developer with 2+ years of professional experience building scalable web applications using MERN and NestJS.
+          {/* Professional Focus */}
+          <div className="bg-slate-800/40 backdrop-blur-sm rounded-xl border border-slate-700/50 p-5 space-y-2">
+            <h3 className="text-sm font-semibold text-cyan-400 uppercase tracking-wide">
+              Professional Focus
+            </h3>
+            <p className="text-slate-300 text-sm leading-relaxed text-justify">
+              Designing and building scalable full-stack systems — from RESTful
+              API architecture and database optimization to responsive,
+              accessible frontends. Strong focus on clean code, SOLID
+              principles, and production-grade reliability.
+            </p>
+          </div>
 
-                                        I will be pursuing my MSc in Innovation & Technology Management at Harz University, Germany, and I am actively seeking Werkstudent (part-time) opportunities where I can contribute to real-world engineering teams.
-                                    </p>
-
-                                    <div className="p-6 bg-indigo-50/30 rounded-xl border border-indigo-100">
-                                        <h3 className="text-lg font-semibold text-indigo-600 mb-3">Professional Focus</h3>
-                                        <p>
-                                            Currently working as an <strong>Associate Software Engineer @Live Media Ltd</strong>,
-                                            where I design and develop scalable backend systems and responsive frontend applications.
-
-                                            My work focuses on clean architecture, API design, performance optimization, and maintainable codebases.
-                                        </p>
-                                    </div>
-
-                                    <div className="p-6 bg-teal-50/30 rounded-xl border border-teal-100">
-                                        <h3 className="text-lg font-semibold text-teal-600 mb-3">Technical Arsenal</h3>
-                                        <p>
-                                            Core stack: <strong>React / Next.js</strong>, <strong>Node.js</strong>, and <strong>NestJS</strong>.
-
-                                            Experienced in building REST APIs, and scalable systems using MongoDB and MySql.
-
-                                            Strong focus on clean architecture, SOLID principles, and production-ready code.
-                                        </p>
-                                    </div>
-
-                                </div>
-                            </HighlightWords>
-                        </div>
-
-                        {/* Personal Side */}
-                        <div className="space-y-6">
-                            <div className="p-6 bg-amber-50/30 rounded-xl border border-amber-100">
-                                <h3 className="text-lg font-semibold text-amber-600 mb-3">Beyond Code</h3>
-                                <p className="text-gray-700 leading-relaxed">
-                                    🌿 Plant enthusiast nurturing a small indoor jungle<br />
-                                    📚 Constant learner exploring new tech frontiers<br />
-                                    🎨 Appreciator of good design and user experiences<br />
-                                    ☕️ Coffee-fueled coding sessions enthusiast
-                                </p>
-                            </div>
-
-                            <div className="p-6 bg-blue-50/30 rounded-xl border border-blue-100">
-                                <h3 className="text-lg font-semibold text-blue-600 mb-3">Work Eligibility</h3>
-                                <p>
-                                    📍 Relocating to Germany (Harz University)<br />
-                                    🎓 MSc in Innovation & Technology Management<br />
-                                    💼 Open to Werkstudent (part-time) roles<br />
-                                    🗣 English (Fluent), German (Learning)
-                                </p>
-                            </div>
-
-                            <div className="p-6 bg-pink-50/30 rounded-xl border border-pink-100">
-                                <h3 className="text-lg font-semibold text-pink-600 mb-3">Collaboration</h3>
-                                <p className="text-gray-700 leading-relaxed">
-                                    💡 Strong problem-solving mindset with focus on real-world impact<br />
-                                    🤝 Experience working in collaborative environments<br />
-                                    🚀 Comfortable contributing to production systems and team workflows
-                                </p>
-                                <button
-                                    onClick={() => window.open('https://www.linkedin.com/in/fuad-hasan-safat/', '_blank')}
-                                    className="mt-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-6 py-2 rounded-full hover:shadow-lg transition-shadow">
-                                    Let&apos;s Connect →
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          {/* Technical Stack */}
+          <div className="bg-slate-800/40 backdrop-blur-sm rounded-xl border border-slate-700/50 p-5 space-y-3">
+            <h3 className="text-sm font-semibold text-cyan-400 uppercase tracking-wide">
+              Core Stack
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {[
+                "React / Next.js",
+                "Node.js",
+                "NestJS",
+                "MongoDB",
+                "MySQL",
+                "Redux",
+                "TypeScript",
+                "REST APIs",
+              ].map((tech) => (
+                <span
+                  key={tech}
+                  className="px-3 py-1 text-xs text-cyan-400/80 bg-cyan-400/10 border border-cyan-400/20 rounded-full"
+                >
+                  {tech}
+                </span>
+              ))}
             </div>
+          </div>
         </div>
-    );
+
+        {/* Right — info cards */}
+        <div className="md:col-span-2 space-y-4">
+          {/* Work Eligibility */}
+          <div className="bg-slate-800/40 backdrop-blur-sm rounded-xl border border-slate-700/50 p-5 space-y-3">
+            <h3 className="text-sm font-semibold text-cyan-400 uppercase tracking-wide">
+              Work Eligibility
+            </h3>
+            <ul className="space-y-2 text-sm text-slate-300">
+              <li className="flex items-start gap-2">
+                <span>📍</span> Harz, Germany (Hochschule Harz)
+              </li>
+              <li className="flex items-start gap-2">
+                <span>🎓</span> MSc in Innovation & Technology Management
+              </li>
+              <li className="flex items-start gap-2">
+                <span>💼</span> Open to Werkstudent (part-time) roles
+              </li>
+              <li className="flex items-start gap-2">
+                <span>🗣</span> English (Fluent), German (A1, Learning)
+              </li>
+            </ul>
+          </div>
+
+          {/* Beyond Code */}
+          <div className="bg-slate-800/40 backdrop-blur-sm rounded-xl border border-slate-700/50 p-5 space-y-3">
+            <h3 className="text-sm font-semibold text-cyan-400 uppercase tracking-wide">
+              Beyond Code
+            </h3>
+            <ul className="space-y-2 text-sm text-slate-300">
+              <li className="flex items-start gap-2">
+                <span>🌿</span> Nurturing a small indoor plant collection
+              </li>
+              <li className="flex items-start gap-2">
+                <span>📚</span> Constant learner, exploring new tech frontiers
+              </li>
+              <li className="flex items-start gap-2">
+                <span>🎨</span> Appreciator of good design and UX
+              </li>
+              <li className="flex items-start gap-2">
+                <span>☕</span> Coffee-fueled late-night coding
+              </li>
+            </ul>
+          </div>
+
+          {/* Collaboration + CTA */}
+          <div className="bg-slate-800/40 backdrop-blur-sm rounded-xl border border-slate-700/50 p-5 space-y-4">
+            <h3 className="text-sm font-semibold text-cyan-400 uppercase tracking-wide">
+              Collaboration
+            </h3>
+            <p className="text-sm text-slate-400 leading-relaxed">
+              Problem-solving mindset, experience in agile teams, and
+              comfortable contributing to production systems from day one.
+            </p>
+            <button
+              onClick={() =>
+                window.open(
+                  "https://www.linkedin.com/in/fuad-hasan-safat/",
+                  "_blank",
+                )
+              }
+              className="w-full py-2.5 bg-linear-to-r from-cyan-500 to-blue-600 text-white text-sm font-semibold rounded-lg hover:opacity-90 transition-opacity"
+            >
+              Let&apos;s Connect →
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
