@@ -16,7 +16,7 @@ import {
 const roles = [
   "Full Stack Developer",
   "MERN & NestJS Engineer",
-  "MSc Student @ Hochschule Harz",
+  "M.Eng Student @ Hochschule Harz",
   "Open to Werkstudent Roles",
 ];
 

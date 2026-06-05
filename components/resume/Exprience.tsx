@@ -130,7 +130,7 @@ const ExperienceLayout = () => {
 
       {/* Germany info */}
       <div className="flex flex-wrap gap-x-3 gap-y-1 text-sm text-slate-400">
-        <span>🎓 MSc @ Hochschule Harz, Germany</span>
+        <span>🎓 M.Eng @ Hochschule Harz, Germany</span>
         <span className="hidden sm:inline text-slate-600">•</span>
         <span>💼 Open to Werkstudent roles</span>
         <span className="hidden sm:inline text-slate-600">•</span>

@@ -34,7 +34,7 @@ export default function AboutMe() {
               highlightWords={highlights}
               highlightClassName="text-cyan-400 font-semibold"
             >
-              {`Hello! I'm Fuad Hasan, a full-stack developer with 2+ years of professional experience building scalable web applications. I work as an Associate Software Engineer at Live Media Ltd, designing backend systems and responsive frontend applications with a focus on clean architecture and performance. I'm currently pursuing my MSc at Harz University, Germany, and actively seeking Werkstudent opportunities to contribute to real-world engineering teams.`}
+              {`Hello! I'm Fuad Hasan, a full-stack developer with 2+ years of professional experience building scalable web applications. I worked as an Software Engineer(Fullstack Web App) at Live Media Ltd, designing backend systems and responsive frontend applications with a focus on clean architecture and performance. I'm currently pursuing my M.Eng at Harz University, Germany, and actively seeking Werkstudent opportunities to contribute to real-world engineering teams.`}
             </HighlightWords>
           </p>
 
@@ -90,7 +90,7 @@ export default function AboutMe() {
                 <span>📍</span> Harz, Germany (Hochschule Harz)
               </li>
               <li className="flex items-start gap-2">
-                <span>🎓</span> MSc in Innovation & Technology Management
+                <span>🎓</span> M.Eng in Technology and Innovation Management
               </li>
               <li className="flex items-start gap-2">
                 <span>💼</span> Open to Werkstudent (part-time) roles
