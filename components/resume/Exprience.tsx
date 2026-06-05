@@ -60,7 +60,7 @@ const notableWorks = [
     contribution:
       "Subscription-based entertainment portal — upgraded backend, improved security, implemented live streaming features.",
     performance: "~45% faster load time",
-    link: "https://starzone.example.com",
+    link: "http://starzone.mobi",
   },
   {
     name: "Azrapay",
@@ -68,23 +68,31 @@ const notableWorks = [
     contribution:
       "Mobile top-up platform — built APIs, integrated third-party services, handled async requests.",
     performance: "~35% API response boost",
-    link: "https://azrapay.example.com",
+    link: "https://azrapay.com",
   },
+  // {
+  //   name: "Lekhar Poka",
+  //   role: "Junior Programmer",
+  //   contribution:
+  //     "Publishing platform for posts and audiobooks — developed frontend features, integrated REST APIs and SSLcommerce billing.",
+  //   performance: "~30% page load improvement",
+  //   link: "https://lekharpoka.example.com",
+  // },
   {
-    name: "Lekhar Poka",
+    name: "Cinematic",
     role: "Junior Programmer",
     contribution:
-      "Publishing platform for posts and audiobooks — developed frontend features, integrated REST APIs and SSLcommerce billing.",
-    performance: "~30% page load improvement",
-    link: "https://lekharpoka.example.com",
+      "OTT video streaming platform — led migration from Node.js 14 to Node.js 24, refactored UI from Styled Components to Tailwind CSS, resolved legacy dependency issues, and improved application scalability and maintainability.",
+    performance: "~30% faster rendering performance",
+    link: "https://cinematic.mobi",
   },
   {
     name: "MComics",
     role: "Full Stack Developer",
     contribution:
       "Subscription-based video content portal for kids — upgraded Node.js and React versions, converted styled-components to modern React components with Tailwind CSS.",
-    performance: "~55% render performance gain",
-    link: "https://mcomics.example.com",
+    performance: "~25% render performance gain",
+    link: "http://mcomics.mobi",
   },
   {
     name: "Medico",
@@ -92,7 +100,7 @@ const notableWorks = [
     contribution:
       "Telemedicine and digital healthcare platform — integrated WebSockets, upgraded styled-components to modern React components, improved user experience and integrated Tailwind CSS.",
     performance: "~40% UX & load improvement",
-    link: "https://medico.example.com",
+    link: "https://medico.bio/login",
   },
 ];
 
@@ -204,14 +212,18 @@ const ExperienceLayout = () => {
             >
               {/* Name + role */}
               <div className="flex items-start justify-between gap-2">
-                <h5 className="font-bold text-white text-sm leading-snug">{project.name}</h5>
-                <span className="text-xs text-cyan-400/70 bg-cyan-400/10 border border-cyan-400/20 px-2 py-0.5 rounded-full shrink-0 whitespace-nowrap">
+                <h5 className="font-bold text-white text-sm leading-snug">
+                  {project.name}
+                </h5>
+                {/* <span className="text-xs text-cyan-400/70 bg-cyan-400/10 border border-cyan-400/20 px-2 py-0.5 rounded-full shrink-0 whitespace-nowrap">
                   {project.role}
-                </span>
+                </span> */}
               </div>
 
               {/* Contribution */}
-              <p className="text-slate-400 text-xs leading-relaxed flex-1">{project.contribution}</p>
+              <p className="text-slate-400 text-xs leading-relaxed flex-1 text-justify">
+                {project.contribution}
+              </p>
 
               {/* Footer — performance + live link */}
               <div className="flex items-center justify-between gap-2 pt-2 border-t border-slate-600/40">
