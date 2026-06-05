@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "Fuad Hasan | Werkstudent Full Stack Developer in Germany | MERN, NestJS",
 
   description:
-    "Fuad Hasan is a Full Stack Developer based in Germany with 2+ years of experience in MERN and NestJS. MSc student in Innovation & Technology Management at Harz University. Open to Werkstudent Software Developer roles in Germany.",
+    "Fuad Hasan is a Full Stack Developer based in Germany with 2+ years of experience in MERN and NestJS. M.Eng student in Technology and Innovation  Management at Harz University. Open to Werkstudent Software Developer roles in Germany.",
 
   keywords: [
     // Core Identity
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
 
     // University Signal
     "Harz University Student Developer",
-    "MSc Student Germany Developer",
+    "M.Eng Student Germany Developer",
   ],
 
   authors: [
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Fuad Hasan | Werkstudent Full Stack Developer | Germany",
     description:
-      "Full Stack Developer based in Germany with experience in MERN and NestJS. MSc student at Harz University. Actively seeking Werkstudent Software Developer opportunities.",
+      "Full Stack Developer based in Germany with experience in MERN and NestJS. M.Eng student at Harz University. Actively seeking Werkstudent Software Developer opportunities.",
     url: "https://fuadhasan.pro.bd/",
     siteName: "Fuad Hasan - Werkstudent Developer",
     images: [
@@ -88,7 +88,7 @@ export const metadata: Metadata = {
     creator: "@fuad_safat",
     title: "Werkstudent Full Stack Developer in Germany | Fuad Hasan",
     description:
-      "MERN & NestJS developer based in Germany. MSc student at Harz University. Open to Werkstudent roles.",
+      "MERN & NestJS developer based in Germany. M.Eng student at Harz University. Open to Werkstudent roles.",
     images: ["/profilepic/FUADlogo.png"],
   },
 };

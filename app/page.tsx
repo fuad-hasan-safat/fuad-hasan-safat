@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     "Fuad Hasan | Werkstudent Full Stack Developer in Germany | MERN, NestJS",
 
   description:
-    "Fuad Hasan is a Full Stack Developer based in Germany with 2+ years of experience building scalable web applications using MERN and NestJS. MSc student at Hochschule Harz (University of Applied Sciences). Open to Werkstudent Software Developer roles.",
+    "Fuad Hasan is a Full Stack Developer based in Germany with 2+ years of experience building scalable web applications using MERN and NestJS. M.Eng student at Hochschule Harz (University of Applied Sciences). Open to Werkstudent Software Developer roles.",
 
   keywords: [
     // Identity
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 
     // Student Positioning
     "International Student Developer Germany",
-    "MSc Student Germany Developer",
+    "M.Eng Student Germany Developer",
     "Hochschule Harz Developer",
     "Harz University Student Developer",
 
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Fuad Hasan | Werkstudent Full Stack Developer | Germany",
     description:
-      "Portfolio of Fuad Hasan – Full Stack Developer based in Germany with experience in MERN and NestJS. MSc student at Hochschule Harz. Actively seeking Werkstudent opportunities.",
+      "Portfolio of Fuad Hasan – Full Stack Developer based in Germany with experience in MERN and NestJS. M.Eng student at Hochschule Harz. Actively seeking Werkstudent opportunities.",
     url: "https://fuadhasan.pro.bd/",
     siteName: "Fuad Hasan - Full Stack Developer",
     images: [
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
     creator: "@fuad_safat",
     title: "Werkstudent Full Stack Developer in Germany | Fuad Hasan",
     description:
-      "Full Stack Developer (MERN & NestJS) based in Germany. MSc student at Hochschule Harz. Open to Werkstudent roles.",
+      "Full Stack Developer (MERN & NestJS) based in Germany. M.Eng student at Hochschule Harz. Open to Werkstudent roles.",
     images: ["/profilepic/FUADlogo.png"],
   },
 };
