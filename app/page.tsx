@@ -1,13 +1,13 @@
 import Fullbody from "@/components/Fullbody";
 import { Metadata } from "next";
 
-
 export const metadata: Metadata = {
-  title: "Fuad Hasan | Werkstudent Full Stack Developer in Germany | MERN, NestJS",
-  
+  title:
+    "Fuad Hasan | Werkstudent Full Stack Developer in Germany | MERN, NestJS",
+
   description:
     "Fuad Hasan is a Full Stack Developer based in Germany with 2+ years of experience building scalable web applications using MERN and NestJS. MSc student at Hochschule Harz (University of Applied Sciences). Open to Werkstudent Software Developer roles.",
-  
+
   keywords: [
     // Identity
     "Fuad Hasan",
@@ -39,14 +39,14 @@ export const metadata: Metadata = {
     "Full Stack Engineer Germany",
     "Backend Developer NestJS",
     "Frontend Developer React",
-    "Web Developer Germany"
+    "Web Developer Germany",
   ],
 
   authors: [
     {
       name: "Fuad Hasan",
-      url: "https://fuadhasan.pro.bd/"
-    }
+      url: "https://fuadhasan.pro.bd/",
+    },
   ],
 
   creator: "Fuad Hasan",
@@ -60,12 +60,12 @@ export const metadata: Metadata = {
     siteName: "Fuad Hasan - Full Stack Developer",
     images: [
       {
-        url: "/profilepic/Fuad_Hasan_Safat_Pro.png",
+        url: "/profilepic/FUADlogo.png",
         width: 1200,
         height: 630,
-        alt: "Fuad Hasan Profile Picture"
-      }
-    ]
+        alt: "Fuad Hasan Profile Picture",
+      },
+    ],
   },
 
   twitter: {
@@ -75,14 +75,14 @@ export const metadata: Metadata = {
     title: "Werkstudent Full Stack Developer in Germany | Fuad Hasan",
     description:
       "Full Stack Developer (MERN & NestJS) based in Germany. MSc student at Hochschule Harz. Open to Werkstudent roles.",
-    images: ["/profilepic/Fuad_Hasan_Safat_Pro.png"]
-  }
+    images: ["/profilepic/FUADlogo.png"],
+  },
 };
 
 export default function Home() {
   return (
     <main className="h-full">
-      <Fullbody/>
+      <Fullbody />
     </main>
   );
 }
