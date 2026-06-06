@@ -11,6 +11,7 @@ import Loader from "./Loader";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiChevronUp } from "react-icons/fi";
 import SendMessage from "./SendMessege";
+import AISummaryButton from "./AISummaryButton";
 
 import { SectionRefs } from "@/types/sections";
 
@@ -121,6 +122,9 @@ export default function Fullbody() {
             })}
           </div>
         </div>
+
+        {/* AI Summary floating button */}
+        <AISummaryButton />
 
         {/* Scroll to Top */}
         {showScrollTop && (
