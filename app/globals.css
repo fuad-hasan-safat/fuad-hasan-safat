@@ -154,3 +154,26 @@ body {
   @apply flex justify-center items-center w-10 h-10 transition-all;
 }
 
+/* Tiny modern scrollbar (used inside the AI summary modal) */
+.tiny-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(34, 211, 238, 0.4) transparent;
+}
+
+.tiny-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.tiny-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.tiny-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(34, 211, 238, 0.35);
+  border-radius: 9999px;
+}
+
+.tiny-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(34, 211, 238, 0.6);
+}
+
